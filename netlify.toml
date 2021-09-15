@@ -1,0 +1,23 @@
+[build]
+  publish = "./public"
+  command = "npm run build"
+
+[build.environment]
+  ELM_HOME = "$NETLIFY_BUILD_BASE/cache/elm"
+
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+
+[[redirects]]
+  from = "/news"
+  to = "/blog"
+  status = 301
+  force = false
+
+[[redirects]]
+  from = "/blog/*"
+  to = "/blog/en/*"
+  status = 302
+  force = false
