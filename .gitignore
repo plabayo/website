@@ -1,3 +1,5 @@
+.DS_Store
+
 .elm-pages/
 elm-stuff/
 node_modules/
