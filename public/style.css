@@ -1,0 +1,19 @@
+@font-face {
+    font-family: "Contra";
+
+    src: url('/fonts/Contra.eot'); /* IE9 Compat Modes */
+    src: url('/fonts/Contra?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+        url("/fonts/Contra.woff") format("woff"), /* Modern browsers */
+        url("/fonts/Contra.woff2") format("woff2"), /* Very Modern Browsers */ 
+        url("/fonts/Contra.ttf") format("truetype"); /* Safari, Android, iOS */
+}
+
+@font-face {
+    font-family: "Lato Hairline Italic";
+
+    src: url('/fonts/Lato-HairlineItalic.eot'); /* IE9 Compat Modes */
+    src: url('/fonts/Lato-HairlineItalic?#iefix') format('embedded-opentype'), /* IE6-IE8 */
+        url("/fonts/Lato-HairlineItalic.woff") format("woff"), /* Modern browsers */
+        url("/fonts/Lato-HairlineItalic.woff2") format("woff2"), /* Very Modern Browsers */ 
+        url("/fonts/Lato-HairlineItalic.ttf") format("truetype"); /* Safari, Android, iOS */
+}

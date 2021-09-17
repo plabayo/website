@@ -78,12 +78,10 @@ view maybeUrl sharedModel static =
                     [ Element.Font.color (Element.rgb255 51 51 51)
                     , Element.Font.size 36
                     , Element.Font.family
-                        [ Element.Font.external
-                            { url = "/fonts/Lato-HairlineItalic.woff2"
-                            , name = "Lato Hairline Italic"
-                            }
+                        [ Element.Font.typeface "Lato Hairline Italic"
                         , Element.Font.sansSerif
                         ]
+                    , Element.Font.extraLight
                     , Element.Font.italic
                     , Element.Font.center
                     , Element.padding 10
@@ -95,10 +93,7 @@ view maybeUrl sharedModel static =
                 [ Element.el
                     [ Element.Font.color (Element.rgb255 51 51 51)
                     , Element.Font.family
-                        [ Element.Font.external
-                            { url = "/fonts/Contra.woff2"
-                            , name = "Contra Regular"
-                            }
+                        [ Element.Font.typeface "Contra"
                         , Element.Font.serif
                         ]
                     , Element.padding 10
@@ -123,12 +118,10 @@ We take it as our mission to help you in your life long journey of learning. Tha
                     [ Element.Font.color (Element.rgb255 51 51 51)
                     , Element.Font.size 28
                     , Element.Font.family
-                        [ Element.Font.external
-                            { url = "/fonts/Lato-HairlineItalic.woff2"
-                            , name = "Lato Hairline Italic"
-                            }
+                        [ Element.Font.typeface "Lato Hairline Italic"
                         , Element.Font.sansSerif
                         ]
+                    , Element.Font.extraLight
                     , Element.Font.italic
                     , Element.padding 10
                     ]
@@ -145,10 +138,7 @@ We take it as our mission to help you in your life long journey of learning. Tha
                 [ Element.el
                     [ Element.Font.color (Element.rgb255 51 51 51)
                     , Element.Font.family
-                        [ Element.Font.external
-                            { url = "/fonts/Contra.woff2"
-                            , name = "Contra Regular"
-                            }
+                        [ Element.Font.typeface "Contra"
                         , Element.Font.serif
                         ]
                     , Element.padding 10
@@ -163,12 +153,10 @@ We take it as our mission to help you in your life long journey of learning. Tha
                     [ Element.Font.color (Element.rgb255 51 51 51)
                     , Element.Font.size 28
                     , Element.Font.family
-                        [ Element.Font.external
-                            { url = "/fonts/Lato-HairlineItalic.woff2"
-                            , name = "Lato Hairline Italic"
-                            }
+                        [ Element.Font.typeface "Lato Hairline Italic"
                         , Element.Font.sansSerif
                         ]
+                    , Element.Font.extraLight
                     , Element.Font.italic
                     , Element.padding 10
                     ]
@@ -180,10 +168,7 @@ We take it as our mission to help you in your life long journey of learning. Tha
                 [ Element.el
                     [ Element.Font.color (Element.rgb255 51 51 51)
                     , Element.Font.family
-                        [ Element.Font.external
-                            { url = "/fonts/Contra.woff2"
-                            , name = "Contra Regular"
-                            }
+                        [ Element.Font.typeface "Contra"
                         , Element.Font.serif
                         ]
                     , Element.padding 10
