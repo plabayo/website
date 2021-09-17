@@ -1,11 +1,15 @@
-module Shared exposing (Data, Model, Msg(..), SharedMsg(..), template)
+module Shared exposing (Data, Model, Msg(..), SharedMsg(..), footer, seoSummary, template)
 
 import Browser.Navigation
 import DataSource
+import Element exposing (Element)
+import Element.Font
+import Element.Region
+import Head.Seo as Seo
 import Html exposing (Html)
-import Element
 import Pages.Flags
 import Pages.PageUrl exposing (PageUrl)
+import Pages.Url
 import Path exposing (Path)
 import Route exposing (Route)
 import SharedTemplate exposing (SharedTemplate)
@@ -45,6 +49,23 @@ type alias Model =
     }
 
 
+seoSummary : Seo.Common
+seoSummary =
+    Seo.summary
+        { canonicalUrlOverride = Nothing
+        , siteName = "Plabajo Website"
+        , image =
+            { url = Pages.Url.external "TODO"
+            , alt = "elm-pages logo"
+            , dimensions = Nothing
+            , mimeType = Nothing
+            }
+        , description = "Plabajo creates Free and Open Source Software"
+        , locale = Nothing
+        , title = "Plabajo Free and Open Source Software"
+        }
+
+
 init :
     Maybe Browser.Navigation.Key
     -> Pages.Flags.Flags
@@ -79,9 +100,23 @@ subscriptions : Path -> Model -> Sub Msg
 subscriptions _ _ =
     Sub.none
 
+
 data : DataSource.DataSource Data
 data =
     DataSource.succeed ()
+
+
+footer : Element msg
+footer =
+    Element.row
+        [ Element.Region.footer
+        , Element.width Element.fill
+        ]
+        [ Element.el
+            [ Element.Font.center ]
+            -- TODO: add links & markdown
+            (Element.text "Website by Elizabeth C. Gonzales Belsuzarri and Glen Henri J. De Cauwsemaecker, licensed by CC BY NC SA 4.0.")
+        ]
 
 
 view :
