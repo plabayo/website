@@ -21,7 +21,7 @@ It doesn not mean that all our products are gratis."""
             """Our slogan is _"Play, Work and Grow"_, one we take as serious as it is playful.
 Children learn by doing, but it is no different for adults.
 Helping you in your life long journey of learning is at the core of our mission.
-Thank you for trusting us an using our products. 
+Thank you for trusting us and for using our products. 
 """
 
         -- Shared: Page
