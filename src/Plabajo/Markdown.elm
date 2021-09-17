@@ -143,11 +143,8 @@ inlinesToId : List Inline -> String
 inlinesToId list =
     list
         |> Block.extractInlineText
-        |> Debug.log "extracted"
         |> String.split " "
-        |> Debug.log "split"
         |> String.join "-"
-        |> Debug.log "joined"
 
 
 gatherHeadings : List Block -> List ( Block.HeadingLevel, List Inline )
