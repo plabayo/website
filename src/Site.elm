@@ -14,7 +14,7 @@ type alias Data =
 config : SiteConfig Data
 config =
     { data = data
-    , canonicalUrl = "https://elm-pages.com"
+    , canonicalUrl = "https://plabajo.tech"
     , manifest = manifest
     , head = head
     }
@@ -34,8 +34,13 @@ head static =
 manifest : Data -> Manifest.Config
 manifest static =
     Manifest.init
-        { name = "Site Name"
-        , description = "Description"
+        { name = "Plabajo Free and Open Source Software"
+        , description = "Plabajo is an indie studio creating Free and Open Source Software"
         , startUrl = Route.Index |> Route.toPath
         , icons = []
         }
+        |> Manifest.withShortName "Plabajo"
+
+-- TODO: support ful manifest with color and all
+
+-- TODO: support icon
