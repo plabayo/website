@@ -12,9 +12,9 @@ import Pages.Flags exposing (Flags(..))
 import Pages.PageUrl exposing (PageUrl)
 import Pages.Url
 import Path exposing (Path)
-import Plabajo.L18n as L18n
-import Plabajo.L18n.UI as L18nUI
-import Plabajo.L18n.Types exposing (Translator, Text(..))
+import Plabayo.L18n as L18n
+import Plabayo.L18n.UI as L18nUI
+import Plabayo.L18n.Types exposing (Translator, Text(..))
 import Random
 import Route exposing (Route)
 import SharedTemplate exposing (SharedTemplate)
@@ -73,16 +73,16 @@ seoSummary : Seo.Common
 seoSummary =
     Seo.summary
         { canonicalUrlOverride = Nothing
-        , siteName = "Plabajo Website"
+        , siteName = "Plabayo Website"
         , image =
             { url = Pages.Url.external "TODO"
             , alt = "elm-pages logo"
             , dimensions = Nothing
             , mimeType = Nothing
             }
-        , description = "Plabajo creates Free and Open Source Software"
+        , description = "Plabayo creates Free and Open Source Software"
         , locale = Nothing
-        , title = "Plabajo Free and Open Source Software"
+        , title = "Plabayo Free and Open Source Software"
         }
 
 
@@ -159,7 +159,7 @@ footer sharedModel =
             (SharedPageFooter
                 { coFounderElizabeth = "[Elizabeth C. Gonzales Belsuzarri](https://www.linkedin.com/in/elizabeth-gonzales-belsuzarri-72173214/)"
                 , coFounderGlen = "[Glen Henri J. De Cauwsemaecker](https://www.glendc.com/)"
-                , licenseWeb = "[Creative Commons Zero v1.0 Universal](https://github.com/plabajo/website/blob/main/LICENSE)"
+                , licenseWeb = "[Creative Commons Zero v1.0 Universal](https://github.com/plabayo/website/blob/main/LICENSE)"
                 }
             )
         ]

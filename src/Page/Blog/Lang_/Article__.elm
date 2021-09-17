@@ -60,7 +60,7 @@ view :
     -> StaticPayload Data RouteParams
     -> View Msg
 view maybeUrl sharedModel static =
-    { title = "Plabajo Blog"
+    { title = "Plabayo Blog"
     , body =
         Element.el
             [ Element.centerX

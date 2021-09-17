@@ -1,6 +1,6 @@
-module Plabajo.Project exposing (..)
+module Plabayo.Project exposing (..)
 
-import Plabajo.L18n.Types exposing (Text(..))
+import Plabayo.L18n.Types exposing (Text(..))
 
 
 type alias Project =

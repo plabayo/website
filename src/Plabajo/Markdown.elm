@@ -1,4 +1,4 @@
-module Plabajo.Markdown exposing (main, renderer)
+module Plabayo.Markdown exposing (main, renderer)
 
 {-
     Example borrowed from https://github.com/dillonkearns/elm-markdown

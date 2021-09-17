@@ -65,7 +65,7 @@ view :
     -> StaticPayload Data RouteParams
     -> View Msg
 view maybeUrl sharedModel static =
-    { title = "Plabajo Blog"
+    { title = "Plabayo Blog"
     , body =
         Element.column
             [ Element.centerX
@@ -85,12 +85,12 @@ view maybeUrl sharedModel static =
                                 [ Element.column []
                                     [ Element.image [ Element.width (Element.px 40) ]
                                         { src = "/media/logo_filled_default.svg"
-                                        , description = "light default version of the Plabajo Logo"
+                                        , description = "light default version of the Plabayo Logo"
                                         }
                                     ]
                                 ,  Element.column
                                     []
-                                    [ Element.text "Plabajo"
+                                    [ Element.text "Plabayo"
                                     ]
                                 ]
                         , url = "/"

@@ -1,5 +1,5 @@
-# Plabajo Website
+# Plabayo Website
 
-The source code of the Plabajo website.
+The source code of the Plabayo website.
 
-https://www.plabajo.tech
+https://www.plabayo.tech

@@ -1,4 +1,4 @@
-module Plabajo.L18n.Types exposing (Text(..), Translator)
+module Plabayo.L18n.Types exposing (Text(..), Translator)
 
 
 type

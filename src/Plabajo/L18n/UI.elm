@@ -1,11 +1,11 @@
-module Plabajo.L18n.UI exposing (hyperlink, mdBlock, paragraph, text)
+module Plabayo.L18n.UI exposing (hyperlink, mdBlock, paragraph, text)
 
-import Plabajo.L18n
-import Plabajo.L18n.Types exposing (Text(..), Translator)
+import Plabayo.L18n
+import Plabayo.L18n.Types exposing (Text(..), Translator)
 import Element exposing (Element)
 import Markdown.Parser
 import Markdown.Renderer
-import Plabajo.Markdown
+import Plabayo.Markdown
 
 
 text : Translator -> Text -> Element msg
@@ -27,7 +27,7 @@ mdBlock translate attributes txt =
         mdElementsResult =
             Markdown.Parser.parse rawText
                 |> Result.mapError deadEndsToString
-                |> Result.andThen (\ast -> Markdown.Renderer.render Plabajo.Markdown.renderer ast)
+                |> Result.andThen (\ast -> Markdown.Renderer.render Plabayo.Markdown.renderer ast)
     in
     case mdElementsResult of
         Err _ ->

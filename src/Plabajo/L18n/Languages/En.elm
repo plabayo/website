@@ -1,6 +1,6 @@
-module Plabajo.L18n.Languages.En exposing (translate)
+module Plabayo.L18n.Languages.En exposing (translate)
 
-import Plabajo.L18n.Types exposing (Text(..))
+import Plabayo.L18n.Types exposing (Text(..))
 
 
 translate : Text -> String
@@ -8,7 +8,7 @@ translate text =
     case text of
         -- Page: Index
         PageIndexIntroP1 params ->
-            "Plabajo was co-founded in 2021 by "
+            "Plabayo was co-founded in 2021 by "
                 ++ params.coFounderElizabeth
                 ++ " and "
                 ++ params.coFounderGlen

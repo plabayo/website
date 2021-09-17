@@ -8,8 +8,8 @@ import Head
 import Head.Seo as Seo
 import Page exposing (Page, StaticPayload)
 import Pages.PageUrl exposing (PageUrl)
-import Plabajo.L18n.Types exposing (Text(..))
-import Plabajo.L18n.UI as L18nUI
+import Plabayo.L18n.Types exposing (Text(..))
+import Plabayo.L18n.UI as L18nUI
 import Shared
 import View exposing (View)
 
@@ -58,7 +58,7 @@ view :
     -> StaticPayload Data RouteParams
     -> View Msg
 view maybeUrl sharedModel static =
-    { title = "Plabajo"
+    { title = "Plabayo"
     , body =
         Element.column
             [ Element.centerX
@@ -71,7 +71,7 @@ view maybeUrl sharedModel static =
                 [ Element.width Element.fill ]
                 [ Element.image [ Element.centerX, Element.width Element.fill ]
                     { src = "/media/index_hero_banner_default_light.svg"
-                    , description = "light default version of the Plabajo Hero Banner"
+                    , description = "light default version of the Plabayo Hero Banner"
                     }
                 ]
             , Element.row

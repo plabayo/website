@@ -1,6 +1,6 @@
-module Plabajo.L18n.Languages.Es exposing (translate)
+module Plabayo.L18n.Languages.Es exposing (translate)
 
-import Plabajo.L18n.Types exposing (Text(..))
+import Plabayo.L18n.Types exposing (Text(..))
 
 
 translate : Text -> Maybe String

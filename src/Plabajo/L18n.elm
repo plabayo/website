@@ -1,13 +1,13 @@
-module Plabajo.L18n exposing
+module Plabayo.L18n exposing
     ( Language(..)
     , negotiateLanguage
     , translate
     )
 
-import Plabajo.L18n.Languages.En
-import Plabajo.L18n.Languages.Es
-import Plabajo.L18n.Languages.Nl
-import Plabajo.L18n.Types exposing (Text(..))
+import Plabayo.L18n.Languages.En
+import Plabayo.L18n.Languages.Es
+import Plabayo.L18n.Languages.Nl
+import Plabayo.L18n.Types exposing (Text(..))
 
 
 type Language
@@ -47,20 +47,20 @@ translate : Language -> Text -> String
 translate lang text =
     case lang of
         En ->
-            Plabajo.L18n.Languages.En.translate text
+            Plabayo.L18n.Languages.En.translate text
 
         Nl ->
-            case Plabajo.L18n.Languages.Nl.translate text of
+            case Plabayo.L18n.Languages.Nl.translate text of
                 Just t ->
                     t
 
                 Nothing ->
-                    Plabajo.L18n.Languages.En.translate text
+                    Plabayo.L18n.Languages.En.translate text
 
         Es ->
-            case Plabajo.L18n.Languages.Es.translate text of
+            case Plabayo.L18n.Languages.Es.translate text of
                 Just t ->
                     t
 
                 Nothing ->
-                    Plabajo.L18n.Languages.En.translate text
+                    Plabayo.L18n.Languages.En.translate text
