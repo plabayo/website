@@ -7,10 +7,15 @@ import Element.Font
 import Element.Region
 import Head.Seo as Seo
 import Html exposing (Html)
-import Pages.Flags
+import Json.Decode
+import Pages.Flags exposing (Flags(..))
 import Pages.PageUrl exposing (PageUrl)
 import Pages.Url
 import Path exposing (Path)
+import Plabajo.L18n as L18n
+import Plabajo.L18n.UI as L18nUI
+import Plabajo.L18n.Types exposing (Translator, Text(..))
+import Random
 import Route exposing (Route)
 import SharedTemplate exposing (SharedTemplate)
 import View exposing (View)
@@ -46,7 +51,22 @@ type SharedMsg
 
 type alias Model =
     { showMobileMenu : Bool
+    , translate : Translator
+    , randomSeed : Random.Seed
     }
+
+
+type alias Flags =
+    { availableLocales : List String
+    , initialRandomSeed : Int
+    }
+
+
+flagsDecoder : Json.Decode.Decoder Flags
+flagsDecoder =
+    Json.Decode.map2 Flags
+        (Json.Decode.field "availableLocales" (Json.Decode.list Json.Decode.string))
+        (Json.Decode.field "initialRandomSeed" Json.Decode.int)
 
 
 seoSummary : Seo.Common
@@ -81,7 +101,21 @@ init :
             }
     -> ( Model, Cmd Msg )
 init navigationKey flags maybePagePath =
-    ( { showMobileMenu = False }
+    let
+        ( language, seed ) =
+            case flags of
+                BrowserFlags rawFlags ->
+                    Json.Decode.decodeValue flagsDecoder rawFlags
+                        |> Result.andThen (\df -> ( L18n.negotiateLanguage df.availableLocales, df.initialRandomSeed ) |> Ok)
+                        |> Result.withDefault ( L18n.En, 0 )
+
+                PreRenderFlags ->
+                    ( L18n.En, 0 )
+    in
+    ( { showMobileMenu = True
+      , translate = L18n.translate language
+      , randomSeed = Random.initialSeed seed
+      }
     , Cmd.none
     )
 
@@ -106,16 +140,28 @@ data =
     DataSource.succeed ()
 
 
-footer : Element msg
-footer =
+footer : Model -> Element msg
+footer sharedModel =
     Element.row
         [ Element.Region.footer
         , Element.width Element.fill
         ]
-        [ Element.el
-            [ Element.Font.center ]
-            -- TODO: add links & markdown
-            (Element.text "Website by Elizabeth C. Gonzales Belsuzarri and Glen Henri J. De Cauwsemaecker, licensed by CC BY NC SA 4.0.")
+        [ L18nUI.mdBlock
+            sharedModel.translate
+            [ Element.Font.color (Element.rgb255 102 102 102)
+            , Element.Font.family
+                [ Element.Font.typeface "Contra"
+                , Element.Font.serif
+                ]
+            , Element.Font.size 14
+            , Element.paddingXY 10 20
+            ]
+            (SharedPageFooter
+                { coFounderElizabeth = "[Elizabeth C. Gonzales Belsuzarri](https://www.linkedin.com/in/elizabeth-gonzales-belsuzarri-72173214/)"
+                , coFounderGlen = "[Glen Henri J. De Cauwsemaecker](https://www.glendc.com/)"
+                , licenseWeb = "[Creative Commons Zero v1.0 Universal](https://github.com/plabajo/website/blob/main/LICENSE)"
+                }
+            )
         ]
 
 

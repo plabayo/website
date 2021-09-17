@@ -120,6 +120,6 @@ view maybeUrl sharedModel static =
                     ]
                     (Element.text "There are no blog posts yet to read...")
                 ]
-            , Shared.footer
+            , Shared.footer sharedModel
             ]
     }

@@ -8,7 +8,8 @@ import Head
 import Head.Seo as Seo
 import Page exposing (Page, StaticPayload)
 import Pages.PageUrl exposing (PageUrl)
-import Pages.Url
+import Plabajo.L18n.Types exposing (Text(..))
+import Plabajo.L18n.UI as L18nUI
 import Shared
 import View exposing (View)
 
@@ -62,6 +63,7 @@ view maybeUrl sharedModel static =
         Element.column
             [ Element.centerX
             , Element.alignTop
+            , Element.paddingXY 0 30
             , Element.width (Element.px 700)
             , Element.Region.mainContent
             ]
@@ -90,7 +92,8 @@ view maybeUrl sharedModel static =
                 ]
             , Element.row
                 [ Element.width Element.fill ]
-                [ Element.el
+                [ L18nUI.mdBlock
+                    sharedModel.translate
                     [ Element.Font.color (Element.rgb255 51 51 51)
                     , Element.Font.family
                         [ Element.Font.typeface "Contra"
@@ -98,17 +101,24 @@ view maybeUrl sharedModel static =
                         ]
                     , Element.padding 10
                     ]
-                    (Element.text
-                        """
-Plabajo was co-founded in 2021 by Elizabeth C. Gonzales Belsuzarri and Glen Henri J. De Cauwsemaecker. Our applications
-and games are the product, not you the user. All data is yours and yours alone to keep. Privacy and transparency is at core of our mission.
-The _"Free"_ in _"Free and Open Source Software"_ (_FOSS_) is about freedom and helps maintain the _civil liberal rights_.
-It doesn not mean that all our products are gratis.
-
-Our slogan is _"Play, Work and Grow"_, one we take as serious as it is playful. Children learn by doing, but it is no different for adults.
-We take it as our mission to help you in your life long journey of learning. Thank you for trusting us an using our products. 
-"""
+                    (PageIndexIntroP1
+                        { coFounderElizabeth = "[Elizabeth C. Gonzales Belsuzarri](https://www.linkedin.com/in/elizabeth-gonzales-belsuzarri-72173214/)"
+                        , coFounderGlen = "[Glen Henri J. De Cauwsemaecker](https://www.glendc.com/)"
+                        }
                     )
+                ]
+            , Element.row
+                [ Element.width Element.fill ]
+                [ L18nUI.mdBlock
+                    sharedModel.translate
+                    [ Element.Font.color (Element.rgb255 51 51 51)
+                    , Element.Font.family
+                        [ Element.Font.typeface "Contra"
+                        , Element.Font.serif
+                        ]
+                    , Element.padding 10
+                    ]
+                    PageIndexIntroP2
                 ]
             , Element.row
                 [ Element.Region.navigation
@@ -180,6 +190,6 @@ We take it as our mission to help you in your life long journey of learning. Tha
                         ]
                     )
                 ]
-            , Shared.footer
+            , Shared.footer sharedModel
             ]
     }
