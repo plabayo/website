@@ -3,6 +3,7 @@ module Shared exposing (Data, Model, Msg(..), SharedMsg(..), template)
 import Browser.Navigation
 import DataSource
 import Html exposing (Html)
+import Element
 import Pages.Flags
 import Pages.PageUrl exposing (PageUrl)
 import Path exposing (Path)
@@ -78,7 +79,6 @@ subscriptions : Path -> Model -> Sub Msg
 subscriptions _ _ =
     Sub.none
 
-
 data : DataSource.DataSource Data
 data =
     DataSource.succeed ()
@@ -95,6 +95,6 @@ view :
     -> View msg
     -> { body : Html msg, title : String }
 view sharedData page model toMsg pageView =
-    { body = Html.div [] pageView.body
+    { body = Element.layout [ Element.width Element.fill ] pageView.body
     , title = pageView.title
     }

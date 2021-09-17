@@ -1,6 +1,7 @@
 module Page.Index exposing (Data, Model, Msg, page)
 
 import DataSource exposing (DataSource)
+import Element
 import Head
 import Head.Seo as Seo
 import Page exposing (Page, StaticPayload)
@@ -66,4 +67,25 @@ view :
     -> StaticPayload Data RouteParams
     -> View Msg
 view maybeUrl sharedModel static =
-    View.placeholder "Website is WIP :)"
+    { title = "Plabajo"
+    , body =
+        Element.column
+            [ Element.centerX
+            , Element.alignTop
+            , Element.width (Element.px 960)
+            ]
+            [ Element.row
+                [ Element.width Element.fill ]
+                [ Element.image [ Element.centerX ]
+                    { src = "/media/index_hero_banner_default_light.svg"
+                    , description = "light default version of the Plabajo Hero Banner"
+                    }
+                ]
+            , Element.row
+                [ Element.width Element.fill ]
+                [ Element.text "play, work and grow" ]
+            , Element.row
+                [ Element.width Element.fill ]
+                [ Element.text "> Plabajo was co-founded in 2021 by Elizabeth C. Gonzales Belsuzarri and Glen Henri J. De Cauwsemaecker. _" ]
+            ]
+    }

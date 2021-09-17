@@ -8,6 +8,7 @@ import Pages.PageUrl exposing (PageUrl)
 import Pages.Url
 import Shared
 import View exposing (View)
+import Element exposing (Element)
 
 
 type alias Model =
@@ -71,4 +72,13 @@ view :
     -> StaticPayload Data RouteParams
     -> View Msg
 view maybeUrl sharedModel static =
-    View.placeholder "Blog.Lang_.Article__"
+    { title = "Plabajo Blog"
+    , body =
+        Element.el
+            [ Element.centerX
+            , Element.alignTop
+            , Element.width <| Element.px 960
+            ]
+            (Element.text "I'm centered and aligned top!")
+    }
+
