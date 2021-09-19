@@ -106,7 +106,7 @@ view maybeUrl sharedModel model static =
             [ Element.centerX
             , Element.alignTop
             , Element.paddingXY 0 30
-            , Element.width (Element.px 700)
+            , Element.width Element.fill
             , Element.Region.mainContent
             ]
             [ Element.row
@@ -133,35 +133,41 @@ view maybeUrl sharedModel model static =
                     (Element.text "Free and Open Source Software")
                 ]
             , Element.row
-                [ Element.width Element.fill ]
-                [ L18nUI.mdBlock
-                    sharedModel.translate
-                    [ Element.Font.color (Element.rgb255 51 51 51)
-                    , Element.Font.family
-                        [ Element.Font.typeface "Contra"
-                        , Element.Font.serif
-                        ]
-                    , Element.padding 10
+                [ Element.width Element.fill
+                , Element.Font.color (Element.rgb255 51 51 51)
+                , Element.Font.family
+                    [ Element.Font.typeface "Contra"
+                    , Element.Font.serif
                     ]
-                    (PageIndexIntroP1
-                        { coFounderElizabeth = "[Elizabeth C. Gonzales Belsuzarri](https://www.linkedin.com/in/elizabeth-gonzales-belsuzarri-72173214/)"
-                        , coFounderGlen = "[Glen Henri J. De Cauwsemaecker](https://www.glendc.com/)"
-                        , emailContact = "[contact@plabayo.tech](mailto:contact@plabayo.tech)"
-                        }
-                    )
+                , Element.padding 10
                 ]
-            , Element.row
-                [ Element.width Element.fill ]
-                [ L18nUI.mdBlock
-                    sharedModel.translate
-                    [ Element.Font.color (Element.rgb255 51 51 51)
-                    , Element.Font.family
-                        [ Element.Font.typeface "Contra"
-                        , Element.Font.serif
+                [ Element.column [ Element.width Element.fill ]
+                    [ Element.row [ Element.paddingXY 0 5 ]
+                        [ L18nUI.mdBlock
+                            sharedModel.translate
+                            []
+                            (PageIndexIntroP1
+                                { coFounderElizabeth = "[Elizabeth C. Gonzales Belsuzarri](https://www.linkedin.com/in/elizabeth-gonzales-belsuzarri-72173214/)"
+                                , coFounderGlen = "[Glen Henri J. De Cauwsemaecker](https://www.glendc.com/)"
+                                }
+                            )
                         ]
-                    , Element.padding 10
+                    , Element.row [ Element.paddingXY 0 5 ]
+                        [ L18nUI.mdBlock
+                            sharedModel.translate
+                            []
+                            PageIndexIntroP2
+                        ]
+                    , Element.row [ Element.paddingXY 0 5 ]
+                        [ L18nUI.mdBlock
+                            sharedModel.translate
+                            []
+                            (PageIndexIntroP3
+                                { emailContact = "[contact@plabayo.tech](mailto:contact@plabayo.tech)"
+                                }
+                            )
+                        ]
                     ]
-                    PageIndexIntroP2
                 ]
             , Element.row
                 [ Element.Region.navigation

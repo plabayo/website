@@ -11,9 +11,11 @@ type
     | PageIndexIntroP1
         { coFounderElizabeth : String
         , coFounderGlen : String
-        , emailContact : String
         }
     | PageIndexIntroP2
+    | PageIndexIntroP3
+        { emailContact : String
+        }
       -- Shared: Page
     | SharedPageFooter
         { coFounderElizabeth : String

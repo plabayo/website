@@ -235,7 +235,9 @@ view sharedData page model toMsg pageView =
 
             -- content
             , Element.row
-                [ Element.width Element.fill ]
+                [ Element.maximum 720 Element.fill |> Element.width
+                , Element.centerX
+                ]
                 [ pageView.body ]
 
             -- footer

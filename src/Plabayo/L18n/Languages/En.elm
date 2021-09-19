@@ -34,6 +34,9 @@ Helping you in your life long journey of learning is at the core of our mission.
 Thank you for trusting us and for using our products. 
 """
 
+        PageIndexIntroP3 params ->
+            "You can reach out to us by mail at " ++ params.emailContact ++ "."
+
         -- Shared: Page
         SharedPageFooter params ->
             String.concat
