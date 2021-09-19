@@ -1,12 +1,16 @@
-module Shared exposing (Data, Model, Msg(..), SharedMsg(..), footer, seoSummary, template)
+module Shared exposing (Data, Model, Msg(..), SharedMsg(..), seoSummary, template)
 
-import Browser.Navigation
+import Browser exposing (element)
+import Browser.Navigation as Navigation
 import DataSource
 import Element exposing (Element)
+import Element.Background
+import Element.Border
 import Element.Font
 import Element.Region
 import Head.Seo as Seo
 import Html exposing (Html)
+import Html.Attributes exposing (title)
 import Json.Decode
 import Pages.Flags exposing (Flags(..))
 import Pages.PageUrl exposing (PageUrl)
@@ -15,12 +19,14 @@ import Path exposing (Path)
 import Plabayo.L18n as L18n
 import Plabayo.L18n.Types exposing (Text(..), Translator)
 import Plabayo.L18n.UI as L18nUI
-import Widget.Material exposing (Palette)
+import Plabayo.Material.Icons as Icons
 import Plabayo.Material.Palette as ColorPalettes
 import Random
 import Route exposing (Route)
 import SharedTemplate exposing (SharedTemplate)
 import View exposing (View)
+import Widget
+import Widget.Material as Material exposing (Palette)
 
 
 template : SharedTemplate Msg Model Data msg
@@ -48,7 +54,7 @@ type alias Data =
 
 
 type SharedMsg
-    = NoOp
+    = GoToPage String
 
 
 type alias Model =
@@ -90,7 +96,7 @@ seoSummary =
 
 
 init :
-    Maybe Browser.Navigation.Key
+    Maybe Navigation.Key
     -> Pages.Flags.Flags
     ->
         Maybe
@@ -131,7 +137,9 @@ update msg model =
             ( { model | showMobileMenu = False }, Cmd.none )
 
         SharedMsg globalMsg ->
-            ( model, Cmd.none )
+            case globalMsg of
+                GoToPage url ->
+                    ( model, Navigation.load url )
 
 
 subscriptions : Path -> Model -> Sub Msg
@@ -142,31 +150,6 @@ subscriptions _ _ =
 data : DataSource.DataSource Data
 data =
     DataSource.succeed ()
-
-
-footer : Model -> Element msg
-footer sharedModel =
-    Element.row
-        [ Element.Region.footer
-        , Element.width Element.fill
-        ]
-        [ L18nUI.mdBlock
-            sharedModel.translate
-            [ Element.Font.color (Element.rgb255 102 102 102)
-            , Element.Font.family
-                [ Element.Font.typeface "Contra"
-                , Element.Font.serif
-                ]
-            , Element.Font.size 14
-            , Element.paddingXY 10 20
-            ]
-            (SharedPageFooter
-                { coFounderElizabeth = "[Elizabeth C. Gonzales Belsuzarri](https://www.linkedin.com/in/elizabeth-gonzales-belsuzarri-72173214/)"
-                , coFounderGlen = "[Glen Henri J. De Cauwsemaecker](https://www.glendc.com/)"
-                , licenseWeb = "[Creative Commons Zero v1.0 Universal](https://github.com/plabayo/website/blob/main/LICENSE)"
-                }
-            )
-        ]
 
 
 view :
@@ -180,6 +163,113 @@ view :
     -> View msg
     -> { body : Html msg, title : String }
 view sharedData page model toMsg pageView =
-    { body = Element.layout [ Element.width Element.fill ] pageView.body
+    { body =
+        Element.column
+            [ Element.width Element.fill
+            , Element.height Element.fill
+            , model.palette.background |> ColorPalettes.colorToElement |> Element.Background.color
+            ]
+            -- menu bar
+            [ Element.row
+                [ Element.width Element.fill
+
+                -- , Element.Border.widthEach
+                --     { bottom = 1
+                --     , left = 0
+                --     , right = 0
+                --     , top = 0
+                --     }
+                -- , model.palette.primary |> ColorPalettes.colorToElement |> Element.Border.color
+                , model.palette.primary |> ColorPalettes.colorToElement |> Element.Font.color
+
+                -- , model.palette.secondary |> ColorPalettes.colorToElement |> Element.Background.color
+                ]
+                [ Element.column
+                    [ Element.alignLeft
+                    , Element.padding 10
+                    ]
+                    [ Widget.button (Material.containedButton model.palette)
+                        { text = model.translate NavButtonHome
+                        , icon = Icons.home
+                        , onPress = Nothing --GoToPage "/" |> SharedMsg |> Just
+                        }
+                    ]
+                , Element.column
+                    [ Element.alignRight
+                    , Element.paddingXY 20 0
+                    ]
+                    [ Element.row []
+                        [ Element.column
+                            [ Element.alignRight
+                            , Element.paddingEach
+                                { top = 0
+                                , right = 0
+                                , bottom = 0
+                                , left = 10
+                                }
+                            ]
+                            [ Widget.button (Material.containedButton model.palette)
+                                { text = model.translate NavButtonBlog
+                                , icon = Icons.blog
+                                , onPress = Nothing --GoToPage "/" |> SharedMsg |> Just
+                                }
+                            ]
+                        , Element.column
+                            [ Element.alignRight
+                            , Element.paddingEach
+                                { top = 0
+                                , right = 0
+                                , bottom = 0
+                                , left = 10
+                                }
+                            ]
+                            [ Widget.button (Material.containedButton model.palette)
+                                { text = model.translate NavButtonProjects
+                                , icon = Icons.projects
+                                , onPress = Nothing --GoToPage "/" |> SharedMsg |> Just
+                                }
+                            ]
+                        ]
+                    ]
+                ]
+
+            -- content
+            , Element.row
+                [ Element.width Element.fill ]
+                [ pageView.body ]
+
+            -- footer
+            , Element.row
+                [ Element.width Element.fill
+                , Element.alignBottom
+                ]
+                [ Element.column
+                    [ Element.Region.footer
+                    , Element.maximum 800 Element.fill |> Element.width
+                    , Element.centerX
+                    ]
+                    [ L18nUI.mdBlock
+                        model.translate
+                        [ Element.Font.color (Element.rgb255 102 102 102)
+                        , Element.Font.family
+                            [ Element.Font.typeface "Contra"
+                            , Element.Font.serif
+                            ]
+                        , Element.Font.size 14
+                        , Element.paddingXY 10 20
+                        ]
+                        (SharedPageFooter
+                            { coFounderElizabeth = "[Elizabeth C. Gonzales Belsuzarri](https://www.linkedin.com/in/elizabeth-gonzales-belsuzarri-72173214/)"
+                            , coFounderGlen = "[Glen Henri J. De Cauwsemaecker](https://www.glendc.com/)"
+                            , licenseWeb = "[Creative Commons Zero v1.0 Universal](https://github.com/plabayo/website/blob/main/LICENSE)"
+                            }
+                        )
+                    ]
+                ]
+            ]
+            |> Element.layout
+                [ Element.width Element.fill
+                , Element.height Element.fill
+                ]
     , title = pageView.title
     }

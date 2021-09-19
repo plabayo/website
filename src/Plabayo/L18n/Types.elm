@@ -6,13 +6,12 @@ type
     -- Navigation:
     = NavButtonHome
     | NavButtonBlog
-    | NavTitleBlog
     | NavButtonProjects
-    | NavTitleProjects
       -- Page: Index
     | PageIndexIntroP1
         { coFounderElizabeth : String
         , coFounderGlen : String
+        , emailContact : String
         }
     | PageIndexIntroP2
       -- Shared: Page

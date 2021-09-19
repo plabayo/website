@@ -1,10 +1,26 @@
 module Plabayo.Material.Palette exposing
     ( darkPalette
     , defaultPalette
+    , colorToElement
     )
 
 import Color exposing (Color)
+import Element
 import Widget.Material exposing (Palette)
+
+
+colorToElement : Color -> Element.Color
+colorToElement color =
+    let
+        rgba =
+            color |> Color.toRgba
+    in
+    Element.fromRgb
+        { red = rgba.red
+        , green = rgba.green
+        , blue = rgba.blue
+        , alpha = rgba.alpha
+        }
 
 
 

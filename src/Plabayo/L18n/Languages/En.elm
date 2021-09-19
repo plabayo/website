@@ -13,14 +13,8 @@ translate text =
         NavButtonBlog ->
             "Blog"
 
-        NavTitleBlog ->
-            "Plabajo Blog"
-
         NavButtonProjects ->
             "Projects"
-
-        NavTitleProjects ->
-            "Projects by Plabajo"
 
         -- Page: Index
         PageIndexIntroP1 params ->

@@ -146,6 +146,7 @@ view maybeUrl sharedModel model static =
                     (PageIndexIntroP1
                         { coFounderElizabeth = "[Elizabeth C. Gonzales Belsuzarri](https://www.linkedin.com/in/elizabeth-gonzales-belsuzarri-72173214/)"
                         , coFounderGlen = "[Glen Henri J. De Cauwsemaecker](https://www.glendc.com/)"
+                        , emailContact = "[contact@plabayo.tech](mailto:contact@plabayo.tech)"
                         }
                     )
                 ]
@@ -221,6 +222,5 @@ view maybeUrl sharedModel model static =
                         ]
                     )
                 ]
-            , Shared.footer sharedModel
             ]
     }
