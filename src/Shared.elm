@@ -46,7 +46,7 @@ type Msg
         , query : Maybe String
         , fragment : Maybe String
         }
-    | SharedMsg SharedMsg
+    | AnySharedMsg SharedMsg
 
 
 type alias Data =
@@ -136,7 +136,7 @@ update msg model =
         OnPageChange _ ->
             ( { model | showMobileMenu = False }, Cmd.none )
 
-        SharedMsg globalMsg ->
+        AnySharedMsg globalMsg ->
             case globalMsg of
                 GoToPage url ->
                     ( model, Navigation.load url )
@@ -172,17 +172,7 @@ view sharedData page model toMsg pageView =
             -- menu bar
             [ Element.row
                 [ Element.width Element.fill
-
-                -- , Element.Border.widthEach
-                --     { bottom = 1
-                --     , left = 0
-                --     , right = 0
-                --     , top = 0
-                --     }
-                -- , model.palette.primary |> ColorPalettes.colorToElement |> Element.Border.color
                 , model.palette.primary |> ColorPalettes.colorToElement |> Element.Font.color
-
-                -- , model.palette.secondary |> ColorPalettes.colorToElement |> Element.Background.color
                 ]
                 [ Element.column
                     [ Element.alignLeft
@@ -191,7 +181,7 @@ view sharedData page model toMsg pageView =
                     [ Widget.button (Material.containedButton model.palette)
                         { text = model.translate NavButtonHome
                         , icon = Icons.home
-                        , onPress = Nothing --GoToPage "/" |> SharedMsg |> Just
+                        , onPress = GoToPage "/" |> AnySharedMsg |> toMsg |> Just
                         }
                     ]
                 , Element.column
@@ -208,10 +198,10 @@ view sharedData page model toMsg pageView =
                                 , left = 10
                                 }
                             ]
-                            [ Widget.button (Material.containedButton model.palette)
+                            [ Widget.button (Material.textButton model.palette)
                                 { text = model.translate NavButtonBlog
                                 , icon = Icons.blog
-                                , onPress = Nothing --GoToPage "/" |> SharedMsg |> Just
+                                , onPress = GoToPage "/blog" |> AnySharedMsg |> toMsg |> Just
                                 }
                             ]
                         , Element.column
@@ -223,10 +213,10 @@ view sharedData page model toMsg pageView =
                                 , left = 10
                                 }
                             ]
-                            [ Widget.button (Material.containedButton model.palette)
+                            [ Widget.button (Material.textButton model.palette)
                                 { text = model.translate NavButtonProjects
                                 , icon = Icons.projects
-                                , onPress = Nothing --GoToPage "/" |> SharedMsg |> Just
+                                , onPress = GoToPage "/projects" |> AnySharedMsg |> toMsg |> Just
                                 }
                             ]
                         ]
@@ -247,7 +237,7 @@ view sharedData page model toMsg pageView =
                 ]
                 [ Element.column
                     [ Element.Region.footer
-                    , Element.maximum 800 Element.fill |> Element.width
+                    , Element.maximum 900 Element.fill |> Element.width
                     , Element.centerX
                     ]
                     [ L18nUI.mdBlock
