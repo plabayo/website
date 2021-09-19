@@ -6,6 +6,22 @@ import Plabayo.L18n.Types exposing (Text(..))
 translate : Text -> String
 translate text =
     case text of
+        -- Navigation
+        NavButtonHome ->
+            "Plabajo"
+
+        NavButtonBlog ->
+            "Blog"
+
+        NavTitleBlog ->
+            "Plabajo Blog"
+
+        NavButtonProjects ->
+            "Projects"
+
+        NavTitleProjects ->
+            "Projects by Plabajo"
+
         -- Page: Index
         PageIndexIntroP1 params ->
             "Plabayo was co-founded in 2021 by "

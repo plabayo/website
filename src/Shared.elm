@@ -13,8 +13,10 @@ import Pages.PageUrl exposing (PageUrl)
 import Pages.Url
 import Path exposing (Path)
 import Plabayo.L18n as L18n
+import Plabayo.L18n.Types exposing (Text(..), Translator)
 import Plabayo.L18n.UI as L18nUI
-import Plabayo.L18n.Types exposing (Translator, Text(..))
+import Widget.Material exposing (Palette)
+import Plabayo.Material.Palette as ColorPalettes
 import Random
 import Route exposing (Route)
 import SharedTemplate exposing (SharedTemplate)
@@ -53,6 +55,7 @@ type alias Model =
     { showMobileMenu : Bool
     , translate : Translator
     , randomSeed : Random.Seed
+    , palette : Palette
     }
 
 
@@ -115,6 +118,7 @@ init navigationKey flags maybePagePath =
     ( { showMobileMenu = True
       , translate = L18n.translate language
       , randomSeed = Random.initialSeed seed
+      , palette = ColorPalettes.defaultPalette
       }
     , Cmd.none
     )

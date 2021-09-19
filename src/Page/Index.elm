@@ -1,38 +1,44 @@
 module Page.Index exposing (Data, Model, Msg, page)
 
+import Browser
+import Browser.Navigation as Navigation
 import DataSource exposing (DataSource)
 import Element
 import Element.Font
 import Element.Region
 import Head
 import Head.Seo as Seo
-import Page exposing (Page, StaticPayload)
+import Page exposing (Page, PageWithState, StaticPayload)
 import Pages.PageUrl exposing (PageUrl)
+import Path exposing (Path)
 import Plabayo.L18n.Types exposing (Text(..))
 import Plabayo.L18n.UI as L18nUI
+import Plabayo.Material.Icons as Icons
 import Shared
 import View exposing (View)
+import Widget
+import Widget.Material as Material
 
 
 type alias Model =
     ()
 
 
-type alias Msg =
-    Never
+type Msg
+    = GoToPage String
 
 
 type alias RouteParams =
     {}
 
 
-page : Page RouteParams Data
+page : PageWithState RouteParams Data Model Msg
 page =
     Page.single
         { head = head
         , data = data
         }
-        |> Page.buildNoState { view = view }
+        |> Page.buildWithLocalState { init = init, update = update, subscriptions = subscriptions, view = view }
 
 
 data : DataSource Data
@@ -52,12 +58,48 @@ type alias Data =
     ()
 
 
-view :
+init :
     Maybe PageUrl
     -> Shared.Model
     -> StaticPayload Data RouteParams
+    -> ( Model, Cmd Msg )
+init maybeUrl sharedModel static =
+    ( ()
+    , Cmd.none
+    )
+
+
+update :
+    PageUrl
+    -> Maybe Navigation.Key
+    -> Shared.Model
+    -> StaticPayload Data RouteParams
+    -> Msg
+    -> Model
+    -> ( Model, Cmd Msg )
+update pageUrl maybeNavKey sharedModel static msg model =
+    case msg of
+        GoToPage url ->
+            ( model, Navigation.load url )
+
+
+subscriptions :
+    Maybe PageUrl
+    -> RouteParams
+    -> Path
+    -> Model
+    -> Sub Msg
+subscriptions maybeUrl route path model =
+    Sub.none
+
+
+view :
+    Maybe PageUrl
+    -> Shared.Model
+    -> Model
+    -> StaticPayload Data RouteParams
     -> View Msg
-view maybeUrl sharedModel static =
+view maybeUrl sharedModel model static =
     { title = "Plabayo"
     , body =
         Element.column
@@ -125,20 +167,12 @@ view maybeUrl sharedModel static =
                 , Element.width Element.fill
                 ]
                 [ Element.el
-                    [ Element.Font.color (Element.rgb255 51 51 51)
-                    , Element.Font.size 28
-                    , Element.Font.family
-                        [ Element.Font.typeface "Lato Hairline Italic"
-                        , Element.Font.sansSerif
-                        ]
-                    , Element.Font.extraLight
-                    , Element.Font.italic
-                    , Element.padding 10
+                    [ Element.padding 10
                     ]
-                    (Element.link
-                        []
-                        { url = "/blog" -- TODO: localise this url
-                        , label = Element.text "Blog"
+                    (Widget.button (Material.textButton sharedModel.palette)
+                        { text = sharedModel.translate NavButtonBlog
+                        , icon = Icons.blog
+                        , onPress = GoToPage "/blog" |> Just
                         }
                     )
                 ]
@@ -160,17 +194,14 @@ view maybeUrl sharedModel static =
                 , Element.width Element.fill
                 ]
                 [ Element.el
-                    [ Element.Font.color (Element.rgb255 51 51 51)
-                    , Element.Font.size 28
-                    , Element.Font.family
-                        [ Element.Font.typeface "Lato Hairline Italic"
-                        , Element.Font.sansSerif
-                        ]
-                    , Element.Font.extraLight
-                    , Element.Font.italic
-                    , Element.padding 10
+                    [ Element.padding 10
                     ]
-                    (Element.text "Projects")
+                    (Widget.button (Material.textButton sharedModel.palette)
+                        { text = sharedModel.translate NavButtonProjects
+                        , icon = Icons.projects
+                        , onPress = GoToPage "/projects" |> Just
+                        }
+                    )
                 ]
             , Element.row
                 [ Element.width Element.fill
