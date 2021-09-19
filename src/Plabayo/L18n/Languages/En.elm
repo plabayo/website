@@ -49,10 +49,26 @@ Thank you for trusting us and for using our products.
                 , ". In the repository of that license you'll find the entire source code of this webpage."
                 ]
 
-        -- Projects
+        -- Project: Bucket
         ProjectBucketTitle ->
             "Bucket"
 
         ProjectBucketDescription ->
             """A Free and Open Source Web application allowing you to keep track
 of your free time in order to spend that time on growth mindful of the future."""
+
+        ProjectBucketSummary ->
+            """A Free and Open Source Web application allowing you to keep track
+of your free time in order to spend that time on growth mindful of the future."""
+
+        -- Project: BoxTube
+        ProjectBoxTubeTitle ->
+            "BoxTube"
+
+        ProjectBoxTubeDescription ->
+            """A Free and Open Source iOS application allowing you to limit
+what content your kids watch and how long, with warnings and with semi-smart stopping system."""
+
+        ProjectBoxTubeSummary ->
+            """A Free and Open Source iOS application allowing you to limit
+what content your kids watch and how long, with warnings and with semi-smart stopping system."""

@@ -1,21 +1,47 @@
-module Plabayo.Project exposing (..)
+module Plabayo.Project exposing
+    ( Project
+    , bucket
+    )
 
 import Plabayo.L18n.Types exposing (Text(..))
 
 
+type ProjectStatus
+    = WIP
+    | Released
+    | Archived
+
+
 type alias Project =
-    { title : Text
+    { id : String
+    , title : Text
     , description : Text
+    , summary : Text
     , url : String
-    , icon : String
+    , featured : Bool
+    , status : ProjectStatus
     }
 
 
 bucket : Project
 bucket =
-    Project
-        { title = ProjectBucketTitle
-        , description = ProjectBucketDescription
-        , url = "https://bckt.xyz"
-        , icon = "/media/project_bucket_icon.svg"
-        }
+    { id = "bucket"
+    , title = ProjectBucketTitle
+    , description = ProjectBucketDescription
+    , summary = ProjectBucketSummary
+    , url = "https://bckt.xyz"
+    , featured = True
+    , status = WIP
+    }
+
+
+boxTube : Project
+boxTube =
+    { id = "boxtube"
+    , title = ProjectBoxTubeTitle
+    , description = ProjectBoxTubeDescription
+    , summary = ProjectBoxTubeSummary
+    , url = "https://github.com/plabayo/boxtube"
+    , featured = True
+    , status = WIP
+    }

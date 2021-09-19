@@ -22,9 +22,14 @@ type
         , coFounderGlen : String
         , licenseWeb : String
         }
-      -- Projects
+      -- Project: Bucket
     | ProjectBucketTitle
     | ProjectBucketDescription
+    | ProjectBucketSummary
+      -- Project: BoxTube
+    | ProjectBoxTubeTitle
+    | ProjectBoxTubeDescription
+    | ProjectBoxTubeSummary
 
 
 type alias Translator =
