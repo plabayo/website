@@ -8,7 +8,7 @@ translate text =
     case text of
         -- Navigation
         NavButtonHome ->
-            "Plabajo"
+            "Plabayo"
 
         NavButtonBlog ->
             "Blog"
