@@ -1,15 +1,19 @@
 module Plabayo.Project exposing
     ( Project
+    , ProjectStatus(..)
+    , boxTube
     , bucket
+    , projects
     )
 
 import Plabayo.L18n.Types exposing (Text(..))
 
 
 type ProjectStatus
-    = WIP
-    | Released
-    | Archived
+    = StatusWIP
+    | StatusReleased
+    | StatusArchived
+    | StatusHidden
 
 
 type alias Project =
@@ -23,6 +27,13 @@ type alias Project =
     }
 
 
+projects : List Project
+projects =
+    [ bucket
+    , boxTube
+    ]
+
+
 bucket : Project
 bucket =
     { id = "bucket"
@@ -31,7 +42,7 @@ bucket =
     , summary = ProjectBucketSummary
     , url = "https://bckt.xyz"
     , featured = True
-    , status = WIP
+    , status = StatusWIP
     }
 
 
@@ -43,5 +54,5 @@ boxTube =
     , summary = ProjectBoxTubeSummary
     , url = "https://github.com/plabayo/boxtube"
     , featured = True
-    , status = WIP
+    , status = StatusWIP
     }

@@ -14,6 +14,7 @@ import Path exposing (Path)
 import Plabayo.L18n.Types exposing (Text(..))
 import Plabayo.L18n.UI as L18nUI
 import Plabayo.Material.Icons as Icons
+import Plabayo.Project exposing (Project, ProjectStatus(..), projects)
 import Shared
 import View exposing (View)
 import Widget
@@ -91,6 +92,81 @@ subscriptions :
     -> Sub Msg
 subscriptions maybeUrl route path model =
     Sub.none
+
+
+projetCard : Shared.Model -> Project -> Element.Element msg
+projetCard sharedModel project =
+    Element.row
+        [ Element.width Element.fill
+        , Element.paddingXY 0 10
+        ]
+        [ Element.column
+            [ Element.px 80 |> Element.width
+            ]
+            [ Element.image
+                    [ Element.centerX
+                    , Element.centerY
+                    , Element.width Element.fill
+                    ]
+                    { src = "/media/projects/" ++ project.id ++ "_card_icon.svg"
+                    , description = "logo for project with id " ++ project.id
+                    }
+                ]
+        , Element.column
+            [ Element.fillPortion 8 |> Element.width
+            , Element.alignRight
+            , Element.paddingEach
+                { left = 20
+                , right = 0 
+                , top = 0
+                , bottom = 0
+                }
+            ]
+            [ Element.row
+                [ Element.width Element.fill
+                , Element.paddingXY 0 5
+                ]
+                [ Element.column
+                    [ Element.alignLeft
+                    , Element.alignBottom
+                    ]
+                    [ Element.el
+                        [ Element.Region.heading 1
+                        , Element.Font.bold
+                        ]
+                        (Element.text (sharedModel.translate project.title))
+                    ]
+                , Element.column
+                    [ Element.alignRight
+                    , Element.alignBottom
+                    ]
+                    [ Element.link
+                        [ Element.Font.size 16
+                        , Element.Font.italic
+                        ]
+                        { url = project.url
+                        , label = Element.text project.url
+                        }
+                    ]
+                ]
+            , Element.row
+                [ Element.width Element.fill
+                , Element.paddingXY 0 10
+                ]
+                [ Element.el
+                    [ Element.Font.size 16
+                    ]
+                    (Element.text (sharedModel.translate project.summary))
+                ]
+            ]
+        ]
+
+
+projectCards : Shared.Model -> List (Element.Element msg)
+projectCards sharedModel =
+    projects
+        |> List.filter (\project -> (project.status == StatusWIP || project.status == StatusReleased) && project.featured)
+        |> List.map (projetCard sharedModel)
 
 
 view :
@@ -213,20 +289,9 @@ view maybeUrl sharedModel model static =
             , Element.row
                 [ Element.width Element.fill
                 ]
-                [ Element.el
-                    [ Element.Font.color (Element.rgb255 51 51 51)
-                    , Element.Font.family
-                        [ Element.Font.typeface "Contra"
-                        , Element.Font.serif
-                        ]
-                    , Element.padding 10
-                    ]
-                    (Element.column
-                        []
-                        [ Element.text "We are currently working hard on bucket, a FOSS time tracker:"
-                        , Element.link [] { url = "https://bckt.xyz", label = Element.text "bckt.xyz" }
-                        ]
-                    )
+                [ Element.column
+                    [ Element.width Element.fill ]
+                    (projectCards sharedModel)
                 ]
             ]
     }
