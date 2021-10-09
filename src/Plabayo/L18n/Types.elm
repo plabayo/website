@@ -16,6 +16,8 @@ type
     | PageIndexIntroP3
         { emailContact : String
         }
+      -- Page: Projects
+    | PageProjectsTitle
       -- Shared: Page
     | SharedPageFooter
         { coFounderElizabeth : String

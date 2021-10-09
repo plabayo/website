@@ -37,6 +37,10 @@ Thank you for trusting us and for using our products.
         PageIndexIntroP3 params ->
             "You can reach out to us by mail at " ++ params.emailContact ++ "."
 
+        -- Page: Projects
+        PageProjectsTitle ->
+            "Projects"
+
         -- Shared: Page
         SharedPageFooter params ->
             String.concat
