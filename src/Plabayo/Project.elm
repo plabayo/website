@@ -12,6 +12,7 @@ import Element.Font
 import Element.Input
 import Element.Region
 import Framework.Card
+import Framework.Grid
 import Plabayo.L18n.Types exposing (Text(..))
 import Shared
 
@@ -23,21 +24,20 @@ projetCard sharedModel toMsg project =
         { onPress = toMsg project.url |> Just
         , label =
             Element.row
-                [ Element.width Element.fill ]
+                Framework.Grid.spaceEvenly
                 [ Element.column
-                    [ Element.fillPortion 1 |> Element.width
+                    [ Element.alignTop
+                    , Element.px 80 |> Element.width
                     ]
                     [ Element.image
-                        [ Element.centerX
-                        , Element.centerY
-                        , Element.width Element.fill
+                        [ Element.width Element.fill
                         ]
                         { src = "/media/projects/" ++ project.id ++ "_card_icon.svg"
                         , description = "logo for project with id " ++ project.id
                         }
                     ]
                 , Element.column
-                    [ Element.fillPortion 8 |> Element.width
+                    [ Element.width Element.fill
                     , Element.alignRight
                     , Element.paddingEach
                         { left = 20

@@ -114,6 +114,39 @@ view maybeUrl sharedModel model static =
     { title = sharedModel.translate PageProjectsTitle
     , body =
         Element.column
-            (Framework.Grid.simple ++ [ Element.paddingXY 0 20 ])
-            (projectCards sharedModel)
+            [ Element.centerX
+            , Element.alignTop
+            , Element.paddingXY 0 30
+            , Element.width Element.fill
+            , Element.Region.mainContent
+            ]
+            [ Element.row
+                [ Element.width Element.fill ]
+                [ Element.image [ Element.width Element.fill ]
+                    { src = "/media/index_hero_banner_default_light.svg"
+                    , description = "light default version of the Plabayo Hero Banner"
+                    }
+                ]
+            , Element.row
+                [ Element.width Element.fill ]
+                [ Element.el
+                    [ Element.Font.color (Element.rgb255 51 51 51)
+                    , Element.Font.size 36
+                    , Element.Font.family
+                        [ Element.Font.typeface "Lato Hairline Italic"
+                        , Element.Font.sansSerif
+                        ]
+                    , Element.Font.extraLight
+                    , Element.Font.italic
+                    , Element.Font.center
+                    , Element.padding 10
+                    ]
+                    (Element.text "Free and Open Source Software")
+                ]
+            , Element.row [ Element.width Element.fill ]
+                [ Element.column
+                    (Framework.Grid.simple ++ [ Element.paddingXY 0 20 ])
+                    (projectCards sharedModel)
+                ]
+            ]
     }
