@@ -1,4 +1,31 @@
 baseURL = 'http://plabayo.tech/'
 languageCode = 'en-us'
-title = 'Plabayo Website'
 theme = "plabayo"
+title = 'Plabayo Website'
+
+defaultContentLanguage = 'en'
+
+[languages]
+
+    [languages.en]
+        weight = 1
+
+    [languages.es]
+        weight = 2
+
+    [languages.nl]
+        weight = 2
+
+[params]
+
+    [params.name]
+        plabayo = 'Plabayo'
+        eliza = 'Elizabeth C. Gonzales Belsuzarri'
+        glen = 'Glen Henri J. De Cauwsemaecker'
+
+    [params.navigation]
+        eliza = 'https://www.linkedin.com/in/elizabeth-gonzales-belsuzarri-72173214/'
+        glen = 'https://www.glendc.com/'
+
+    [params.email]
+        contact = 'contact@plabayo.tech'
