@@ -1,0 +1,4 @@
+baseURL = 'http://plabayo.tech/'
+languageCode = 'en-us'
+title = 'Plabayo Website'
+theme = "plabayo"
