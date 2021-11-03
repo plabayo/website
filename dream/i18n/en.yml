@@ -1,0 +1,24 @@
+eliza:
+  name: 'Elizabeth C. Gonzales Belsuzarri'
+  nameShort: 'Eliza'
+  website: 'https://www.linkedin.com/in/elizabeth-gonzales-belsuzarri-72173214/'
+  email: 'eliza@plabayo.tech'
+
+glen:
+  name: 'Glen Henri J. De Cauwsemaecker'
+  nameShort: 'Glen'
+  website: 'https://www.glendc.com/'
+  email: 'contact@glendc.com'
+
+plabayo:
+  name: 'Plabayo'
+  slogan: 'Free and Open Source Software'
+  website: 'https://www.plabayo.tech/'
+  email: 'contact@plabayo.tech'
+
+license:
+  name: 'Creative Commons Zero v1.0 Universal'
+  url: 'https://github.com/plabayo/website/blob/main/LICENSE'
+
+repository:
+  url: 'https://github.com/plabayo/website'

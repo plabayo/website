@@ -1,0 +1,6 @@
+name: Tiny Site Generator
+short: tsg
+website: https://tsg.plabayo.tech/
+summary: A down to earth site generator.
+description: A down to earth static site generator written in Rust.
+status: WIP
