@@ -1,0 +1,9 @@
+[footer]
+other = """ \
+    Deze website is ontworpen en ontwikkeld door [{{ .elizaName }}]({{ .elizaWeb }}) \
+    en [{{ .glenName }}]({{ .glenWeb }}). \
+    Deze website is gelicentieerd onder de \
+    [{{ .licenseName }} licentie]({{ .licenseUrl }}). \
+    In [de code repository]({{ .repositoryUrl }}) waar de licentie deel van uitmaakt \
+    vind u ook de volledige broncode van deze website. \
+    """
