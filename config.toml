@@ -18,14 +18,26 @@ defaultContentLanguage = 'en'
 
 [params]
 
-    [params.name]
-        plabayo = 'Plabayo'
-        eliza = 'Elizabeth C. Gonzales Belsuzarri'
-        glen = 'Glen Henri J. De Cauwsemaecker'
+    [params.eliza]
+        name = 'Elizabeth C. Gonzales Belsuzarri'
+        nameShort = 'Eliza'
+        website = 'https://www.linkedin.com/in/elizabeth-gonzales-belsuzarri-72173214/'
+        email = 'eliza@plabayo.tech'
 
-    [params.navigation]
-        eliza = 'https://www.linkedin.com/in/elizabeth-gonzales-belsuzarri-72173214/'
-        glen = 'https://www.glendc.com/'
+    [params.glen]
+        name = 'Glen Henri J. De Cauwsemaecker'
+        nameShort = 'Glen'
+        website = 'https://www.glendc.com/'
+        email = 'contact@glendc.com'
 
-    [params.email]
-        contact = 'contact@plabayo.tech'
+    [params.plabayo]
+        name = 'Plabayo'
+        website = 'https://www.plabayo.tech/'
+        email = 'contact@plabayo.tech'
+
+    [params.license]
+        name = 'Creative Commons Zero v1.0 Universal'
+        url = 'https://github.com/plabayo/website/blob/main/LICENSE'
+
+    [params.repository]
+        url = 'https://github.com/plabayo/website'

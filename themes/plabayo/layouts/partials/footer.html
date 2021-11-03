@@ -1,0 +1,14 @@
+<footer>
+    <p>
+        {{ i18n "footer" (dict
+            "elizaName" .Site.Params.eliza.name
+            "elizaWeb" .Site.Params.eliza.website
+            "glenName" .Site.Params.glen.name
+            "glenWeb" .Site.Params.glen.website
+            "licenseName" .Site.Params.license.name
+            "licenseUrl" .Site.Params.license.url
+            "repositoryUrl" .Site.Params.repository.url
+        ) | markdownify }}
+        {{ .Params.eliza.name }}
+    </p>
+</footer>
