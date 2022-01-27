@@ -1,23 +1,18 @@
 [build]
-  publish = "./dist"
-  command = "npm run build"
+# This assumes that the Zola site is in a docs folder. If it isn't, you don't need
+# to have a `base` variable but you do need the `publish` and `command` variables.
+# base    = "docs"
+publish = "./dist"
+command = "zola build"
 
 [build.environment]
-  ELM_HOME = "$NETLIFY_BUILD_BASE/cache/elm"
+# Set the version name that you want to use and Netlify will automatically use it.
+ZOLA_VERSION = "0.15.3"
 
-[[redirects]]
-  from = "/*"
-  to = "/index.html"
-  status = 200
+# The magic for deploying previews of branches.
+# We need to override the base url with whatever url Netlify assigns to our
+# preview site.  We do this using the Netlify environment variable
+# `$DEPLOY_PRIME_URL`.
 
-[[redirects]]
-  from = "/news"
-  to = "/blog"
-  status = 301
-  force = false
-
-[[redirects]]
-  from = "/blog/*"
-  to = "/blog/en/*"
-  status = 302
-  force = false
+[context.deploy-preview]
+command = "zola build --base-url $DEPLOY_PRIME_URL"
