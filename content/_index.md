@@ -7,11 +7,12 @@ template = "index.html"
 
 **Plabayo** was co-founded in 2021 by [Elizabeth C. Gonzales Belsuzarri](https://www.linkedin.com/in/elizabeth-gb/) and [Glen Henri J. De Cauwsemaecker (glendc)](https://glendc.com).
 
+We are located in Ghent, Belgium and are available with events on premise within Belgium. Remotely we are open to any location and timezone.
+
 > **Privacy** and **transparency** is at core of our mission.
 
-> **Play, Work and Grow** is our slogan
-
-You can reach out to us by mail at [contact@plabayo.tech](mailto:contact@plabayo.tech).
+Whether you have questions, are in need of our services or wish to work
+together with us, you can reach out to us by mail at [contact@plabayo.tech](mailto:contact@plabayo.tech).
 
 ## Consulting
 
