@@ -23,7 +23,7 @@ and are in function of their needs and requirements.
 
 Please reach out to Elizabeth by email on [elizabeth@plabayo.tech](mailto:elizabeth@plabayo.tech) if you are in need of a consultant related to education inspired by montessori, conscious parenting, process automatization or business analytics. She can find a fitting solution to any problem and does so with great passion.
 
-> Learn more about Glen at <https://www.linkedin.com/in/elizabeth-gb/>.
+> Learn more about Elizabeth at <https://www.linkedin.com/in/elizabeth-gb/>.
 
 ## Projects
 
