@@ -14,6 +14,8 @@ We are located in Ghent, Belgium and are available with events on premise within
 Whether you have questions, are in need of our services or wish to work
 together with us, you can reach out to us by mail at [contact@plabayo.tech](mailto:contact@plabayo.tech).
 
+Stay up to date with our progress and thoughts by [reading our blog](/blog), also available by [RSS](/rss.xml).
+
 ## Consulting
 
 Glen offers his consultancy services within the realms of software:

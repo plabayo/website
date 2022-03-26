@@ -4,12 +4,16 @@
 
 {{ section.content | safe }}
 
-<!-- <div id="blog-summary">
+<div id="blog-summary">
+  <h2>Latest articles:</h2>
   <ul>
     {% for page in section.pages %}
-    <li><a href="{{ page.permalink | safe }}">{{ page.title }}</a></li>
+    <li>
+      <a href="{{ page.permalink | safe }}">{{ page.title }}</a>
+    </li>
     {% endfor %}
   </ul>
-</div> -->
+</div>
+
 
 {% endblock content %}
