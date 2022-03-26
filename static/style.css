@@ -33,7 +33,7 @@ body {
 
 @media screen and (max-width: 850px) {
     #wrapper-content {
-        max-width: 95%;
+        max-width: 1280px;
     }
 }
 
@@ -47,7 +47,6 @@ body {
     flex-direction: row;
     justify-content: space-between;
     align-items: center;
-    padding: 10px;
     column-gap: 20px;
 }
 

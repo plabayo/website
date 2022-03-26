@@ -9,7 +9,7 @@ template = "index.html"
 
 We are located in Ghent, Belgium and are available with events on premise within Belgium. Remotely we are open to any location and timezone.
 
-> **Privacy** and **transparency** is at core of our mission.
+> **Education**, **Privacy** and **transparency** is at core of our mission.
 
 Whether you have questions, are in need of our services or wish to work
 together with us, you can reach out to us by mail at [contact@plabayo.tech](mailto:contact@plabayo.tech).

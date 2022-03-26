@@ -10,12 +10,13 @@ fieldset {
 }
 
 html {
-    background-color: #eee8d5;
     color: #657b83;
+    background-color: #fdf6e3;
 }
 
-body {
-    background-color: #fdf6e3;
+header,
+footer {
+    background-color: #eee8d5;
 }
 
 code {
@@ -112,12 +113,16 @@ pre code {
     }
 
     html {
-        background-color: #073642;
         color: #839496;
+        background-color: #002b36;
     }
 
+    header,
+    footer {
+        background-color: #073642;
+    }
+        
     body {
-        background-color: #002b36;
         border-color: #586e75;
     }
 
