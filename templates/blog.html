@@ -4,15 +4,18 @@
 
 {{ section.content | safe }}
 
-<div id="blog-summary">
-  <h2>Latest articles:</h2>
-  <ul>
-    {% for page in section.pages %}
-    <li>
-      <a href="{{ page.permalink | safe }}">{{ page.title }}</a>
-    </li>
-    {% endfor %}
-  </ul>
+<div id="blog-article-list">
+  {% for page in section.pages %}
+  <article>
+    <header>
+      <h2><a href="/blog/{{ page.slug }}">{{ page.title }}</a></h2>, <span class="blog-article-title">{{ page.date }}</span>
+    </header>
+    <section>
+      <p class="blog-article-author">{{ page.extra.author }}</p>
+      <p>{{ page.description }}</p>
+    </section>
+  </article>
+  {% endfor %}
 </div>
 
 
