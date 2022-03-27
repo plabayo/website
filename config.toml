@@ -142,14 +142,3 @@ name = "Plabayo"
 #
 # author value will be available using {{ config.extra.author }} in templates
 #
-
-[extra.glen]
-name = "Glen Henri J. De Cauwsemaecker"
-email = "glen@plabayo.tech"
-name_short = "Glen"
-username = "glendc"
-
-[extra.eliza]
-name = "Elizabeth C. Gonzales Belsuzarri"
-email = "eliza@plabayo.tech"
-name_short = "Elizabeth"

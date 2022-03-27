@@ -7,9 +7,7 @@
 <div id="blog-article-list">
   {% for page in section.pages %}
   <article>
-    <header>
-      <h2><a href="/blog/{{ page.slug }}">{{ page.title }}</a></h2>, <span class="blog-article-title">{{ page.date }}</span>
-    </header>
+    <h2><a href="/blog/{{ page.slug }}">{{ page.title }}</a></h2>, <span class="blog-article-title">{{ page.day }} {{ macros::month(n=page.month) }} {{ page.year }}</span>
     <section>
       <p class="blog-article-author">{{ page.extra.author }}</p>
       <p>{{ page.description }}</p>

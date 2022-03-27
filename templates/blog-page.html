@@ -1,9 +1,32 @@
 {% extends "layouts/base.html" %}
 
 {% block content %}
-<h1 class="title">
-  {{ page.title }}
-</h1>
-<p class="subtitle"><strong>{{ page.date }}</strong></p>
-{{ page.content | safe }}
+
+<p>
+  <a href="/blog">The Plabayo Blog</a>
+</p>
+
+<div id="article-header">
+  <h1 class="title">
+    {{ page.title }}
+  </h1>
+  <p class="subtitle"><strong>{{ page.extra.author }}</strong></p>
+  <p class="subtitle"><strong>{{ page.day }} {{ macros::month(n=page.month) }} {{ page.year }}</strong></p>
+</div>
+
+<div id="article-content">
+  {{ page.content | safe }}
+</div>
+
+<nav id="blog-nav">
+  <ul>
+    {% if page.later %}
+    <li><strong>Next Article</strong>: <a href="/blog/{{ page.later.slug }}">{{ page.later.title }}</a></li>
+    {% endif %}
+    {% if page.earlier %}
+    <li><strong>Previous Article</strong>: <a href="/blog/{{ page.earlier.slug }}">{{ page.earlier.title }}</a></li>
+    {% endif %}
+    <li><a href="/blog">Blog Index</a></li>
+  </ul>
+</nav>
 {% endblock content %}

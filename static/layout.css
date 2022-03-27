@@ -130,6 +130,15 @@ nav .selected a {
     font-size: 1.2em;
 }
 
+#blog-article-list h2 a {
+    text-decoration: none;
+}
+
 #blog-article-list .blog-article-author {
     font-style: italic;
+}
+
+#blog-article-list {
+    display: grid;
+    row-gap: 10px;
 }
