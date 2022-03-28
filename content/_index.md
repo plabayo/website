@@ -5,7 +5,7 @@ template = "index.html"
 
 # Plabayo — Play, Work and Grow
 
-**Plabayo** was co-founded in 2021 by [Elizabeth C. Gonzales Belsuzarri](https://www.linkedin.com/in/elizabeth-gb/) and [Glen Henri J. De Cauwsemaecker (glendc)](https://glendc.com).
+**Plabayo** was co-founded in 2021 by [Elizabeth C. Gonzales Belsuzarri](https://elizadc.me) and [Glen Henri J. De Cauwsemaecker (glendc)](https://glendc.com).
 
 We are located in Ghent, Belgium and are available with events on premise within Belgium. Remotely we are open to any location and timezone.
 
