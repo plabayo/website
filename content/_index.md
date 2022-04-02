@@ -56,7 +56,7 @@ She can find a fitting solution to any problem and does so with great passion.
 
 Next to consulting and our open source contributions we also work on some of our own projects.
 
-You can find all on our [our Github org page](https://github.com/plabayo).
+You can find all our projects on our [our Github organization home page](https://github.com/plabayo).
 
 ### 1. [Plabayo News](https://github.com/plabayo/news)
 
