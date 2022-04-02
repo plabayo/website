@@ -172,7 +172,7 @@
 
 <p>
     Next to consulting and our open source contributions we
-    also work on some of our own projects.
+    also work on <a href="/projects">some projects of our own</a>.
 </p>
 
 <p>
@@ -183,27 +183,24 @@
     .
 </p>
 
-<h3>
-    <a href="https://github.com/plabayo/news">1. Plabayo News</a>
-</h3>
-
-<p>
-    A conscious social news website focusing on parenting, spirituality,
-    science and psychology.
-</p>
-
 <blockquote>
-    <p>
-        The project is in early development.
-    </p>
-    <p>
-        Closed beta is planned in Q2 of 2022,
-        source code can already be found at:
-        <a href="https://github.com/plabayo/news">
-            https://github.com/plabayo/news
-        </a>
-        .
-    </p>
+    <div id="project-article-list">
+        {% set projects_section = get_section(path="projects/_index.md") %}
+        {% for page in projects_section.pages | slice(end=3) %}
+        <article>
+          <h2><a href="/projects/{{ page.slug }}">{{ page.title }}</a></h2>,
+          <span>website: <a href="{{ page.extra.website }}">{{ page.extra.website }}</a></span>
+          <section>
+            <p>{{ page.description }}</p>
+            <blockquote>
+              <p>
+                {{ page.extra.status | safe }}
+              </p>
+            </blockquote>
+          </section>
+        </article>
+        {% endfor %}
+    </div>
 </blockquote>
 
 {% endblock content %}

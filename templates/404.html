@@ -16,6 +16,7 @@
     together with us, you can reach out to us by mail at
     <a href="mailto:contact@plabayo.tech">contact@plabayo.tech</a>.
 </p>
+
 <h3>Plabayo Blog</h3>
 <p>
     We also have a blog, which you can access on our
@@ -36,4 +37,40 @@
     </article>
     {% endfor %}
 </div>
+
+<h3>Projects</h3>
+
+<p>
+    Next to consulting and our open source contributions we
+    also work on <a href="/projects">some projects of our own</a>.
+</p>
+
+<p>
+    You can find all our projects on our
+    <a href="https://github.com/plabayo">
+        our Github organization home page
+    </a>
+    .
+</p>
+
+<blockquote>
+    <div id="project-article-list">
+        {% set projects_section = get_section(path="projects/_index.md") %}
+        {% for page in projects_section.pages | slice(end=3) %}
+        <article>
+          <h2><a href="/projects/{{ page.slug }}">{{ page.title }}</a></h2>,
+          <span>website: <a href="{{ page.extra.website }}">{{ page.extra.website }}</a></span>
+          <section>
+            <p>{{ page.description }}</p>
+            <blockquote>
+              <p>
+                {{ page.extra.status | safe }}
+              </p>
+            </blockquote>
+          </section>
+        </article>
+        {% endfor %}
+    </div>
+</blockquote>
+
 {% endblock content %}

@@ -1,0 +1,26 @@
+{% extends "layouts/base.html" %}
+
+{% block content %}
+
+{{ section.content | safe }}
+
+<div id="project-index">
+  <div id="project-article-list">
+    {% for page in section.pages %}
+    <article>
+      <h2><a href="/projects/{{ page.slug }}">{{ page.title }}</a></h2>,
+      <span>website: <a href="{{ page.extra.website }}">{{ page.extra.website }}</a></span>
+      <section>
+        <p>{{ page.description }}</p>
+        <blockquote>
+          <p>
+            {{ page.extra.status | safe }}
+          </p>
+        </blockquote>
+      </section>
+    </article>
+    {% endfor %}
+  </div>
+</div>
+
+{% endblock content %}
