@@ -3,7 +3,7 @@
 {% block content %}
 
 <p>
-  <a href="/blog">The Plabayo Blog</a>
+  <a href="/blog" style="text-decoration: none;">The Plabayo Blog</a>
 </p>
 
 <div id="article-header">
@@ -19,14 +19,43 @@
 </div>
 
 <nav id="blog-nav">
-  <ul>
-    {% if page.later %}
-    <li><strong>Next Article</strong>: <a href="/blog/{{ page.later.slug }}">{{ page.later.title }}</a></li>
-    {% endif %}
+  <div class="bullet-points-list">
     {% if page.earlier %}
-    <li><strong>Previous Article</strong>: <a href="/blog/{{ page.earlier.slug }}">{{ page.earlier.title }}</a></li>
+    <a href="/blog/{{ page.earlier.slug }}">
+      <div class="bullet-point-item">
+        <div class="bullet-point-mark">
+          ⬅️
+        </div>
+        <div class="bullet-point-text">
+          <strong>Previous Article</strong>:
+          {{ page.earlier.title }}
+        </div>
+      </div>
+    </a>
     {% endif %}
-    <li><a href="/blog">Blog Index</a></li>
-  </ul>
+    {% if page.later %}
+    <a href="/blog/{{ page.later.slug }}">
+      <div class="bullet-point-item">
+        <div class="bullet-point-mark">
+          ➡️
+        </div>
+        <div class="bullet-point-text">
+          <strong>Next Article</strong>:
+          {{ page.later.title }}
+        </div>
+      </div>
+    </a>
+    {% endif %}
+    <a href="/blog">
+      <div class="bullet-point-item">
+        <div class="bullet-point-mark">
+          🏠
+        </div>
+        <div class="bullet-point-text">
+          Blog Index
+        </div>
+      </div>
+    </a>
+  </div>
 </nav>
 {% endblock content %}
