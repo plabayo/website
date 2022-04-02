@@ -31,9 +31,9 @@ body {
     }
 }
 
-@media screen and (min-width: 1280px) {
+@media screen and (min-width: 825px) {
     #wrapper-content {
-        width: 1280px;
+        width: 825px;
     }
 }
 
@@ -117,6 +117,10 @@ nav .selected a {
     text-align: center;
 }
 
+blockquote {
+    margin-left: 20px;
+}
+
 /* blog */
 
 #blog-article-list * {
@@ -143,14 +147,26 @@ nav .selected a {
     row-gap: 10px;
 }
 
-.bullet-points-list ul {
-    list-style-type: none;
-    padding-left: 15px;
+
+/* bullet point list with emoji items */
+
+.bullet-points-list {
+    display: grid;
+    gap: 0.3em;
+    grid-auto-rows: auto;
+    margin-left: 20px;
 }
 
-.bullet-points-list span {
-    font-size: 0.75em;
-    padding: 0;
-    margin: 0;
-    margin-right: 5px;
+.bullet-point-mark {
+    font-size: 0.9em;
+}
+
+.bullet-point-item {
+    display: grid;
+    gap: 10px;
+    grid-template-columns: auto 1fr;
+}
+
+.bullet-point-text {
+    text-align: left;
 }
