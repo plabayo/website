@@ -1,5 +1,39 @@
 {% extends "layouts/base.html" %}
 
 {% block content %}
-<p> Woopsie, not found :(</p>
+<h1>Plabayo</h1> 
+<h2>404 — Not Found</h2>
+<p>
+    The content you are looking for never existed,
+    or has been moved.
+</p>
+<p>
+    You can learn more about us and see some of our projects
+    by visiting <a href="/">our home page</a>.
+</p>
+<p>
+    Whether you have questions, are in need of our services or wish to work
+    together with us, you can reach out to us by mail at
+    <a href="mailto:contact@plabayo.tech">contact@plabayo.tech</a>.
+</p>
+<h3>Plabayo Blog</h3>
+<p>
+    We also have a blog, which you can access on our
+    "<a href="/blog">/blog page</a>". It is also available by <a href="/rss.xml">RSS</a>.
+</p>
+<p>
+    Here you can find the last blog posts published:
+</p>
+<div id="blog-article-list">
+{% set blog_section = get_section(path="blog/_index.md") %}
+{% for page in blog_section.pages | slice(end=5) %}
+    <article>
+        <h2><a href="/blog/{{ page.slug }}">{{ page.title }}</a></h2>, <span class="blog-article-title">{{ page.day }} {{ macros::month(n=page.month) }} {{ page.year }}</span>
+        <section>
+        <p class="blog-article-author">{{ page.extra.author }}</p>
+        <p>{{ page.description }}</p>
+        </section>
+    </article>
+    {% endfor %}
+</div>
 {% endblock content %}

@@ -11,7 +11,7 @@ body {
 }
 
 * {
-    box-sizing: inherit;
+    box-sizing: border-box;
 }
 
 #wrapper {
@@ -21,19 +21,19 @@ body {
 }
 
 #wrapper-content {
-    max-width: 85%;
+    width: 85%;
 }
 
 @media screen and (max-width: 650px) {
     #wrapper-content {
-        max-width: 100%;
+        width: 100%;
         margin: 0 10px;
     }
 }
 
-@media screen and (max-width: 850px) {
+@media screen and (min-width: 1280px) {
     #wrapper-content {
-        max-width: 1280px;
+        width: 1280px;
     }
 }
 
@@ -141,4 +141,16 @@ nav .selected a {
 #blog-article-list {
     display: grid;
     row-gap: 10px;
+}
+
+.bullet-points-list ul {
+    list-style-type: none;
+    padding-left: 15px;
+}
+
+.bullet-points-list span {
+    font-size: 0.75em;
+    padding: 0;
+    margin: 0;
+    margin-right: 5px;
 }

@@ -7,7 +7,9 @@ template = "index.html"
 
 **Plabayo** was co-founded in 2021 by [Elizabeth C. Gonzales Belsuzarri](https://elizadc.me) and [Glen Henri J. De Cauwsemaecker (glendc)](https://glendc.com).
 
-We are located in Ghent, Belgium and are available with events on premise within Belgium. Remotely we are open to any location and timezone.
+We are located in Ghent, Belgium and are available with events on premise within Belgium. 
+
+Remotely we are open to any location and timezone.
 
 > **Education**, **Privacy** and **transparency** is at the core of our mission.
 
@@ -20,11 +22,15 @@ You can stay up to date with our progress and thoughts by [reading our blog](/bl
 
 Glen offers his consultancy services within the realms of software:
 
-- With over a decade of experience he can help you with the entire software development cycle.
-- Including, but not only limited to, architecture, prototyping, R&D, technical UX, development, testing, reviewing and debugging.
-- Topics include backend development, data scraping, tooling, automatization, game programming, game engine development, API design and more.
-- Programming language expertise in Rust, Go and Python, with a background in C++ and comfortable with many other languages.
-- Workshops, classes, mentoring and talks are possible as well, and you can expect an educational flair in all the above as well.
+<div class="bullet-points-list">
+
+- <span>🛠️</span> The entire software development cycle;
+- <span>💻</span> Including, but not only limited to, architecture, prototyping, R&D, technical UX, - development, testing, reviewing and debugging;
+- <span>⚙️</span> Topics include backend development, data scraping, tooling, automatization, game - programming, game engine development, API design and more;
+- <span>🧰</span> Programming language expertise in Rust, Go and Python, with a background in C++ and - comfortable with many other languages;
+- <span>📜</span> Workshops, classes, mentoring and talks are also possible.
+
+</div>
 
 **Rates and terms are agreed upon directly with the client and are in function of their needs and requirements.**
 
@@ -33,9 +39,13 @@ Glen offers his consultancy services within the realms of software:
 Elizabeth can be hired as a consultant as well. She's the person you're looking for if you are in need of a consultant
 related to:
 
-- education inspired by montessori;
-- conscious parenting;
-- process automatization and business analytics.
+<div class="bullet-points-list">
+
+- <span>👩‍🏫</span> education inspired by montessori;
+- <span>👶</span> conscious parenting;
+- <span>⚡</span> process automatization and business analytics.
+
+</div>
 
 She can find a fitting solution to any problem and does so with great passion.
 
@@ -48,8 +58,11 @@ Next to consulting and our open source contributions we also work on some of our
 
 You can find all on our [our Github org page](https://github.com/plabayo).
 
-### Plabayo News
+### 1. [Plabayo News](https://github.com/plabayo/news)
 
 A conscious social news website focusing on parenting, spirituality, science and psychology. 
 
-> early development, closed beta planned in Q2 of 2022, source code: <https://github.com/plabayo/news>
+> The project is in early development.
+>
+> Closed beta is planned in Q2 of 2022,
+> source code can already be found at: <https://github.com/plabayo/news>.
