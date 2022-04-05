@@ -55,6 +55,15 @@
                     {% endif %}
                 {% endfor %}
             </p>
+            <p class="blog-article-tags">
+                tags: 
+                {% for tag in page.taxonomies.tags %}
+                  <a href="/tags/{{ tag | slugify}}">{{ tag }}</a>
+                  {% if not loop.last %}
+                  , 
+                  {% endif %}
+                {% endfor %}
+            </p>
             <p>{{ page.description }}</p>
             </section>
         </article>

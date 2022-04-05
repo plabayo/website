@@ -4,6 +4,30 @@
 
 {{ section.content | safe }}
 
+<p>
+  On this page you find all our articles. You can also filter on a specific author:
+  {% set taxonomy_authors = get_taxonomy(kind="authors") %}
+  {% for author in taxonomy_authors.items %}
+    "<a href="/authors/{{ author.slug }}">{{ author.name }}</a>""
+    {% if not loop.last %}
+    , 
+    {% endif %}
+  {% endfor %}
+  .
+</p>
+
+<p>
+  Besides labeling the authors for each article we also make use of tags:
+  {% set taxonomy_tags = get_taxonomy(kind="tags") %}
+  {% for tag in taxonomy_tags.items %}
+    "<a href="/tags/{{ tag.slug }}">{{ tag.name }}</a>"
+    {% if not loop.last %}
+    , 
+    {% endif %}
+  {% endfor %}
+  .
+</p>
+
 <div id="blog-article-list">
   {% for page in section.pages %}
   <article>
@@ -12,6 +36,15 @@
       <p class="blog-article-author">
         {% for author in page.taxonomies.authors %}
           <a href="/authors/{{ author | slugify}}">{{ author }}</a>
+          {% if not loop.last %}
+          , 
+          {% endif %}
+        {% endfor %}
+      </p>
+      <p class="blog-article-tags">
+        tags: 
+        {% for tag in page.taxonomies.tags %}
+          <a href="/tags/{{ tag | slugify}}">{{ tag }}</a>
           {% if not loop.last %}
           , 
           {% endif %}

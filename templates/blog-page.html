@@ -18,6 +18,15 @@
       {% endif %}
     {% endfor %}
   </strong></p>
+  <p class="subtitle">
+    tags: 
+    {% for tag in page.taxonomies.tags %}
+      <a href="/tags/{{ tag | slugify}}">{{ tag }}</a>
+      {% if not loop.last %}
+      , 
+      {% endif %}
+    {% endfor %}
+  </p>
   <p class="subtitle"><strong>{{ page.day }} {{ macros::month(n=page.month) }} {{ page.year }}</strong></p>
 </div>
 
