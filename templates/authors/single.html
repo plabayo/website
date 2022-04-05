@@ -22,7 +22,7 @@
             {% endfor %}
         </p>
         <p class="blog-article-tags">
-            tags: 
+            <span class="emoji-label">🏷</span> tags: 
             {% for tag in page.taxonomies.tags %}
               <a href="/tags/{{ tag | slugify}}">{{ tag }}</a>
               {% if not loop.last %}

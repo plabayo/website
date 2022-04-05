@@ -205,6 +205,10 @@ blockquote {
     font-size: 0.9em;
 }
 
+.emoji-label {
+    font-size: 0.85em;
+}
+
 .bullet-point-item {
     display: grid;
     gap: 10px;

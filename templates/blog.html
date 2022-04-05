@@ -17,7 +17,7 @@
 </p>
 
 <p>
-  Besides labeling the authors for each article we also make use of tags:
+  Besides labeling the authors for each article we also make use of tags (<span class="emoji-label">🏷</span>):
   {% set taxonomy_tags = get_taxonomy(kind="tags") %}
   {% for tag in taxonomy_tags.items %}
     "<a href="/tags/{{ tag.slug }}">{{ tag.name }}</a>"
@@ -42,7 +42,7 @@
         {% endfor %}
       </p>
       <p class="blog-article-tags">
-        tags: 
+        <span class="emoji-label">🏷</span> tags: 
         {% for tag in page.taxonomies.tags %}
           <a href="/tags/{{ tag | slugify}}">{{ tag }}</a>
           {% if not loop.last %}
