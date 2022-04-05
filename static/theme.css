@@ -11,12 +11,11 @@ fieldset {
 
 html {
     color: #657b83;
-    background-color: #fdf6e3;
+    background-color: #eee8d5;
 }
 
-header,
-footer {
-    background-color: #eee8d5;
+main {
+    background-color: #fdf6e3;
 }
 
 code {
@@ -114,12 +113,11 @@ pre code {
 
     html {
         color: #839496;
-        background-color: #002b36;
+        background-color: #073642;
     }
 
-    header,
-    footer {
-        background-color: #073642;
+    main {
+        background-color: #002b36;
     }
         
     body {
