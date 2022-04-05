@@ -2,6 +2,10 @@
 title = "Hola, we are Plabayo!"
 description = "An introduction on why we co-founded plabayo."
 
+[taxonomies]
+authors = ["Glen De Cauwsemaecker"]
+tags = ["about us"]
+
 [extra]
 author = "Glen De Cauwsemaecker"
 +++

@@ -1,0 +1,23 @@
+{% extends "layouts/base.html" %}
+
+{% block content %}
+
+<p>
+    <a href="/blog" style="text-decoration: none;">The Plabayo Blog</a>
+</p>
+
+<h1>Author: {{ term.name }}</h1>
+
+<div id="blog-article-list">
+{% for page in term.pages %}
+<article>
+    <h2><a href="/blog/{{ page.slug }}">{{ page.title }}</a></h2>, <span class="blog-article-title">{{ page.day }} {{ macros::month(n=page.month) }} {{ page.year }}</span>
+    <section>
+        <p class="blog-article-author">{{ page.extra.author }}</p>
+        <p>{{ page.description }}</p>
+    </section>
+</article>
+{% endfor %}
+</div>
+
+{% endblock content %}
