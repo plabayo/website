@@ -193,6 +193,10 @@ blockquote {
     margin-left: 20px;
 }
 
+.bullet-points-list a:hover {
+    text-decoration: none;
+}
+
 .bullet-point-mark {
     font-size: 0.9em;
 }
@@ -201,6 +205,10 @@ blockquote {
     display: grid;
     gap: 10px;
     grid-template-columns: auto 1fr;
+}
+
+.bullet-point-item-center {
+    align-items: center;
 }
 
 .bullet-point-text {
