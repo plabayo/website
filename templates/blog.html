@@ -9,7 +9,14 @@
   <article>
     <h2><a href="/blog/{{ page.slug }}">{{ page.title }}</a></h2>, <span class="blog-article-title">{{ page.day }} {{ macros::month(n=page.month) }} {{ page.year }}</span>
     <section>
-      <p class="blog-article-author">{{ page.extra.author }}</p>
+      <p class="blog-article-author">
+        {% for author in page.taxonomies.authors %}
+          <a href="/authors/{{ author | slugify}}">{{ author }}</a>
+          {% if not loop.last %}
+          , 
+          {% endif %}
+        {% endfor %}
+      </p>
       <p>{{ page.description }}</p>
     </section>
   </article>

@@ -5,9 +5,6 @@ description = "An introduction on why we co-founded plabayo."
 [taxonomies]
 authors = ["Glen De Cauwsemaecker"]
 tags = ["about us"]
-
-[extra]
-author = "Glen De Cauwsemaecker"
 +++
 
 Hola, welcome on our blog and very warm greetings to you. Muchas gusta, nice to meet you.

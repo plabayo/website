@@ -10,7 +10,14 @@
   <h1 class="title">
     {{ page.title }}
   </h1>
-  <p class="subtitle"><strong>{{ page.extra.author }}</strong></p>
+  <p class="subtitle"><strong>
+    {% for author in page.taxonomies.authors %}
+      <a href="/authors/{{ author | slugify}}">{{ author }}</a>
+      {% if not loop.last %}
+      , 
+      {% endif %}
+    {% endfor %}
+  </strong></p>
   <p class="subtitle"><strong>{{ page.day }} {{ macros::month(n=page.month) }} {{ page.year }}</strong></p>
 </div>
 
