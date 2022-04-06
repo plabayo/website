@@ -2,7 +2,7 @@
 
 {% block head %}
 
-<link rel="canonical" href="https://plabayo.tech/blog-authors/{{ term.name | slugify }}" />
+<link rel="canonical" href="https://plabayo.tech/blog-authors/{{ term.name | slugify }}/" />
 
 {% endblock head %}
 
@@ -23,6 +23,12 @@
 
 <p>
     On this page you can find all articles written by {{ term.name }}.
+</p>
+
+<p>
+    You can find a full list of all our articles on
+    <a href="/blog">our blog index page</a>
+    .
 </p>
 
 <div id="blog-article-list">
