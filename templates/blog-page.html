@@ -39,6 +39,16 @@
 </article>
 
 <nav id="blog-nav">
+  <p>
+    Did you find a mistake in this blog article or have an improvement in mind?
+  </p>
+  <p>
+    You can 
+    <a href="https://github.com/plabayo/website/edit/main/content/blog/{{ page.date }}_{{ page.slug | replace(from='-', to='_') }}.md" rel="nofollow">
+      start by modifying the article's content
+    </a> and open a Pull Request afterwards.
+  </p>
+
   <div class="bullet-points-list">
     {% if page.earlier %}
     <a href="/blog/{{ page.earlier.slug }}">
