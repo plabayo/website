@@ -6,33 +6,37 @@
   <a href="/blog" style="text-decoration: none;">The Plabayo Blog</a>
 </p>
 
-<div id="article-header">
-  <h1 class="title">
-    {{ page.title }}
-  </h1>
-  <p class="subtitle"><strong>
-    {% for author in page.taxonomies.blog_authors %}
-      <a href="/blog-authors/{{ author | slugify}}">{{ author }}</a>
-      {% if not loop.last %}
-      , 
-      {% endif %}
-    {% endfor %}
-  </strong></p>
-  <p class="subtitle">
-    <span class="emoji-label">🏷</span> tags: 
-    {% for tag in page.taxonomies.blog_tags %}
-      <a href="/blog-tags/{{ tag | slugify}}">{{ tag }}</a>
-      {% if not loop.last %}
-      , 
-      {% endif %}
-    {% endfor %}
-  </p>
-  <p class="subtitle"><strong>{{ page.day }} {{ macros::month(n=page.month) }} {{ page.year }}</strong></p>
-</div>
+<article>
+  <div id="article-header">
+    <h1 class="title">
+      {{ page.title }}
+    </h1>
+    <p class="subtitle"><strong>
+      {% for author in page.taxonomies.blog_authors %}
+        <a href="/blog-authors/{{ author | slugify}}">{{ author }}</a>
+        {% if not loop.last %}
+        , 
+        {% endif %}
+      {% endfor %}
+    </strong></p>
+    <p class="subtitle">
+      <span class="emoji-label">🏷</span> tags: 
+      {% for tag in page.taxonomies.blog_tags %}
+        <a href="/blog-tags/{{ tag | slugify}}">{{ tag }}</a>
+        {% if not loop.last %}
+        , 
+        {% endif %}
+      {% endfor %}
+    </p>
+    <p class="subtitle"><strong>{{ page.day }} {{ macros::month(n=page.month) }} {{ page.year }}</strong></p>
+  </div>
 
-<div id="article-content">
-  {{ page.content | safe }}
-</div>
+  <section>
+    <div id="article-content">
+      {{ page.content | safe }}
+    </div>
+  </section>
+</article>
 
 <nav id="blog-nav">
   <div class="bullet-points-list">
