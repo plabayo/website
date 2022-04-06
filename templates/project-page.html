@@ -6,6 +6,8 @@
   <a href="/projects" style="text-decoration: none;">Go back to our projects overview</a>
 </p>
 
+<article>
+
 <div id="article-header">
   <h1 class="title">
     {{ page.title }}
@@ -18,8 +20,12 @@
   </blockquote>
 </div>
 
+<section>
 <div id="article-content">
   {{ page.content | safe }}
 </div>
+</section>
+
+</article>
 
 {% endblock content %}
