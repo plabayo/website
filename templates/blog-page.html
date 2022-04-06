@@ -11,8 +11,8 @@
     {{ page.title }}
   </h1>
   <p class="subtitle"><strong>
-    {% for author in page.taxonomies.authors %}
-      <a href="/authors/{{ author | slugify}}">{{ author }}</a>
+    {% for author in page.taxonomies.blog_authors %}
+      <a href="/blog-authors/{{ author | slugify}}">{{ author }}</a>
       {% if not loop.last %}
       , 
       {% endif %}
@@ -20,8 +20,8 @@
   </strong></p>
   <p class="subtitle">
     <span class="emoji-label">🏷</span> tags: 
-    {% for tag in page.taxonomies.tags %}
-      <a href="/tags/{{ tag | slugify}}">{{ tag }}</a>
+    {% for tag in page.taxonomies.blog_tags %}
+      <a href="/blog-tags/{{ tag | slugify}}">{{ tag }}</a>
       {% if not loop.last %}
       , 
       {% endif %}

@@ -32,8 +32,8 @@
         <h2><a href="/blog/{{ page.slug }}">{{ page.title }}</a></h2>, <span class="blog-article-title">{{ page.day }} {{ macros::month(n=page.month) }} {{ page.year }}</span>
         <section>
         <p class="blog-article-author">
-        {% for author in page.taxonomies.authors %}
-            <a href="/authors/{{ author | slugify}}">{{ author }}</a>
+        {% for author in page.taxonomies.blog_authors %}
+            <a href="/blog-authors/{{ author | slugify}}">{{ author }}</a>
             {% if not loop.last %}
             , 
             {% endif %}
@@ -41,8 +41,8 @@
         </p>
         <p class="blog-article-tags">
             <span class="emoji-label">🏷</span> tags: 
-            {% for tag in page.taxonomies.tags %}
-              <a href="/tags/{{ tag | slugify}}">{{ tag }}</a>
+            {% for tag in page.taxonomies.blog_tags %}
+              <a href="/blog-tags/{{ tag | slugify}}">{{ tag }}</a>
               {% if not loop.last %}
               , 
               {% endif %}

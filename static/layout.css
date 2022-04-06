@@ -137,6 +137,10 @@ blockquote {
     text-indent: 15px;
 }
 
+#blog-article-list {
+    margin-top: 30px;
+}
+
 #blog-article-list * {
     padding: 0;
     margin: 0;
@@ -158,13 +162,13 @@ blockquote {
 
 #blog-article-list {
     display: grid;
-    row-gap: 10px;
+    row-gap: 20px;
 }
 
 #blog-nav {
     padding: 0;
     margin: 0;
-    margin-top: 30px;
+    margin-top: 100px;
     padding-top: 10px;
 }
 

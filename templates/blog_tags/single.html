@@ -2,11 +2,21 @@
 
 {% block content %}
 
-<p>
-    <a href="/blog" style="text-decoration: none;">The Plabayo Blog</a>
-</p>
+<a href="/blog">
+    <div class="bullet-point-item bullet-point-item-center">
+        <div class="bullet-point-mark">
+        ⬅️
+        </div>
+        <div class="bullet-point-text">
+           The Plabayo Blog
+        </div>
+    </div>
+</a>
 
 <h1>Tag: {{ term.name }}</h1>
+<p>
+    On this page you can find all articles labeled with the tag "{{ term.name }}".
+</p>
 
 <div id="blog-article-list">
 {% for page in term.pages %}
@@ -14,8 +24,8 @@
     <h2><a href="/blog/{{ page.slug }}">{{ page.title }}</a></h2>, <span class="blog-article-title">{{ page.day }} {{ macros::month(n=page.month) }} {{ page.year }}</span>
     <section>
         <p class="blog-article-author">
-            {% for author in page.taxonomies.authors %}
-                <a href="/authors/{{ author | slugify}}">{{ author }}</a>
+            {% for author in page.taxonomies.blog_authors %}
+                <a href="/blog-authors/{{ author | slugify}}">{{ author }}</a>
                 {% if not loop.last %}
                 , 
                 {% endif %}
@@ -23,8 +33,8 @@
         </p>
         <p class="blog-article-tags">
             <span class="emoji-label">🏷</span> tags: 
-            {% for tag in page.taxonomies.tags %}
-              <a href="/tags/{{ tag | slugify}}">{{ tag }}</a>
+            {% for tag in page.taxonomies.blog_tags %}
+              <a href="/blog-tags/{{ tag | slugify}}">{{ tag }}</a>
               {% if not loop.last %}
               , 
               {% endif %}

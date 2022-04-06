@@ -49,8 +49,8 @@ hard_link_static = false
 #     ]
 #
 taxonomies = [
-    {name = "tags", feed = true},
-    {name = "authors", feed = true},
+    {name = "blog_tags"},
+    {name = "blog_authors"},
 ]
 
 # Whether to build a search index to be used later on by a JavaScript library
