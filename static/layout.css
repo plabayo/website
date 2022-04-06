@@ -121,6 +121,10 @@ blockquote {
     margin-left: 20px;
 }
 
+.subtle-link {
+    text-decoration: none;
+}
+
 /* items */
 
 #article-header h1 a,
