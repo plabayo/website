@@ -1,3 +1,6 @@
 .trash/
 public/
 .DS_Store
+design/*.ico
+design/*.png
+design/*_opt.svg
