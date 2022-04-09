@@ -4,6 +4,10 @@
 
 <link rel="canonical" href="https://plabayo.tech/blog/{{ page.slug }}/" />
 
+<title>Plabayo — Blog</title>
+
+<meta name="description" content="Blog Article '{{ page.title }}': {{page.description }}">
+
 <meta property="og:title" content="Blog Article: {{ page.title }}" />
 <meta property="og:type" content="website" />
 <meta property="og:url" content="https://plabayo.tech/blog/{{ page.slug }}/" />
@@ -20,7 +24,9 @@
 
 {% for author in page.taxonomies.blog_authors %}
 <meta property="article:author" content="{{ author }}" />
+<meta name="author" content="{{ author }}">
 {% endfor %}
+<meta name="keywords" content="{% for tag in page.taxonomies.blog_tags %}{{ tag }}{% if not loop.last %},{% endif %}{% endfor %}">
 {% for tag in page.taxonomies.blog_tags %}
 <meta property="article:tag" content="{{ tag }}" />
 {% endfor %}

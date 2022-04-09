@@ -6,6 +6,7 @@ weight = 1000
 [extra]
 status = "This project is in early development."
 website = "https://github.com/plabayo/news"
+tags = ["rust", "education", "news", "social-network", "foss", "community-driven", "community-project", "privacy-preserving"]
 +++
 
 A conscious social news website focusing on parenting, spirituality, science and psychology.
