@@ -11,10 +11,8 @@ tags = ["rust", "education", "news", "social-network", "foss", "community-driven
 
 A conscious social news website focusing on parenting, spirituality, science and psychology.
 
-Closed beta is planned in Q2 of 2022, source code can already be found at: <https://github.com/plabayo/news>.
-
-The code can be found at <https://github.com/plabayo/news>,
-where you can find more technical information as well.
+Closed beta is planned in Q2 of 2022, source code can already be found at: <https://github.com/plabayo/news>,
+where you can also find a more technical description about the project, its architecture and design.
 
 ## Community
 
