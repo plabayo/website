@@ -13,7 +13,7 @@ A conscious social news website focusing on parenting, spirituality, science and
 
 Closed beta is planned in Q2 of 2022, source code can already be found at: <https://github.com/plabayo/news>.
 
-The code is written at <https://github.com/plabayo/news>,
+The code can be found at <https://github.com/plabayo/news>,
 where you can find more technical information as well.
 
 ## Community
