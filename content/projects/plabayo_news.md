@@ -13,6 +13,28 @@ A conscious social news website focusing on parenting, spirituality, science and
 
 Closed beta is planned in Q2 of 2022, source code can already be found at: <https://github.com/plabayo/news>.
 
+The code is written at <https://github.com/plabayo/news>,
+where you can find more technical information as well.
+
+## Community
+
+Plabayo news is community driven:
+
+- articles need to be shared, with a focus on quality;
+- content needs to be curated and moderated;
+- translations needs to be provided for international reach;
+- code is to be maintained and improved in service of the community;
+
+If you wish start contributing as a developer you can use
+<https://github.com/plabayo/news/blob/main/CONTRIBUTING.md> as a starting point.
+
+On <https://github.com/plabayo/news/discussions> you can ask questions, find news updates,
+collaborate with translators and developers, post ideas, give your feedback and interact
+with the community in general.
+
+And of course by sharing high quality content relevant to our topics,
+you are greatly helping as well.
+
 ## Donate 
 
 Plabayo news is developed Free and Open Source Software (FOSS) and is gratis on top of that.
