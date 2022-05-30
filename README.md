@@ -22,11 +22,11 @@ Or serve:
 $ zola serve --interface 127.0.0.1 --port 8080
 ```
 
-## Performance
+## Performance and Accessibility
 
 <https://www.plabayo.tech> is listed in <https://512kb.club/>.
 
-- Lighthouse Performance Score: 100%
+- Lighthouse Performance Score: 100% (mobile & desktop)
 - GTMetrix Grade A:
   - Performance = 100%, Structure = 98%
   - largest contentful Paint = 474ms

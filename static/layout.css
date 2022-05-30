@@ -88,6 +88,7 @@ body {
 ul.nav-buttons,
 ul.nav-buttons>li {
     display: inline;
+    line-height: 2em;
 }
 
 ul.nav-buttons {
@@ -96,7 +97,7 @@ ul.nav-buttons {
 
 ul.nav-buttons>li+li:before {
     content: " | ";
-    padding: 0 3px;
+    padding: 0.6em;
 }
 
 nav a {

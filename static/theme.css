@@ -10,7 +10,7 @@ fieldset {
 }
 
 html {
-    color: #657b83;
+    color: #2c2f2f;
     background-color: #eee8d5;
 }
 
@@ -23,11 +23,20 @@ code {
 }
 
 a {
-    color: #b58900;
+    color: #641a03;
+}
+
+a main {
+    color: #894a07;
 }
 
 a:visited {
-    color: #b58900;
+    color: #641a03;
+    /* color: #cb4b16; */
+}
+
+main a:visited {
+    color: #894a07;
     /* color: #cb4b16; */
 }
 
@@ -44,7 +53,7 @@ h3,
 h4,
 h5,
 h6 {
-    color: #859900;
+    color: #667600;
 }
 
 pre {
@@ -112,14 +121,14 @@ pre code {
     }
 
     html {
-        color: #839496;
+        color: #b2bfc0;
         background-color: #073642;
     }
 
     main {
         background-color: #002b36;
     }
-        
+
     body {
         border-color: #586e75;
     }
@@ -129,11 +138,20 @@ pre code {
     }
 
     a {
-        color: #b58900;
+        color: #dfa800;
+    }
+
+    main a {
+        color: #d29d00;
     }
 
     a:visited {
-        color: #b58900;
+        color: #dfa800;
+        /* color: #cb4b16; */
+    }
+
+    main a:visited {
+        color: #d29d00;
         /* color: #cb4b16; */
     }
 
@@ -150,7 +168,7 @@ pre code {
     h4,
     h5,
     h6 {
-        color: #859900;
+        color: #a7c100;
     }
 
     pre {
