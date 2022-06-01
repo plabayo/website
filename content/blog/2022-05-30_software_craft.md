@@ -4,7 +4,7 @@ description = "Aim for excellent craftsmanship is at the core of our mission."
 
 [taxonomies]
 blog_authors = ["Glen De Cauwsemaecker"]
-blog_tags = ["about us"]
+blog_tags = ["about us", "software", "tech"]
 +++
 
 Software and life became one, in a way at least. At this point
