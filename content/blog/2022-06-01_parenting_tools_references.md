@@ -17,7 +17,7 @@ The awareness and strength of our emotional and psychological world is a key com
 
 Parenting is an aspect of our lives we are learning to shape it, and the question arises: **what kind of parent do I want to be?** Best answer I have found is: I want to be my most honest self on my parenting style, I want to offer connection because I know how to connect with myself. And the most honest answer: Therefore I am parent on the making, on the day by day decisions I make, and who I choose to be everyday. Because I can choose to express my inner authentic truth, which would mean I can bring out my most authentic contribution to others. Specially the ones most closed to me.
 
-Having the above in mind. I would like to offer you this list of resources, that I can recommend you to check it out, either in books or on internet. Please, feel free to take from them what you need to, or adapt them to your needs, because we all have different main topics to focus on at the time.
+Having the above in mind. I would like to offer you this list of resources, that I can recommend you to check it out, either in books or on internet. Please, feel free to take from them what you need to, or adapt them to your needs, because we all have different main topics to focus on at this time.
 
 1. [Conscious Parenting by Dr. Shefali](https://www.drshefali.com/the-conscious-parent/), related to the emotional world and great connection to our children we highly this work, it will give you a broader view on self-regulations, how to let go of reactivity by being more aware of our own triggers, fears, and source of anxiously, in order to nurture in the best way our connection with our children.
 
