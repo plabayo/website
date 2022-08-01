@@ -145,3 +145,14 @@ name = "Plabayo"
 #
 # author value will be available using {{ config.extra.author }} in templates
 #
+
+[languages.nl]
+generate_feed = true # there will be a feed for Dutch content
+build_search_index = false
+taxonomies = [
+    {name = "blog_tags"},
+    {name = "blog_authors"},
+]
+
+[languages.nl.translations]
+name = "Plabayo"

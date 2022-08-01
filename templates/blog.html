@@ -31,6 +31,10 @@
 <article>
 
 <p>
+  {{ trans(key="name", lang=lang) }}
+</p>
+
+<p>
   On this page you find all our articles. You can also filter on a specific author:
   {% set taxonomy_authors = get_taxonomy(kind="blog_authors") %}
   {% for author in taxonomy_authors.items %}
