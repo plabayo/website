@@ -1,0 +1,227 @@
+/* COLOURS */
+
+mark {
+    background: #ff0;
+    color: #000;
+}
+
+fieldset {
+    border-color: #c0c0c0;
+}
+
+html {
+    color: #2c2f2f;
+    background-color: #eee8d5;
+}
+
+main {
+    background-color: #fdf6e3;
+}
+
+code {
+    background-color: #eee8d5;
+}
+
+a {
+    color: #641a03;
+}
+
+a main {
+    color: #894a07;
+}
+
+a:visited {
+    color: #641a03;
+    /* color: #cb4b16; */
+}
+
+main a:visited {
+    color: #894a07;
+    /* color: #cb4b16; */
+}
+
+a:hover {
+    color: #cb4b16;
+}
+
+h1 {
+    color: #d33682;
+}
+
+h2,
+h3,
+h4,
+h5,
+h6 {
+    color: #667600;
+}
+
+pre {
+    background-color: #fdf6e3;
+    color: #657b83;
+    border-color: #93a1a1;
+}
+
+pre code {
+    background-color: #fdf6e3;
+}
+
+.tag {
+    background-color: #eee8d5;
+    color: #d33682;
+}
+
+.todo,
+.next,
+.done {
+    color: #fdf6e3;
+    background-color: #dc322f;
+}
+
+.TODO {
+    background-color: #2aa198;
+}
+
+.NEXT {
+    background-color: #268bd2;
+}
+
+.ACTIVE {
+    background-color: #268bd2;
+}
+
+.DONE {
+    background-color: #859900;
+}
+
+.WAITING {
+    background-color: #cb4b16;
+}
+
+.HOLD {
+    background-color: #d33682;
+}
+
+.NOTE {
+    background-color: #d33682;
+}
+
+.CANCELLED {
+    background-color: #859900;
+}
+
+@media (prefers-color-scheme: dark) {
+    mark {
+        background: #ff0;
+        color: #000;
+    }
+
+    fieldset {
+        border-color: #c0c0c0;
+    }
+
+    html {
+        color: #b2bfc0;
+        background-color: #073642;
+    }
+
+    main {
+        background-color: #002b36;
+    }
+
+    body {
+        border-color: #586e75;
+    }
+
+    code {
+        background-color: #073642;
+    }
+
+    a {
+        color: #dfa800;
+    }
+
+    main a {
+        color: #d29d00;
+    }
+
+    a:visited {
+        color: #dfa800;
+        /* color: #cb4b16; */
+    }
+
+    main a:visited {
+        color: #d29d00;
+        /* color: #cb4b16; */
+    }
+
+    a:hover {
+        color: #cb4b16;
+    }
+
+    h1 {
+        color: #d33682;
+    }
+
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        color: #a7c100;
+    }
+
+    pre {
+        background-color: #002b36;
+        color: #839496;
+        border-color: #586e75;
+    }
+
+    pre code {
+        background-color: #002b36;
+    }
+
+    .tag {
+        background-color: #073642;
+        color: #d33682;
+    }
+
+    .todo,
+    .next,
+    .done {
+        color: #002b36;
+        background-color: #dc322f;
+    }
+
+    .TODO {
+        background-color: #2aa198;
+    }
+
+    .NEXT {
+        background-color: #268bd2;
+    }
+
+    .ACTIVE {
+        background-color: #268bd2;
+    }
+
+    .DONE {
+        background-color: #859900;
+    }
+
+    .WAITING {
+        background-color: #cb4b16;
+    }
+
+    .HOLD {
+        background-color: #d33682;
+    }
+
+    .NOTE {
+        background-color: #d33682;
+    }
+
+    .CANCELLED {
+        background-color: #859900;
+    }
+}
