@@ -4,3 +4,5 @@ public/
 design/*.ico
 design/*.png
 design/*_opt.svg
+dist/
+target/
