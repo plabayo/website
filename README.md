@@ -4,22 +4,24 @@ The source code of the Plabayo website.
 
 https://www.plabayo.tech
 
-## Build Locally
+Worker domain:
 
-Install Zola first:
+https://website.plabayo.workers.dev/
 
-> <https://www.getzola.org/documentation/getting-started/installation/>
-
-Build:
+## Dev
 
 ```
-$ zola build
+npm run dev
 ```
 
-Or serve:
+### Release
+
+Soon (TM) via GH Action.
+
+For now:
 
 ```
-$ zola serve --interface 127.0.0.1 --port 8080
+npm run deploy
 ```
 
 ## Performance and Accessibility
