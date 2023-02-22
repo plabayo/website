@@ -3,7 +3,7 @@ name: Deploy
 on:
   push:
     branches:
-      - versions/wasm-worker
+      - version/wasm-worker
 
 jobs:
   deploy:
