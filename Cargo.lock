@@ -997,6 +997,7 @@ version = "0.0.0"
 dependencies = [
  "cfg-if 0.1.10",
  "console_error_panic_hook",
+ "plabayo-website",
  "serde_json",
  "worker",
 ]

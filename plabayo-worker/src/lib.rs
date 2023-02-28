@@ -1,4 +1,3 @@
-use serde_json::json;
 use worker::*;
 
 mod utils;
@@ -29,26 +28,22 @@ pub async fn main(req: Request, env: Env, _ctx: worker::Context) -> Result<Respo
     // functionality and a `RouteContext` which you can use to  and get route parameters and
     // Environment bindings like KV Stores, Durable Objects, Secrets, and Variables.
     router
-        .get("/", |_, _| Response::ok("Hello from Workers!"))
-        .post_async("/form/:field", |mut req, ctx| async move {
-            if let Some(name) = ctx.param("field") {
-                let form = req.form_data().await?;
-                match form.get(name) {
-                    Some(FormEntry::Field(value)) => {
-                        return Response::from_json(&json!({ name: value }))
-                    }
-                    Some(FormEntry::File(_)) => {
-                        return Response::error("`field` param in form shouldn't be a File", 422);
-                    }
-                    None => return Response::error("Bad Request", 400),
-                }
-            }
+        .get("/", |_, _| Response::from_html(plabayo_website::index()))
+        .get("/style.css", |_, _| {
+            let mut headers = Headers::new();
+            headers.set("content-type", "text/css")?;
 
-            Response::error("Bad Request", 400)
+            let data = plabayo_website::stylesheet().as_bytes().to_vec();
+            Response::from_body(ResponseBody::Body(data))
+                .and_then(|resp| Ok(resp.with_headers(headers)))
         })
-        .get("/worker-version", |_, ctx| {
-            let version = ctx.var("WORKERS_RS_VERSION")?.to_string();
-            Response::ok(version)
+        .get("/favicon.ico", |_, _| {
+            let mut headers = Headers::new();
+            headers.set("content-type", "image/x-icon")?;
+
+            let data = plabayo_website::favicon().to_vec();
+            Response::from_body(ResponseBody::Body(data))
+                .and_then(|resp| Ok(resp.with_headers(headers)))
         })
         .run(req, env)
         .await

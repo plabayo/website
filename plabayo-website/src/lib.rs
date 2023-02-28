@@ -42,7 +42,9 @@ pub fn index() -> String {
                 meta charset="UTF-8";
                 meta name="viewport" content="width=device-width, initial-scale=1.0";
                 title { "ushift" }
-                link rel="stylesheet" href="/style.css" {}
+                link rel="stylesheet" href="/style.css";
+                link rel="shortcut icon" href="/favicon.ico" type="image/x-icon";
+                link rel="icon" href="/favicon.ico" type="image/x-icon";
             }
             body {
                 main {
@@ -81,7 +83,10 @@ pub fn index() -> String {
     html.into_string()
 }
 
-
 pub fn stylesheet() -> &'static str {
     include_str!("../static/style.css")
+}
+
+pub fn favicon() -> &'static [u8] {
+    include_bytes!("../static/favicon.ico")
 }

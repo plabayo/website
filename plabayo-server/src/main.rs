@@ -34,7 +34,8 @@ async fn main() {
     // build our application with a route
     let app = Router::new()
         .route("/", get(index))
-        .route("/style.css", get(stylesheet));
+        .route("/style.css", get(stylesheet))
+        .route("/favicon.ico", get(favicon));
 
     // run our app with hyper
     // `axum::Server` is a re-export of `hyper::Server`
@@ -58,5 +59,12 @@ async fn stylesheet() -> Response {
     let mut resp = plabayo_website::stylesheet().into_response();
     resp.headers_mut()
         .insert("Content-Type", "text/css".parse().unwrap());
+    resp
+}
+
+async fn favicon() -> Response {
+    let mut resp = plabayo_website::favicon().into_response();
+    resp.headers_mut()
+        .insert("Content-Type", "image/x-icon".parse().unwrap());
     resp
 }
