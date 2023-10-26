@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>plabayo</title>
+
+    <link rel="icon" href="/static/img/favicon.ico">
+
+    <meta name="description" content="official website of Plabayo — FOSS Software Studio">
+    <meta name="robots" content="index,follow">
+    <link rel="canonical" href="https://plabayo.tech/">
+
+    <meta property="og:title" content="plabayo" />
+    <meta property="og:locale" content="en_US" />
+    <meta property="og:type" content="website">
+    <meta property="og:description" content="official website of Plabayo — FOSS Software Studio" />
+    <meta property="og:url" content="https://plabayo.tech/" />
+    <meta property="og:site_name" content="plabayo" />
+    <meta property="og:image" content="https://plabayo.tech/static/img/og.jpeg">
+
+    <script src="/static/js/htmx.min.js?v=1.9.6"></script>
+    <script type="module" src="/static/js/plabayo.js?v=0.1.0"></script>
+
+    <link rel="stylesheet" href="/static/css/missing.min.css?v=1.1.1" />
+    <link rel="stylesheet" href="/static/css/style.css?t=plabayo&v=0.1.0" />
+</head>
+
+<body hx-boost="true">
+    <main class="width:100%" style="max-width: 650px;">
+        <header class="width:100% center" style="margin: 0 0 10px 0;">
+            <h1 style="margin: 0;">
+                <a href="/">Plabayo</a>
+            </h1>
+        </header>
+
+        <div id="content" class="center" style="padding: 5px">
+            {% block content %}{% endblock %}
+        </div>
+    </main>
+</body>
+
+</html>
