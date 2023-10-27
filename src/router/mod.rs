@@ -11,11 +11,13 @@ use tower_http::{
 mod index;
 mod memory;
 mod not_found;
+mod redirect;
 mod shared;
 
 fn new_root() -> Router {
     Router::new()
         .route("/", get(index::get))
+        .route("/projects", get(redirect::projects))
         .route("/robots.txt", get(memory::get_robots_txt))
         .route("/sitemap.xml", get(memory::get_sitemap_xml))
         .layer(CookieManagerLayer::new())
