@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% block content %}
-<div class="crowded margin-block">
+<div class="crowded margin-block" style="margin-bottom: 0;">
     <p>
         Plabayo was co-founded in 2021 by
         <a href="https://www.elizadc.me/">Elizabeth C. Gonzales Belsuzarri</a>
@@ -10,17 +10,13 @@
         and consultancy studio.
     </p>
     <p>
-        Education, Privacy and transparency is at the core of our mission.
-        We take our craft serious and work on the fringes of playfulness.
-    </p>
-    <p>
         If you like or work and would like to donate to us,
         you can do so at
         <a href="https://github.com/sponsors/plabayo">https://github.com/sponsors/plabayo</a>.
     </p>
 </div>
-<div class="margin-block width:100%">
-    <h2>Projects</h2>
+<div class="margin-block width:100%" style="margin-top: 0;">
+    <h2 id="projects"><a href="#projects">Projects</a></h2>
     {% for project in projects %}
     <div class="box crowded width:100%" style="margin-bottom: 10px;">
         <strong class="block titlebar">
