@@ -1,4 +1,5 @@
 mod router;
+mod services;
 
 #[shuttle_runtime::main]
 async fn axum() -> shuttle_axum::ShuttleAxum {

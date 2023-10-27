@@ -22,6 +22,13 @@
         <strong class="block titlebar">
             <span>{{ project.icon }}</span>
             {{ project.name }}
+            {% match project.github_info %}
+            {% when Some with (github_info) %}
+            <span style="float: right;">
+                <a href="https://github.com/plabayo/{{ github_info.repo }}">⭐&nbsp;{{ github_info.stars }}</a>
+            </span>
+            {% when None %}
+            {% endmatch %}
         </strong>
         <p>
             {{ project.description }}
