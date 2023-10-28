@@ -130,6 +130,14 @@ impl ProjectCache {
         let mut cache = ProjectCache {
             projects: vec![
                 Project::new(
+                    "✅",
+                    "Rust Language Guide",
+                    "A guide to aid you in your journey of becoming a Rustacean (Rust developer).",
+                    "https://rust-lang.guide/",
+                    vec!["rust", "learning", "guide", "educational"],
+                    "learn-rust-101"
+                ),
+                Project::new(
                     "🧪",
                      "Rama",
                      "Distortion proxy software to be anonymous.",
@@ -138,20 +146,20 @@ impl ProjectCache {
                      "rama"
                  ),
                  Project::new(
-                     "✅",
-                     "Rust Language Guide",
-                     "A guide to aid you in your journey of becoming a Rustacean (Rust developer).",
-                     "https://rust-lang.guide/",
-                     vec!["rust", "learning", "guide", "educational"],
-                     "learn-rust-101"
-                 ),
-                 Project::new(
                      "🧪",
                      "bckt.xyz",
                      "Link shortener and secret sharing service.",
                      "https://bckt.xyz/",
                      vec!["rust", "webservice"],
                      "bucket"
+                 ),
+                 Project::new(
+                    "🧪",
+                    "NES Studio",
+                    "A NES emulator and IDE, as a fully featured web application, served as WASM, compiled from Rust.",
+                    "https://nes.studio/",
+                    vec!["rust", "webservice", "wasm", "emulator", "NES", "IDE"],
+                    "nes-studio"
                  ),
                  Project::new(
                      "✅",
@@ -168,7 +176,15 @@ impl ProjectCache {
                      "https://crates.io/crates/tower-async",
                      vec!["rust", "async", "networking"],
                      "tower-async"
-                 )
+                 ),
+                 Project::new(
+                    "✅",
+                    "plabayo.tech",
+                    "This company website, served by our own Rust web service, hosted on shuttle.com",
+                    "https://plabayo.tech/",
+                    vec!["rust", "webservice"],
+                    "website",
+                 ),
             ],
             fetch_time: None,
         };
