@@ -15,20 +15,34 @@
         <a href="https://github.com/sponsors/plabayo">🤝&nbsp;https://github.com/sponsors/plabayo</a>.
     </p>
 </div>
-<div class="margin-block width:100%" style="margin-top: 0;">
+<div
+    id="projects-section"
+    class="margin-block width:100%"
+    style="margin-top: 0;"
+
+    {% if fetch_projects %}
+    hx-trigger="load once"
+    hx-get="/"
+    hx-select="#projects-section"
+    hx-target="#projects-section"
+    {% endif %}
+>
     <h2 id="projects"><a href="#projects">🏖️&nbsp;projects</a></h2>
     {% for project in projects %}
     <div class="box crowded width:100%" style="margin-bottom: 10px;">
         <strong class="block titlebar">
             <span>{{ project.icon }}</span>
             {{ project.name }}
-            {% match project.github_info %}
-            {% when Some with (github_info) %}
             <span style="float: right;">
-                <a href="https://github.com/plabayo/{{ github_info.repo }}">⭐&nbsp;{{ github_info.stars }}</a>
+                <a href="https://github.com/plabayo/{{ project.repo_name }}">
+                    {% match project.repo_info %}
+                    {% when Some with (github_info) %}
+                    ⭐&nbsp;{{ github_info.stargazers_count }}
+                    {% when None %}
+                    🏔️&nbsp;source&nbsp;code
+                    {% endmatch %}
+                </a>
             </span>
-            {% when None %}
-            {% endmatch %}
         </strong>
         <p>
             {{ project.description }}

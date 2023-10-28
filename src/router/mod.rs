@@ -21,21 +21,23 @@ pub struct State {
     project_cache: Arc<Mutex<ProjectCache>>,
 }
 
-fn new_root() -> Router {
+async fn new_root() -> Router {
+    let project_cache = ProjectCache::new().await;
     Router::new()
         .route("/", get(index::get))
         .route("/projects", get(redirect::projects))
         .route("/robots.txt", get(memory::get_robots_txt))
         .route("/sitemap.xml", get(memory::get_sitemap_xml))
         .with_state(Arc::new(State {
-            project_cache: Arc::new(Mutex::new(ProjectCache::new())),
+            project_cache: Arc::new(Mutex::new(project_cache)),
         }))
 }
 
-pub fn new() -> Router {
+pub async fn new() -> Router {
+    let index_root = new_root().await;
     Router::new()
         .nest_service("/static", ServeDir::new(PathBuf::from("static")))
-        .nest("/", new_root())
+        .nest("/", index_root)
         .fallback(not_found::any)
         .layer(
             ServiceBuilder::new()
