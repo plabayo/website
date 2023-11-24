@@ -38,3 +38,6 @@ watch name="plabayo":
 
 restart name="plabayo":
     cargo shuttle project restart --name {{name}}
+
+shuttle-update:
+    curl -sSfL https://www.shuttle.rs/install | bash
