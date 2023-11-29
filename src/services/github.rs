@@ -141,7 +141,7 @@ impl ProjectCache {
                     "🧪",
                      "Rama",
                      "Distortion proxy software to be anonymous.",
-                     "https://github.com/plabayo/rama",
+                     "https://ramaproxy.org",
                      vec!["rust", "http", "networking", "proxy", "scraping", "mitm"],
                      "rama"
                  ),
