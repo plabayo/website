@@ -146,6 +146,14 @@ impl ProjectCache {
                      "rama"
                  ),
                  Project::new(
+                    "🧪",
+                     "VennDB",
+                     "In memory Rust database to query your data like a Venn diagram.",
+                     "https://venndb.rs",
+                     vec!["rust", "database", "in-memory"],
+                     "venndb"
+                 ),
+                 Project::new(
                      "🧪",
                      "bckt.xyz",
                      "Link shortener and secret sharing service.",
