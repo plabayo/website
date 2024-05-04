@@ -10,15 +10,15 @@ repository = "https://github.com/plabayo/website"
 
 [dependencies]
 askama = { version = "0.12", features = ["with-axum"] }
-askama_axum = "0.3"
-axum = "0.6"
+askama_axum = "0.4"
+axum = "0.7"
 chrono = "0.4"
 futures = "0.3"
-reqwest = { version = "0.11", features = ["json"] }
+reqwest = { version = "0.12", features = ["json"] }
 serde = { version = "1.0", features = ["derive"] }
-shuttle-axum = "0.34.0"
-shuttle-runtime = "0.34.0"
+shuttle-axum = "0.44.0"
+shuttle-runtime = "0.44.0"
 tokio = "1.28"
 tower = { version = "0.4", features = ["tracing"] }
-tower-http = { version = "0.4", features = ["fs", "trace", "compression-full", "normalize-path"] }
+tower-http = { version = "0.5", features = ["fs", "trace", "compression-full", "normalize-path"] }
 tracing = "0.1"

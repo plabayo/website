@@ -138,7 +138,7 @@ impl ProjectCache {
                     "learn-rust-101"
                 ),
                 Project::new(
-                    "🧪",
+                    "✅",
                      "Rama",
                      "Distortion proxy software to be anonymous.",
                      "https://ramaproxy.org",
@@ -146,13 +146,21 @@ impl ProjectCache {
                      "rama"
                  ),
                  Project::new(
-                    "🧪",
-                     "VennDB",
-                     "In memory Rust database to query your data like a Venn diagram.",
-                     "https://venndb.rs",
-                     vec!["rust", "database", "in-memory"],
-                     "venndb"
-                 ),
+                    "✅",
+                    "VennDB",
+                    "An append-only in-memory database in Rust for rows queried using bit (flag) columns.",
+                    "https://venndb.rs/",
+                    vec!["rust", "database", "memory", "bits"],
+                    "venndb"
+                ),
+                Project::new(
+                    "✅",
+                    "tokio-graceful",
+                    "Graceful shutdown util for Rust projects using the Tokio Async runtime.",
+                    "https://crates.io/crates/tokio-graceful",
+                    vec!["rust", "async", "networking"],
+                    "tokio-graceful"
+                ),
                  Project::new(
                      "🧪",
                      "bckt.xyz",
@@ -168,14 +176,6 @@ impl ProjectCache {
                     "https://nes.studio/",
                     vec!["rust", "webservice", "wasm", "emulator", "NES", "IDE"],
                     "nes-studio"
-                 ),
-                 Project::new(
-                     "✅",
-                     "tokio-graceful",
-                     "Graceful shutdown util for Rust projects using the Tokio Async runtime.",
-                     "https://crates.io/crates/tokio-graceful",
-                     vec!["rust", "async", "networking"],
-                     "tokio-graceful"
                  ),
                  Project::new(
                      "✅",
