@@ -170,6 +170,14 @@ impl ProjectCache {
                      "bucket"
                  ),
                  Project::new(
+                     "🧪",
+                     "Elementary Training",
+                     "Free online training for elementary school students.",
+                     "https://elementary.training/",
+                     vec!["javascript", "education"],
+                     "homework"
+                 ),
+                 Project::new(
                     "🧪",
                     "NES Studio",
                     "A NES emulator and IDE, as a fully featured web application, served as WASM, compiled from Rust.",
