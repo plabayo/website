@@ -1,0 +1,68 @@
+{% extends "base.html" %}
+{% block content %}
+<div class="crowded margin-block" style="margin-bottom: 0;">
+    <p>
+        Plabayo was co-founded in 2021 by
+        <a href="https://www.elizadc.me/">👩‍💻&nbsp;Elizabeth C. Gonzales Belsuzarri</a>
+        and
+        <a href="https://www.glendc.com/">👨‍💻&nbsp;Glen Henri J. De Cauwsemaecker</a>
+        as a Free and Open Source Software (FOSS) dev
+        and consultancy studio&nbsp;🏡.
+    </p>
+    <p>
+        Reach out to us at
+        <a href="mailto:hello@plabayo.tech">✉️&nbsp;hello@plabayo.tech</a>
+        to hire our services, give feedback or to just say&nbsp;hi&nbsp;👋.
+    </p>
+    <p>
+        If you like our work and would like to donate to us,
+        you can do so at
+        <a href="https://github.com/sponsors/plabayo">🤝&nbsp;https://github.com/sponsors/plabayo</a>
+        or you can
+        <a href="https://www.buymeacoffee.com/plabayo">☕️&nbsp;buy&nbsp;us&nbsp;a&nbsp;coffee</a>.
+    </p>
+</div>
+<div
+    id="projects-section"
+    class="margin-block width:100%"
+    style="margin-top: 0;"
+
+    {% if fetch_projects %}
+    hx-trigger="load once"
+    hx-get="/"
+    hx-select="#projects-section"
+    hx-target="#projects-section"
+    {% endif %}
+>
+    <h2 id="projects"><a href="#projects">🏖️&nbsp;projects</a></h2>
+    {% for project in projects %}
+    <div class="box crowded width:100%" style="margin-bottom: 10px;">
+        <strong class="block titlebar">
+            <span>{{ project.icon }}</span>
+            {{ project.name }}
+            <span style="float: right;">
+                <a href="https://github.com/plabayo/{{ project.repo_name }}">
+                    {% match project.repo_info %}
+                    {% when Some with (github_info) %}
+                    ⭐&nbsp;{{ github_info.stargazers_count }}
+                    {% when None %}
+                    🏔️&nbsp;source&nbsp;code
+                    {% endmatch %}
+                </a>
+            </span>
+        </strong>
+        <p>
+            {{ project.description }}
+        </p>
+        <p>
+            <span style="margin-right: 5px">🔗</span><a href="{{ project.url }}">{{ project.url }}</a>
+        </p>
+        <section>
+            {% for label in project.labels %}
+            <chip style="padding: 5px">{{ label }}</chip>
+            {% endfor %}
+        </section>
+    </div>
+    {% endfor %}
+</div>
+{% endblock %}

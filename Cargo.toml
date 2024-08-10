@@ -1,24 +1,13 @@
 [package]
-name = "plabayo"
+name = "plabayo_www"
 version = "0.1.0"
 edition = "2021"
-description = "official website of plabayo"
-homepage = "https://www.bckt.xyz/"
-readme = "README.md"
-license = "MIT OR Apache-2.0"
-repository = "https://github.com/plabayo/website"
+# See more keys and their definitions at https://doc.rust-lang.org/cargo/reference/manifest.html
 
 [dependencies]
-askama = { version = "0.12", features = ["with-axum"] }
-askama_axum = "0.4"
-axum = "0.7"
-chrono = "0.4"
-futures = "0.3"
-reqwest = { version = "0.12", features = ["json"] }
-serde = { version = "1.0", features = ["derive"] }
-shuttle-axum = "0.44.0"
-shuttle-runtime = "0.44.0"
-tokio = "1.28"
-tower = { version = "0.4", features = ["tracing"] }
-tower-http = { version = "0.5", features = ["fs", "trace", "compression-full", "normalize-path"] }
-tracing = "0.1"
+askama = "0.12.1"
+clap = { version = "4.5.13", features = ["derive"] }
+rama = { git = "https://github.com/plabayo/rama" }
+tokio = { version = "1", features = ["full"] }
+tracing = "0.1.40"
+tracing-subscriber = { version = "0.3.16", features = ["env-filter"] }

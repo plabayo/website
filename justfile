@@ -1,43 +1,58 @@
-check:
-    cargo check --workspace --all-targets
-
-check-fmt:
-    cargo fmt --all -- --check
-
-clippy:
-    cargo clippy --workspace --all-targets --all-features --  -D warnings -W clippy::all
-
-test:
-    cargo test --workspace --all-targets --all-features
-
-qa: check check-fmt clippy test
-
 fmt:
-    cargo fmt --all
+	cargo fmt --all
 
 sort:
-	cargo sort --grouped .
+	cargo sort --workspace --grouped
+
+lint: fmt sort
+
+check:
+	cargo check --all --all-targets
+
+clippy:
+	cargo clippy --all --all-targets
 
 clippy-fix:
-    cargo clippy --fix --workspace --all-targets --all-features --allow-dirty --allow-staged
+	cargo clippy --fix
 
-fix: fmt sort clippy-fix
+typos:
+	typos -w
 
-update:
-    cargo update
+doc:
+	RUSTDOCFLAGS="-D rustdoc::broken-intra-doc-links" cargo doc --no-deps
 
-commit message: fix qa
-    git add -A
-    git commit -am "{{ message }}"
+doc-open:
+	RUSTDOCFLAGS="-D rustdoc::broken-intra-doc-links" cargo doc --no-deps --open
 
-deploy name="plabayo": qa
-    cargo shuttle deploy --name {{name}} --no-test
+hack:
+	cargo hack check --each-feature --no-dev-deps --workspace
 
-watch name="plabayo":
-    cargo watch -x 'shuttle run --name {{name}}' -i 'Cargo.lock'
+test:
+	cargo test --workspace
 
-restart name="plabayo":
-    cargo shuttle project restart --name {{name}}
+test-ignored:
+	cargo test --workspace -- --ignored
 
-shuttle-update:
-    curl -sSfL https://www.shuttle.rs/install | bash
+qa: lint check clippy doc test
+
+qa-full: lint check clippy doc hack test test-ignored
+
+upgrades:
+    cargo upgrades
+
+watch-docs:
+	cargo watch -x doc
+
+watch-check:
+	cargo watch -x check -x test
+
+example NAME:
+		cargo run -p rama --example {{NAME}}
+www *ARGS:
+    RUST_LOG=debug cargo run -- -d "${PWD}/static" {{ARGS}}
+
+watch-www *ARGS:
+	RUST_LOG=debug cargo watch -x 'run -- -d "${PWD}/static" {{ARGS}}'
+
+deploy:
+    flyctl deploy

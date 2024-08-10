@@ -1,68 +1,62 @@
-{% extends "base.html" %}
-{% block content %}
-<div class="crowded margin-block" style="margin-bottom: 0;">
-    <p>
-        Plabayo was co-founded in 2021 by
-        <a href="https://www.elizadc.me/">👩‍💻&nbsp;Elizabeth C. Gonzales Belsuzarri</a>
-        and
-        <a href="https://www.glendc.com/">👨‍💻&nbsp;Glen Henri J. De Cauwsemaecker</a>
-        as a Free and Open Source Software (FOSS) dev
-        and consultancy studio&nbsp;🏡.
-    </p>
-    <p>
-        Reach out to us at
-        <a href="mailto:hello@plabayo.tech">✉️&nbsp;hello@plabayo.tech</a>
-        to hire our services, give feedback or to just say&nbsp;hi&nbsp;👋.
-    </p>
-    <p>
-        If you like our work and would like to donate to us,
-        you can do so at
-        <a href="https://github.com/sponsors/plabayo">🤝&nbsp;https://github.com/sponsors/plabayo</a>
-        or you can
-        <a href="https://www.buymeacoffee.com/plabayo">☕️&nbsp;buy&nbsp;us&nbsp;a&nbsp;coffee</a>.
-    </p>
-</div>
-<div
-    id="projects-section"
-    class="margin-block width:100%"
-    style="margin-top: 0;"
-
-    {% if fetch_projects %}
-    hx-trigger="load once"
-    hx-get="/"
-    hx-select="#projects-section"
-    hx-target="#projects-section"
-    {% endif %}
->
-    <h2 id="projects"><a href="#projects">🏖️&nbsp;projects</a></h2>
-    {% for project in projects %}
-    <div class="box crowded width:100%" style="margin-bottom: 10px;">
-        <strong class="block titlebar">
-            <span>{{ project.icon }}</span>
-            {{ project.name }}
-            <span style="float: right;">
-                <a href="https://github.com/plabayo/{{ project.repo_name }}">
-                    {% match project.repo_info %}
-                    {% when Some with (github_info) %}
-                    ⭐&nbsp;{{ github_info.stargazers_count }}
-                    {% when None %}
-                    🏔️&nbsp;source&nbsp;code
-                    {% endmatch %}
-                </a>
-            </span>
-        </strong>
-        <p>
-            {{ project.description }}
-        </p>
-        <p>
-            <span style="margin-right: 5px">🔗</span><a href="{{ project.url }}">{{ project.url }}</a>
-        </p>
-        <section>
-            {% for label in project.labels %}
-            <chip style="padding: 5px">{{ label }}</chip>
-            {% endfor %}
-        </section>
+{% extends "base.html" %} {% block content %}
+<main>
+    <div class="cardbox">
+        <div class="card rust">
+            <article>
+                <header><a href="/rust">🦀 rust consulting 🍄‍🟫</a></header>
+                <p>
+                    With over a decade of experience in
+                    <a href="https://www.rust-lang.org/">rust</a>
+                    we are available as experts to train your team, audit your
+                    code, refactor your existing codebase or help develop your
+                    greenfield project.
+                </p>
+            </article>
+        </div>
+        <div class="card data">
+            <article>
+                <header><a href="/data">💾 data extraction 📡</a></header>
+                <p>
+                    We are experts in extracting data from the net, and
+                    transforming it into objects ready to help you succeed.
+                </p>
+                <p>
+                    You can hire our services to provide you with data feeds,
+                    data sets, reverse engineering of mobile apps and APIs and
+                    more. If the data is public we can make it cleanly
+                    accessible for you.
+                </p>
+            </article>
+        </div>
+        <div class="card rust">
+            <article>
+                <header>
+                    <a href="/foss">👩‍💻 Free and Open Source Software 🧑‍💻</a>
+                </header>
+                <p>
+                    We develop and maintain Free and Open Source Software,
+                    source available at
+                    <a href="https://github.com/plabayo">github.com/plabayo</a>.
+                </p>
+            </article>
+        </div>
+        <div class="card about">
+            <article>
+                <header><a href="/about">👩 About 🧔</a></header>
+                <p>
+                    Plabayo was co-founded in 2021 by
+                    <a href="https://www.elizadc.me/"
+                        >👩‍💻&nbsp;Elizabeth C. Gonzales Belsuzarri</a
+                    >
+                    and
+                    <a href="https://www.glendc.com/"
+                        >👨‍💻&nbsp;Glen Henri J. De Cauwsemaecker</a
+                    >
+                    as a Free and Open Source Software (FOSS) dev and
+                    consultancy studio&nbsp;🏡.
+                </p>
+            </article>
+        </div>
     </div>
-    {% endfor %}
-</div>
+</main>
 {% endblock %}

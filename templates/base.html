@@ -1,52 +1,58 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+    <head>
+        <meta charset="UTF-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>plabayo</title>
 
-    <title>plabayo</title>
+        <link rel="icon" href="/static/img/favicon.ico" />
 
-    <link rel="icon" href="/static/img/favicon.ico">
+        <meta
+            name="description"
+            content="official website of Plabayo — FOSS dev and consultancy studio"
+        />
+        <meta name="robots" content="index,follow" />
+        <link rel="canonical" href="https://plabayo.tech/" />
 
-    <meta name="description" content="official website of Plabayo — FOSS dev and consultancy studio">
-    <meta name="robots" content="index,follow">
-    <link rel="canonical" href="https://plabayo.tech/">
+        <meta property="og:title" content="plabayo" />
+        <meta property="og:locale" content="en_US" />
+        <meta property="og:type" content="website" />
+        <meta
+            property="og:description"
+            content="official website of Plabayo — FOSS dev and consultancy studio"
+        />
+        <meta property="og:url" content="https://plabayo.tech/" />
+        <meta property="og:site_name" content="plabayo" />
+        <meta
+            property="og:image"
+            content="https://plabayo.tech/static/img/og.jpeg"
+        />
 
-    <meta property="og:title" content="plabayo" />
-    <meta property="og:locale" content="en_US" />
-    <meta property="og:type" content="website">
-    <meta property="og:description" content="official website of Plabayo — FOSS dev and consultancy studio" />
-    <meta property="og:url" content="https://plabayo.tech/" />
-    <meta property="og:site_name" content="plabayo" />
-    <meta property="og:image" content="https://plabayo.tech/static/img/og.jpeg">
+        <script src="/static/js/htmx.min.js?v=2.0.1"></script>
 
-    <script src="/static/js/htmx.min.js?v=1.9.6"></script>
-    <script type="module" src="/static/js/plabayo.js?v=0.1.0"></script>
-
-    <link rel="stylesheet" href="/static/css/missing.min.css?v=1.1.1" />
-    <link rel="stylesheet" href="/static/css/style.css?t=plabayo&v=0.1.0" />
-</head>
-
-<body hx-boost="true">
-    <main class="width:100%" style="max-width: 650px;">
-        <header class="width:100% center" style="margin: 0 0 10px 0;">
-            <h1 style="margin: 0;">
-                <a href="/">Plabayo</a>
-            </h1>
-            <section class="tool-bar" style="margin: 5px; padding: 5px;">
-                <a href="/#projects">🏖️&nbsp;projects</a>
-                <a href="mailto:hello@plabayo.tech">✉️&nbsp;hello@plabayo.tech</a>
-                <a href="https://github.com/sponsors/plabayo">🤝&nbsp;sponsor&nbsp;us</a>
-                <a href="https://discord.gg/ssgbDnpXp7">💬&nbsp;discord</a>
-                <a href="https://github.com/plabayo/website">🏔️&nbsp;source&nbsp;code</a>
-            </section>
+        <link rel="stylesheet" href="/static/css/style.css?t=plabayo&v=2.0.0" />
+    </head>
+    <body>
+        <header>
+            <div>
+                <a href="/">
+                    <span class="nuance">&gt;</span>
+                    <span>&nbsp;plabayo.tec</span>
+                    <span class="cursor">h</span>
+                </a>
+            </div>
+            <div>
+                <span>FOSS dev and consultancy studio</span>
+            </div>
         </header>
-
-        <div id="content" class="center" style="padding: 5px">
-            {% block content %}{% endblock %}
-        </div>
-    </main>
-</body>
-
+        <div id="content">{% block content %}{% endblock %}</div>
+        <footer>
+            <div>
+                contact us: 📧&nbsp;<a href="mailto:hello@plabayo.tech"
+                    >hello@plabayo.tech</a
+                >
+            </div>
+        </footer>
+    </body>
 </html>
