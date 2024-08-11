@@ -20,6 +20,7 @@ pub struct PageContext {
 #[derive(Debug, Clone)]
 pub struct PageCardContext {
     icon: &'static str,
+    style: &'static str,
     button_title: &'static str,
     description_short: &'static str,
 }
@@ -111,6 +112,7 @@ page!(rust, "rust.html", "rust", {
     header: "Rust Consulting",
     card: Some(PageCardContext {
         icon: "🦀",
+        style: "rust",
         button_title: "rust",
         description_short: r##"<p>
             With over a decade of experience in rust we are available
@@ -125,6 +127,7 @@ page!(data, "data.html", "data", {
     header: "Data Extraction",
     card: Some(PageCardContext {
         icon: "💾",
+        style: "data",
         button_title: "data",
         description_short: r##"<p>
             We are experts in extracting data from the net,
@@ -143,6 +146,7 @@ page!(foss, "foss.html", "foss", {
     header: "Free and Open Source Software",
     card: Some(PageCardContext {
         icon: "🏡",
+        style: "rust",
         button_title: "FOSS",
         description_short: r##"<p>
             We develop and maintain Free and Open Source Software
@@ -157,6 +161,7 @@ page!(about, "about.html", "about", {
     header: "About Plabayo",
     card: Some(PageCardContext {
         icon: "👫",
+        style: "about",
         button_title: "about",
         description_short: r##"<p>\
             Plabayo was co-founded in 2021 by

@@ -260,29 +260,28 @@ div.card header {
 
 nav {
     width: 100%;
-    margin: 5px 0;
     background-color: var(--accent);
     display: flex;
     justify-content: center;
+    gap: 10px;
+    margin-bottom: 30px;
 }
 
-.button {
-    border-radius: 5px;
-    padding: 20xp;
-    margin: 5px;
-    display: inline-block;
-}
-
-.button {
-    width: fit-content;
-    border: 1px solid var(--accent);
+nav .button > div {
+    border: 2px solid var(--accent);
+    border-radius: 10px;
     font-size: 18px;
+    padding: 5px 20px;
 }
 
-.button a {
+nav .button {
     text-decoration: none;
 }
 
-.button:hover {
+nav .button.idle > div {
+    background-color: var(--accent);
+}
+
+nav .button.active:hover > div {
     background-color: var(--bg);
 }

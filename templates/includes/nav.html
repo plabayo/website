@@ -1,12 +1,16 @@
 <nav>
     {% for page in ctx.pages %} {% match page.card %} {% when Some with (card)
     %}{% if this.slug != page.slug %}
-    <div class="button {{ page.slug }}">
-        <a href="/{{ page.slug }}">{{ card.icon }} {{ card.button_title }}</a>
-    </div>
+    <a class="button active" href="/{{ page.slug }}"
+        ><div class="{{ card.style }}">
+            <span>{{ card.icon }}</span> {{ card.button_title }}
+        </div>
+    </a>
     {% else %}
-    <div class="button {{ page.slug }}">
-        {{ card.icon }} {{ card.button_title }}
-    </div>
+    <span class="button idle">
+        <div class="{{ card.style }}">
+            <span>{{ card.icon }}</span> {{ card.button_title }}
+        </div>
+    </span>
     {% endif %} {% when None %} {% endmatch %} {% endfor %}
 </nav>
