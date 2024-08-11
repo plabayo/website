@@ -19,6 +19,7 @@ pub struct PageContext {
 #[derive(Debug, Clone)]
 pub struct PageCardContext {
     icon: &'static str,
+    button_title: &'static str,
     description_short: &'static str,
 }
 
@@ -35,6 +36,7 @@ const PAGE_CTX_RUST: PageContext = PageContext {
     slug: "rust",
     card: Some(PageCardContext {
         icon: "🦀",
+        button_title: "rust",
         description_short: r##"<p>
             With over a decade of experience in rust we are available
             as experts to train your team, audit your code,
@@ -49,6 +51,7 @@ const PAGE_CTX_DATA: PageContext = PageContext {
     slug: "data",
     card: Some(PageCardContext {
         icon: "💾",
+        button_title: "data",
         description_short: r##"<p>
             We are experts in extracting data from the net,
             and transforming it into objects ready to help you succeed.
@@ -63,10 +66,11 @@ const PAGE_CTX_DATA: PageContext = PageContext {
 
 const PAGE_CTX_FOSS: PageContext = PageContext {
     title: "Plabayo FOSS",
-    header: "FOSS dev and consultancy studio",
+    header: "Free and Open Source Software",
     slug: "foss",
     card: Some(PageCardContext {
-        icon: "💾",
+        icon: "🏡",
+        button_title: "FOSS",
         description_short: r##"<p>
             We develop and maintain Free and Open Source Software
             related to data extraction, education, networking
@@ -81,6 +85,7 @@ const PAGE_CTX_ABOUT: PageContext = PageContext {
     slug: "about",
     card: Some(PageCardContext {
         icon: "👫",
+        button_title: "about",
         description_short: r##"<p>\
             Plabayo was co-founded in 2021 by
             Elizabeth C. Gonzales Belsuzarri and

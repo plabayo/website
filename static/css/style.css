@@ -253,6 +253,9 @@ div.card header {
 nav {
     width: 100%;
     margin: 5px 0;
+    background-color: var(--accent);
+    display: flex;
+    justify-content: center;
 }
 
 .button {
