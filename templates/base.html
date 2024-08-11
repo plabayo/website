@@ -6,7 +6,7 @@
 
         <title>{{ this.title }}</title>
 
-        <link rel="icon" href="/static/img/favicon.ico" />
+        <link rel="icon" href="/favicon.ico" />
 
         <meta
             name="description"
@@ -24,14 +24,11 @@
         />
         <meta property="og:url" content="https://plabayo.tech/" />
         <meta property="og:site_name" content="plabayo" />
-        <meta
-            property="og:image"
-            content="https://plabayo.tech/static/img/og.jpeg"
-        />
+        <meta property="og:image" content="https://plabayo.tech/img/og.jpeg" />
 
-        <script src="/static/js/htmx.min.js?v=2.0.1"></script>
+        <script src="/js/htmx.min.js"></script>
 
-        <link rel="stylesheet" href="/static/css/style.css?t=plabayo&v=2.0.0" />
+        <link rel="stylesheet" href="/css/style.css" />
     </head>
     <body hx-boost="true">
         <header>
@@ -42,13 +39,24 @@
                     <span class="cursor">&nbsp;</span>
                 </a>
             </div>
-            <div><span>&Gt;&nbsp;{{ this.header }}</span></div>
+            <div>
+                <span>&Gt;&nbsp;{{ this.header }}</span>
+            </div>
         </header>
         <div id="content">{% block content %}{% endblock %}</div>
         <footer>
             <div>
                 contact us: 📧&nbsp;<a href="mailto:hello@plabayo.tech"
                     >hello@plabayo.tech</a
+                >
+            </div>
+            <div>
+                <small
+                    >(&FilledVerySmallSquare;
+                    <a
+                        href="https://github.com/plabayo/website/tree/{{ ctx.git_sha }}"
+                        >{{ ctx.git_sha }}</a
+                    >)</small
                 >
             </div>
         </footer>

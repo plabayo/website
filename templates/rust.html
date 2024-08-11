@@ -2,7 +2,7 @@
 <main>
     {% match this.card %} {% when Some with (card) %} {{
     card.description_short|safe }} {% when None %}
-    <p>{{ this.header }}</p>
+    <p>{{ this.title }}</p>
     {% endmatch %}
 </main>
 {% endblock %}

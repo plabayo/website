@@ -165,8 +165,10 @@ body > header {
     border-bottom: 1px solid var(--accent);
 }
 
-footer {
+body > footer {
     border-top: 1px solid var(--accent);
+    display: grid;
+    grid-template-columns: 1fr auto;
 }
 
 @media only screen and (max-width: 640px) {
@@ -175,8 +177,14 @@ footer {
     }
 }
 
+@media only screen and (max-width: 320px) {
+    body > footer {
+        grid-template-columns: 1fr;
+    }
+}
+
 body > header a,
-footer a {
+body > footer a {
     text-decoration: none;
 }
 
@@ -189,7 +197,7 @@ body > header > div {
     margin: 5px;
 }
 
-footer > div {
+body > footer > div {
     margin: 5px;
 }
 
