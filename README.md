@@ -6,11 +6,7 @@ The website of Plabayo.
 [![Apache 2.0 License][license-apache-badge]][license-apache-url]
 [![Build Status][actions-badge]][actions-url]
 
-This project is deployed on <https://www.shuttle.rs/>.
-
 > Live @ <https://plabayo.tech
-
-
 
 [license-mit-badge]: https://img.shields.io/badge/license-MIT-blue.svg
 [license-mit-url]: https://github.com/plabayo/website/blob/main/LICENSE-MIT
