@@ -13,7 +13,7 @@ use rama::{
     service::{Service, ServiceBuilder},
 };
 
-mod endpoints;
+mod pages;
 
 #[derive(Debug, Clone)]
 pub struct State;
@@ -33,8 +33,11 @@ pub async fn web_service(
         .layer(TraceLayer::new_for_http())
         .service(
             WebService::default()
-                .get("/", endpoints::home::service())
-                .get("/about", endpoints::about::service())
+                .get(pages::PageIndex::endpoint(), pages::PageIndex::service())
+                .get(pages::PageRust::endpoint(), pages::PageRust::service())
+                .get(pages::PageData::endpoint(), pages::PageData::service())
+                .get(pages::PageFOSS::endpoint(), pages::PageFOSS::service())
+                .get(pages::PageAbout::endpoint(), pages::PageAbout::service())
                 .not_found(Redirect::temporary("/"))
                 .dir("/static", &cfg.static_dir),
         )

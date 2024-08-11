@@ -1,0 +1,8 @@
+{% extends "base.html" %} {% block content %} {% include "includes/nav.html" %}
+<main>
+    {% match this.card %} {% when Some with (card) %} {{
+    card.description_short|safe }} {% when None %}
+    <p>{{ this.header }}</p>
+    {% endmatch %}
+</main>
+{% endblock %}

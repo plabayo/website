@@ -4,7 +4,7 @@
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <title>plabayo</title>
+        <title>{{ this.title }}</title>
 
         <link rel="icon" href="/static/img/favicon.ico" />
 
@@ -33,7 +33,7 @@
 
         <link rel="stylesheet" href="/static/css/style.css?t=plabayo&v=2.0.0" />
     </head>
-    <body>
+    <body hx-boost="true">
         <header>
             <div>
                 <a href="/">
@@ -43,7 +43,7 @@
                 </a>
             </div>
             <div>
-                <span>FOSS dev and consultancy studio</span>
+                <span>{{ this.header }}</span>
             </div>
         </header>
         <div id="content">{% block content %}{% endblock %}</div>
