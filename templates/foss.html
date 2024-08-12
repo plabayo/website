@@ -1,8 +1,83 @@
 {% extends "base.html" %} {% block content %} {% include "includes/nav.html" %}
-<main>
+<main class="article">
     {% match this.card %} {% when Some with (card) %} {{
-    card.description_short|safe }} {% when None %}
-    <p>{{ this.title }}</p>
-    {% endmatch %}
+    card.description_short|safe }} {% when None %} {% endmatch %}
+
+    <h1>ラマ</h1>
+
+    <p>
+        Our main open source focus is
+        <a href="https://github.com/plabayo/rama">Rama</a> (ラマ), a Rust
+        project that we spend most of our time on. Rama is a powerful modular
+        service framework designed specifically for the Rust language. Its
+        primary focus is to develop proxies, but its versatile nature allows it
+        to excel in developing web services and clients as well. In fact,
+        <a href="https://github.com/plabayo/website"
+            >this website is served by Rama</a
+        >.
+    </p>
+
+    <p>
+        With Rama, you can move and transform your network packets with ease.
+        Its modular design allows for flexible customization, making it an ideal
+        solution for a wide range of network-related tasks. Whether you need to
+        develop proxies, web services, or clients, Rama is an excellent choice.
+    </p>
+
+    <p>
+        <a href="mailto:hello@plabayo.tech">Contact us today</a> to learn more
+        about how Rama can help you with your network-related needs.
+    </p>
+
+    <p>
+        To learn more about why we developed Rama,
+        <a href="https://rustacean-station.org/episode/glen-de-cauwsemaecker/">
+            you can listen to the Rama episode on Rustacean Station </a
+        >. This episode provides valuable insights into the development process
+        and the benefits of using Rama for your network-related needs.
+    </p>
+
+    <h1>Rust Crates</h1>
+
+    <p>
+        Besides Rama we have a couple of more Rust crates that we develop and
+        maintain:
+    </p>
+
+    <ul>
+        <li>
+            <a href="https://github.com/plabayo/tokio-graceful">
+                <code>tokio-graceful</code> </a
+            >: Graceful shutdown util for Rust projects using the Tokio Async
+            runtime.
+        </li>
+
+        <li>
+            <a href="https://github.com/plabayo/venndb"> <code>venndb</code> </a
+            >: in memory Rust database to query your data like a Venn diagram .
+        </li>
+    </ul>
+
+    <p>
+        At our team, we're passionate about Rust and its ecosystem. That's why
+        we're proud to contribute to all kinds of Rust crates, pushing fixes
+        upstream, proposing and developing features, reviewing PRs, and helping
+        community members online.
+    </p>
+
+    <p>
+        By working together with and for the Rust ecosystem, we're able to help
+        ensure that Rust remains a reliable and secure language for years to
+        come. Our team has the expertise and experience needed to provide a wide
+        range of Rust-related services, including team training, code auditing,
+        codebase refactoring, and project development.
+    </p>
+
+    <p>
+        Whether you're looking to improve your team's Rust skills or need help
+        with a specific project, we're here to help.
+        <a href="mailto:hello@plabayo.tech"> Contact us today </a>to learn more
+        about how our team can help you achieve your Rust-related goals.
+    </p>
 </main>
 {% endblock %}

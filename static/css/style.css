@@ -230,6 +230,10 @@ main {
     padding: 0 20px;
 }
 
+main.article {
+    max-width: 850px;
+}
+
 div.cardbox {
     display: grid;
     grid-template-columns: 1fr 1fr;

@@ -1,8 +1,35 @@
 {% extends "base.html" %} {% block content %} {% include "includes/nav.html" %}
-<main>
+<main class="article">
     {% match this.card %} {% when Some with (card) %} {{
-    card.description_short|safe }} {% when None %}
-    <p>{{ this.title }}</p>
-    {% endmatch %}
+    card.description_short|safe }} {% when None %} {% endmatch %}
+
+    <h1>Data Extraction</h1>
+
+    <p>
+        In today's world, knowledge is power, and data is its currency. The
+        internet is a vast source of information that can help your business
+        thrive or your academic research succeed. However, accessing relevant
+        data can be a significant challenge, with many companies investing more
+        and more money in anti-bot defenses to protect against malicious bots.
+        Unfortunately, these defenses can also block legitimate data needs.
+    </p>
+
+    <p>
+        At Plabayo, we understand the importance of having access to reliable
+        and relevant data. That's why we offer data extraction services as a
+        one-off job or an ongoing service. By trusting us as your data provider,
+        you can focus on your business while we handle the data extraction
+        requirements.
+    </p>
+
+    <p>
+        Our team of experts has the skills and experience needed to extract
+        valuable data from the internet, turning it into actionable insights
+        that can help you make informed decisions. Don't let anti-bot defenses
+        stand in the way of your success.
+        <a href="mailto:hello@plabayo.tech">Contact us today</a>
+        to learn more about how Plabayo can help you access the data you need to
+        thrive.
+    </p>
 </main>
 {% endblock %}

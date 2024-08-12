@@ -1,31 +1,68 @@
 {% extends "base.html" %} {% block content %} {% include "includes/nav.html" %}
-<main>
+<main class="article">
+    {% match this.card %} {% when Some with (card) %} {{
+    card.description_short|safe }} {% when None %} {% endmatch %}
+
+    <h1>Testimonies</h1>
+
     <p>
-        Plabayo was co-founded in 2021 by
-        <a href="https://www.elizadc.me/"
-            >👩‍💻&nbsp;Elizabeth C. Gonzales Belsuzarri</a
-        >
-        and
-        <a href="https://www.glendc.com/"
-            >👨‍💻&nbsp;Glen Henri J. De Cauwsemaecker</a
-        >
-        as a Free and Open Source Software (FOSS) dev and consultancy
-        studio&nbsp;🏡.
+        With over a decade of experience in software development, team training,
+        and data extraction, our team has the skills and expertise needed to
+        help your business succeed. Don't just take our word for it - here are a
+        couple of testimonials from people who have worked with Glen in the past
+        two decades:
     </p>
+
+    <hr />
+
+    <blockquote>
+        <p>
+            Glen is one of the most inspiring people you can work with. He's
+            accurate, sharp, helps everyone to grow. Simply one of the best in
+            the industry.
+        </p>
+    </blockquote>
+    <p>— Ahmed Thabet, Engineering Manager @ Codescalers Egypt</p>
+
+    <blockquote>
+        <p>
+            Glen is a top noch software engineer. One of best i guys i worked
+            with in my career. Glen's primary interest is to build solid
+            software using industry standard methodologies.
+        </p>
+    </blockquote>
+    <p>— Geert Audenaert, Co-Founder @ whitesky.cloud</p>
+
+    <blockquote>
+        <p>
+            Glen is a unique and interesting programmer. Full of enthusiasm and
+            great ideas, he never seemed to stop in his quest to implement new
+            features and improve existing ones. Characteristically eccentric in
+            his approach, I found Glen a great addition to the Studio - both
+            when he was here in person and after he went freelance so he could
+            explore more of the world while continuing to code.
+        </p>
+    </blockquote>
+    <p>— Nick Harper, Studio Head at Electric Square</p>
+
+    <hr />
+
     <p>
-        Reach out to us at
-        <a href="mailto:hello@plabayo.tech">✉️&nbsp;hello@plabayo.tech</a>
-        to hire our services, give feedback or to just say&nbsp;hi&nbsp;👋.
+        We take pride in our ability to deliver high-quality services that meet
+        the unique needs of each of our clients. Whether you need help with
+        software development, team training, or data extraction, we have the
+        experience and expertise needed to get the job done right.
     </p>
+
+    <h1>Legal</h1>
+
     <p>
-        If you like our work and would like to donate to us, you can do so at
-        <a href="https://github.com/sponsors/plabayo"
-            >🤝&nbsp;https://github.com/sponsors/plabayo</a
+        Plabayo is registered in Belgium's CBE as
+        <a
+            href="https://kbopub.economie.fgov.be/kbopub/zoeknummerform.html?lang=en&nummer=0790842087&actionLu=Zoek"
         >
-        or you can
-        <a href="https://www.buymeacoffee.com/plabayo"
-            >☕️&nbsp;buy&nbsp;us&nbsp;a&nbsp;coffee</a
-        >.
+            number 0790842087 </a
+        >. Our EU VAT ID is <code>BE0790842087</code>.
     </p>
 </main>
 {% endblock %}
