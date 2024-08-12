@@ -1,62 +1,20 @@
 {% extends "base.html" %} {% block content %}
 <main>
     <div class="cardbox">
-        <div class="card rust">
-            <article>
-                <header><a href="/rust">🦀 rust consulting 🍄‍🟫</a></header>
-                <p>
-                    With over a decade of experience in
-                    <a href="https://www.rust-lang.org/">rust</a>
-                    we are available as experts to train your team, audit your
-                    code, refactor your existing codebase or help develop your
-                    greenfield project.
-                </p>
-            </article>
+        {% for page in ctx.pages %} {% match page.card %} {% when Some with
+        (card) %}
+        <div class="card">
+            <a href="/{{ page.slug }}">
+                <div class="{{ card.style }}">
+                    <header>
+                        <span class="icon">{{ card.icon }}</span>{{ page.header
+                        }}
+                    </header>
+                    <article>{{ card.description_short|safe }}</article>
+                </div>
+            </a>
         </div>
-        <div class="card data">
-            <article>
-                <header><a href="/data">💾 data extraction 📡</a></header>
-                <p>
-                    We are experts in extracting data from the net, and
-                    transforming it into objects ready to help you succeed.
-                </p>
-                <p>
-                    You can hire our services to provide you with data feeds,
-                    data sets, reverse engineering of mobile apps and APIs and
-                    more. If the data is public we can make it cleanly
-                    accessible for you.
-                </p>
-            </article>
-        </div>
-        <div class="card rust">
-            <article>
-                <header>
-                    <a href="/foss">👩‍💻 Free and Open Source Software 🧑‍💻</a>
-                </header>
-                <p>
-                    We develop and maintain Free and Open Source Software,
-                    source available at
-                    <a href="https://github.com/plabayo">github.com/plabayo</a>.
-                </p>
-            </article>
-        </div>
-        <div class="card about">
-            <article>
-                <header><a href="/about">👩 About 🧔</a></header>
-                <p>
-                    Plabayo was co-founded in 2021 by
-                    <a href="https://www.elizadc.me/"
-                        >👩‍💻&nbsp;Elizabeth C. Gonzales Belsuzarri</a
-                    >
-                    and
-                    <a href="https://www.glendc.com/"
-                        >👨‍💻&nbsp;Glen Henri J. De Cauwsemaecker</a
-                    >
-                    as a Free and Open Source Software (FOSS) dev and
-                    consultancy studio&nbsp;🏡.
-                </p>
-            </article>
-        </div>
+        {% when None %} {% endmatch %} {% endfor %}
     </div>
 </main>
 {% endblock %}

@@ -30,8 +30,8 @@ const CTX: RenderContext = RenderContext {
         &PAGE_CTX_INDEX,
         &PAGE_CTX_RUST,
         &PAGE_CTX_DATA,
-        &PAGE_CTX_FOSS,
         &PAGE_CTX_ABOUT,
+        &PAGE_CTX_FOSS,
     ],
     git_sha: env!("VERGEN_GIT_SHA"),
 };
@@ -115,9 +115,12 @@ page!(rust, "rust.html", "rust", {
         style: "rust",
         button_title: "Rust",
         description_short: r##"<p>
-            With over a decade of experience in rust we are available
-            as experts to train your team, audit your code,
-            refactor your existing codebase or help develop your greenfield project.
+            Our team has more than 10 years of experience in Rust language,
+            providing us with the expertise to offer a range of services to your business.
+        </p><p>
+            We can train your team, audit your code, refactor your existing codebase,
+            or assist with the development of your new project.
+            Whatever your needs are, we're here to help.
         </p>"##,
     }),
 });
@@ -130,13 +133,12 @@ page!(data, "data.html", "data", {
         style: "data",
         button_title: "Data",
         description_short: r##"<p>
-            We are experts in extracting data from the net,
-            and transforming it into objects ready to help you succeed.
-        </p>
-        <p>
-            You can hire our services to provide you with data feeds,
-            data sets, reverse engineering of mobile apps and APIs and more.
-            If the data is public we can make it cleanly accessible for you.
+            Our team specializes in extracting valuable data from the internet, transforming it into actionable insights,
+            and delivering it to you. We offer our services as either a consulting contract
+            or a customized solution tailored to meet your specific needs.
+        </p><p>
+            Trust us to provide you with the most accurate and relevant information available,
+            so you can make informed decisions for your business.
         </p>"##,
     }),
 });
@@ -149,9 +151,12 @@ page!(foss, "foss.html", "foss", {
         style: "rust",
         button_title: "FOSS",
         description_short: r##"<p>
-            We develop and maintain Free and Open Source Software
-            related to data extraction, education, networking
-            and games. All are source available with a permissive license.
+            Our business specializes in developing and maintaining Free and Open Source Software (FOSS)
+            solutions for data extraction, education, networking, and gaming.
+        </p><p>
+            All of our software is source available with a permissive license,
+            giving you the freedom to use, modify, and distribute it.
+            Trust us to provide you with reliable and secure software solutions that align with your business goals.
         </p>"##,
     }),
 });
@@ -163,11 +168,11 @@ page!(about, "about.html", "about", {
         icon: "👫",
         style: "about",
         button_title: "About",
-        description_short: r##"<p>\
-            Plabayo was co-founded in 2021 by
-            Elizabeth C. Gonzales Belsuzarri and
-            Glen Henri J. De Cauwsemaecker as a
-            Free and Open Source Software (FOSS) dev and consultancy studio.
+        description_short: r##"<p>
+            Plabayo is a FOSS development and consultancy studio co-founded in 2021 by Elizabeth C. Gonzales Belsuzarri and Glen Henri J. De Cauwsemaecker.
+            We offer custom software development, team training, and code auditing to drive business innovation and growth.
+        </p><p>
+            Trust us for reliable and secure software solutions.
         </p>"##,
     }),
 });
