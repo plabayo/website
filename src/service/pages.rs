@@ -113,7 +113,7 @@ page!(rust, "rust.html", "rust", {
     card: Some(PageCardContext {
         icon: "🦀",
         style: "rust",
-        button_title: "rust",
+        button_title: "Rust",
         description_short: r##"<p>
             With over a decade of experience in rust we are available
             as experts to train your team, audit your code,
@@ -128,7 +128,7 @@ page!(data, "data.html", "data", {
     card: Some(PageCardContext {
         icon: "💾",
         style: "data",
-        button_title: "data",
+        button_title: "Data",
         description_short: r##"<p>
             We are experts in extracting data from the net,
             and transforming it into objects ready to help you succeed.
@@ -162,7 +162,7 @@ page!(about, "about.html", "about", {
     card: Some(PageCardContext {
         icon: "👫",
         style: "about",
-        button_title: "about",
+        button_title: "About",
         description_short: r##"<p>\
             Plabayo was co-founded in 2021 by
             Elizabeth C. Gonzales Belsuzarri and

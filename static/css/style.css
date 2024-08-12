@@ -265,6 +265,7 @@ nav {
     justify-content: center;
     gap: 10px;
     margin-bottom: 30px;
+    padding: 5px 0;
 }
 
 nav .button > div {
@@ -274,14 +275,25 @@ nav .button > div {
     padding: 5px 20px;
 }
 
+nav .button .icon {
+    margin-right: 8px;
+}
+
 nav .button {
     text-decoration: none;
 }
 
 nav .button.idle > div {
-    background-color: var(--accent);
+    box-shadow: inset 0px 3px 5px rgba(0, 0, 0, 0.3);
+    transform: scale(0.95);
 }
 
 nav .button.active:hover > div {
     background-color: var(--bg);
+}
+
+@media only screen and (max-width: 640px) {
+    nav .button .icon {
+        display: none;
+    }
 }

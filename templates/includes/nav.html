@@ -3,13 +3,13 @@
     %}{% if this.slug != page.slug %}
     <a class="button active" href="/{{ page.slug }}"
         ><div class="{{ card.style }}">
-            <span>{{ card.icon }}</span> {{ card.button_title }}
+            <span class="icon">{{ card.icon }}</span> {{ card.button_title }}
         </div>
     </a>
     {% else %}
     <span class="button idle">
         <div class="{{ card.style }}">
-            <span>{{ card.icon }}</span> {{ card.button_title }}
+            <span class="icon">{{ card.icon }}</span> {{ card.button_title }}
         </div>
     </span>
     {% endif %} {% when None %} {% endmatch %} {% endfor %}
