@@ -336,9 +336,11 @@ nav .button.idle > div {
     transform: scale(0.85);
 }
 
-nav .button.active:hover > div {
-    background-color: var(--bg);
-    transform: scale(0.95);
+@media not all and (hover: none) {
+    nav .button.active:hover > div {
+        background-color: var(--bg);
+        transform: scale(0.95);
+    }
 }
 
 @media only screen and (max-width: 640px) {
