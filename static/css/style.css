@@ -188,6 +188,27 @@ body > footer a {
     text-decoration: none;
 }
 
+body > header a:hover,
+body > footer a:hover {
+    color: var(--accent);
+}
+
+body > header a:hover .icon {
+    visibility: hidden;
+}
+
+body > header a .hover-icon {
+    display: none;
+    font-size: 16px;
+}
+
+body > header a:hover .hover-icon {
+    display: block;
+    position: absolute;
+    top: 6px;
+    left: 5px;
+}
+
 .nuance {
     opacity: 75%;
 }
@@ -328,4 +349,10 @@ nav .button.active:hover > div {
     nav .button .icon {
         display: none;
     }
+}
+
+blockquote > p {
+    font-style: italic;
+    border-left: 1px solid var(--accent);
+    padding-left: 10px;
 }

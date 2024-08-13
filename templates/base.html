@@ -48,14 +48,16 @@
     <body hx-boost="true">
         <header>
             <div>
-                <a href="/">
-                    <span class="nuance">&gt;</span>
+                <a href="/" title="Go to the homepage">
+                    <span class="nuance icon">&gt;</span>
+                    <span class="hover-icon">🏠</span>
                     <span>&nbsp;plabayo.tech/{{ this.slug }}</span>
                     <span class="cursor">&nbsp;</span>
                 </a>
             </div>
             <div>
-                <span>&Gt;&nbsp;{{ this.header }}</span>
+                <span class="nuance">&Gt;&nbsp;</span
+                ><span>{{ this.header }}</span>
             </div>
         </header>
         <div id="content">{% block content %}{% endblock %}</div>
@@ -70,6 +72,7 @@
                     >(&FilledVerySmallSquare;
                     <a
                         href="https://github.com/plabayo/website/tree/{{ ctx.git_sha }}"
+                        title="View the sourcecode of this website."
                         >{{ ctx.git_sha }}</a
                     >)</small
                 >
