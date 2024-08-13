@@ -1,66 +1,74 @@
 {% extends "base.html" %} {% block content %} {% include "includes/nav.html" %}
 <main class="article">
-    {% match this.card %} {% when Some with (card) %} {{
-    card.description_short|safe }} {% when None %} {% endmatch %}
+    <article>
+        {% match this.card %} {% when Some with (card) %}
+        <section>{{ card.description_short|safe }}</section>
+        {% when None %} {% endmatch %}
 
-    <h1>Training</h1>
+        <h1>Training</h1>
 
-    <p>
-        We have a strong background in C/C++ and over a decade of experience in
-        using and teaching Rust. Our team is dedicated to helping you and your
-        team succeed in your Rust development journey. As the authors of
-        <a href="https://rust-lang.guide/">rust-lang.guide</a>, a free guide to
-        becoming a Rust developer, we have the expertise to guide you through
-        the process.
-    </p>
+        <p>
+            We have a strong background in C/C++ and over a decade of experience
+            in using and teaching Rust. Our team is dedicated to helping you and
+            your team succeed in your Rust development journey. As the authors
+            of
+            <a href="https://rust-lang.guide/">rust-lang.guide</a>, a free guide
+            to becoming a Rust developer, we have the expertise to guide you
+            through the process.
+        </p>
 
-    <p>
-        We offer remote training services that can be delivered asynchronously
-        or interactively via video and/or text. Our team is based in Belgium,
-        which allows us to accommodate clients across different time zones. We
-        are available during morning hours for American clients, office hours
-        for European and African clients, and evening hours for Asian clients.
-    </p>
+        <p>
+            We offer remote training services that can be delivered
+            asynchronously or interactively via video and/or text. Our team is
+            based in Belgium, which allows us to accommodate clients across
+            different time zones. We are available during morning hours for
+            American clients, office hours for European and African clients, and
+            evening hours for Asian clients.
+        </p>
 
-    <h1>Development</h1>
+        <h1>Development</h1>
 
-    <p>
-        At Plabayo, we are developers at heart and we practice what we preach.
-        While we often work on private codebases for our clients, we also
-        develop and maintain our own open-source codebases.
-    </p>
+        <p>
+            At Plabayo, we are developers at heart and we practice what we
+            preach. While we often work on private codebases for our clients, we
+            also develop and maintain our own open-source codebases.
+        </p>
 
-    <p>
-        Our main focus is
-        <a href="https://github.com/plabayo/rama">Rama</a> (ラマ), an
-        open-source Rust project that we spend most of our time on. Rama is a
-        powerful modular service framework designed specifically for the Rust
-        language. Its primary focus is to develop proxies, but its versatile
-        nature allows it to excel in developing web services and clients as
-        well. In fact,
-        <a href="https://github.com/plabayo/website"
-            >this website is served by Rama</a
-        >.
-    </p>
+        <p>
+            Our main focus is
+            <a href="https://github.com/plabayo/rama">Rama</a> (ラマ), an
+            open-source Rust project that we spend most of our time on. Rama is
+            a powerful modular service framework designed specifically for the
+            Rust language. Its primary focus is to develop proxies, but its
+            versatile nature allows it to excel in developing web services and
+            clients as well. In fact,
+            <a href="https://github.com/plabayo/website"
+                >this website is served by Rama</a
+            >.
+        </p>
 
-    <p>
-        With Rama, you can move and transform your network packets with ease.
-        Its modular design allows for flexible customization, making it an ideal
-        solution for a wide range of network-related tasks. Whether you need to
-        develop proxies, web services, or clients, Rama is an excellent choice.
-    </p>
+        <p>
+            With Rama, you can move and transform your network packets with
+            ease. Its modular design allows for flexible customization, making
+            it an ideal solution for a wide range of network-related tasks.
+            Whether you need to develop proxies, web services, or clients, Rama
+            is an excellent choice.
+        </p>
 
-    <p>
-        <a href="mailto:hello@plabayo.tech">Contact us today</a> to learn more
-        about how Rama can help you with your network-related needs.
-    </p>
+        <p>
+            <a href="mailto:hello@plabayo.tech">Contact us today</a> to learn
+            more about how Rama can help you with your network-related needs.
+        </p>
 
-    <p>
-        To learn more about why we developed Rama,
-        <a href="https://rustacean-station.org/episode/glen-de-cauwsemaecker/">
-            you can listen to the Rama episode on Rustacean Station </a
-        >. This episode provides valuable insights into the development process
-        and the benefits of using Rama to develop proxy services.
-    </p>
+        <p>
+            To learn more about why we developed Rama,
+            <a
+                href="https://rustacean-station.org/episode/glen-de-cauwsemaecker/"
+            >
+                you can listen to the Rama episode on Rustacean Station </a
+            >. This episode provides valuable insights into the development
+            process and the benefits of using Rama to develop proxy services.
+        </p>
+    </article>
 </main>
 {% endblock %}
