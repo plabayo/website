@@ -158,8 +158,6 @@ a {
 }
 
 body > header {
-    display: grid;
-    grid-template-columns: 1fr auto;
     margin: 0;
     font-family: var(--mono-font);
     border-bottom: 1px solid var(--accent);
@@ -169,12 +167,6 @@ body > footer {
     border-top: 1px solid var(--accent);
     display: grid;
     grid-template-columns: 1fr auto;
-}
-
-@media only screen and (max-width: 640px) {
-    body > header {
-        grid-template-columns: 1fr;
-    }
 }
 
 @media only screen and (max-width: 320px) {

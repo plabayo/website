@@ -2,10 +2,10 @@
 <main class="article">
     <article>
         {% match this.card %} {% when Some with (card) %}
-        <section>{{ card.description_short|safe }}</section>
-        {% when None %} {% endmatch %}
+        <h1>{{ this.header }}</h1>
+        {{ card.description_short|safe }} {% when None %} {% endmatch %}
 
-        <h1>ラマ</h1>
+        <h2>ラマ</h2>
 
         <p>
             Our main open source focus is
@@ -43,7 +43,7 @@
             process and the benefits of using Rama to develop proxy services.
         </p>
 
-        <h1>Rust Crates</h1>
+        <h2>Rust Crates</h2>
 
         <p>
             Besides Rama we have a couple of more Rust crates that we develop

@@ -2,10 +2,10 @@
 <main class="article">
     <article>
         {% match this.card %} {% when Some with (card) %}
-        <section>{{ card.description_short|safe }}</section>
-        {% when None %} {% endmatch %}
+        <h1>{{ this.header }}</h1>
+        {{ card.description_short|safe }} {% when None %} {% endmatch %}
 
-        <h1>Data Extraction</h1>
+        <h2>Hire us</h2>
 
         <p>
             In today's world, knowledge is power, and data is its currency. The

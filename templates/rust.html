@@ -2,10 +2,10 @@
 <main class="article">
     <article>
         {% match this.card %} {% when Some with (card) %}
-        <section>{{ card.description_short|safe }}</section>
-        {% when None %} {% endmatch %}
+        <h1>{{ this.header }}</h1>
+        {{ card.description_short|safe }} {% when None %} {% endmatch %}
 
-        <h1>Training</h1>
+        <h2>Training</h2>
 
         <p>
             We have a strong background in C/C++ and over a decade of experience
@@ -26,7 +26,7 @@
             evening hours for Asian clients.
         </p>
 
-        <h1>Development</h1>
+        <h2>Development</h2>
 
         <p>
             At Plabayo, we are developers at heart and we practice what we

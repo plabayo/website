@@ -2,10 +2,10 @@
 <main class="article">
     <article>
         {% match this.card %} {% when Some with (card) %}
-        <section>{{ card.description_short|safe }}</section>
-        {% when None %} {% endmatch %}
+        <h1>{{ this.header }}</h1>
+        {{ card.description_short|safe }} {% when None %} {% endmatch %}
 
-        <h1>Testimonials</h1>
+        <h2>Testimonials</h2>
 
         <p>
             With over a decade of experience in software development, team
@@ -57,7 +57,7 @@
             have the experience and expertise needed to get the job done right.
         </p>
 
-        <h1>Legal</h1>
+        <h2>Legal</h2>
 
         <p>
             Plabayo is registered in Belgium's CBE as
