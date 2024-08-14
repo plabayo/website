@@ -115,7 +115,7 @@ page!(rust, "rust.html", "rust", {
         style: "rust",
         button_title: "Rust",
         description_short: r##"<p>
-            Our team has more than 10 years of experience in Rust language,
+            Our team has more than 10 years of experience using the Rust language,
             providing us with the expertise to offer a range of services to your business.
         </p><p>
             We can train your team, audit your code, refactor your existing codebase,
