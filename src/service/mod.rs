@@ -5,13 +5,13 @@ use rama::{
         headers::{Accept, HeaderMapExt},
         layer::{
             compression::CompressionLayer, required_header::AddRequiredResponseHeadersLayer,
-            trace::TraceLayer,
+            set_header::SetResponseHeaderLayer, trace::TraceLayer,
         },
         response::Redirect,
         service::web::WebService,
-        IntoResponse, Request, Response, StatusCode,
+        HeaderName, HeaderValue, IntoResponse, Request, Response, StatusCode,
     },
-    service::{Service, ServiceBuilder},
+    service::{Layer, Service},
 };
 use std::convert::Infallible;
 
@@ -38,12 +38,19 @@ pub async fn web_service(
     cfg: Config,
 ) -> impl Service<State, Request, Response = Response, Error = Infallible> {
     tracing::info!("creating web service with static dir: {}", cfg.static_dir);
-    ServiceBuilder::new()
-        .layer(CacheControlLayer::default())
-        .layer(AddRequiredResponseHeadersLayer::new())
-        .layer(CompressionLayer::new())
-        .layer(TraceLayer::new_for_http())
-        .service(
+    (
+        CacheControlLayer::default(),
+        AddRequiredResponseHeadersLayer::new(),
+        SetResponseHeaderLayer::if_not_present(
+            HeaderName::from_static("x-hire-us"),
+            HeaderValue::from_static(
+                "rust development, training, data extraction and reverse engineering",
+            ),
+        ),
+        CompressionLayer::new(),
+        TraceLayer::new_for_http(),
+    )
+        .layer(
             page_web_service!(PageIndex, PageRust, PageData, PageFoss, PageAbout, Sitemap)
                 .not_found(|req: Request| async move {
                     if req

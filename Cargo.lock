@@ -428,12 +428,13 @@ dependencies = [
 
 [[package]]
 name = "cc"
-version = "1.1.10"
+version = "1.1.11"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e9e8aabfac534be767c909e0690571677d49f41bd8465ae876fe043d52ba5292"
+checksum = "5fb8dd288a69fc53a1996d7ecfbf4a20d59065bff137ce7e56bbd620de191189"
 dependencies = [
  "jobserver",
  "libc",
+ "shlex",
 ]
 
 [[package]]
@@ -1173,9 +1174,9 @@ dependencies = [
 
 [[package]]
 name = "indexmap"
-version = "2.3.0"
+version = "2.4.0"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "de3fc2e30ba82dd1b3911c8de1ffc143c74a914a14e99514d7637e3099df5ea0"
+checksum = "93ead53efc7ea8ed3cfb0c79fc8023fbb782a5432b52830b6518941cebe6505c"
 dependencies = [
  "equivalent",
  "hashbrown",
@@ -1716,7 +1717,7 @@ checksum = "dc33ff2d4973d518d823d61aa239014831e521c75da58e3df4840d3f47749d09"
 [[package]]
 name = "rama"
 version = "0.2.0-alpha.1"
-source = "git+https://github.com/plabayo/rama#e7cddaff6fdf1de51fb369ef3398b8a103503b6f"
+source = "git+https://github.com/plabayo/rama#552348570f23ef32ff5f33a0a1ff0a2504f350a3"
 dependencies = [
  "arc-swap",
  "async-compression",
@@ -1775,7 +1776,7 @@ dependencies = [
 [[package]]
 name = "rama-macros"
 version = "0.2.0-alpha.1"
-source = "git+https://github.com/plabayo/rama#e7cddaff6fdf1de51fb369ef3398b8a103503b6f"
+source = "git+https://github.com/plabayo/rama#552348570f23ef32ff5f33a0a1ff0a2504f350a3"
 dependencies = [
  "proc-macro2",
  "quote",

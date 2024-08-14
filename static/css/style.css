@@ -11,20 +11,20 @@
 /* Light Mode */
 :root {
     --bg: rgb(255, 255, 255);
-    --accent: rgb(125, 125, 125);
+    --accent: rgb(216, 216, 216);
     --fg: rgb(0, 0, 0);
 }
 
 .rust {
-    background-color: #fff6f6;
+    background-color: #ffe9e9;
 }
 
 .data {
-    background-color: #edf8ed;
+    background-color: #caf4ca;
 }
 
 .about {
-    background-color: rgb(173, 216, 230);
+    background-color: rgb(214, 241, 249);
 }
 
 /* Dark Mode */
@@ -188,7 +188,7 @@ body > header a .hover-icon {
 @media not all and (hover: none) {
     body > header a:hover,
     body > footer a:hover {
-        color: var(--accent);
+        opacity: 0.65;
     }
 
     body > header a:hover .icon {
