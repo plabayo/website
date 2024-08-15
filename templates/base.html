@@ -41,9 +41,9 @@
         <meta property="og:site_name" content="Plabayo" />
         <meta property="og:image" content="https://plabayo.tech/img/og.jpeg" />
 
-        <script src="/js/htmx.min.js"></script>
+        <script src="/js/htmx.min.js?h={{ ctx.git_sha }}"></script>
 
-        <link rel="stylesheet" href="/css/style.css" />
+        <link rel="stylesheet" href="/css/style.css?h={{ ctx.git_sha }}" />
     </head>
     <body hx-boost="true">
         <header {% if this.slug !="" %}class="grid" {% endif %}>
