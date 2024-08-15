@@ -1,9 +1,19 @@
 <nav>
     {% for page in ctx.pages %} {% match page.card %} {% when Some with (card)
     %}{% if this.slug != page.slug %}
-    <a class="button active" href="/{{ page.slug }}"
+    <a
+        class="button active"
+        href="/{{ page.slug }}"
+        title="Click to view the page: '{{ page.header }}'"
+        hx-indicator="#button-spinner-{{ page.slug }}"
         ><div class="{{ card.style }}">
-            <span class="icon">{{ card.icon }}</span> {{ card.button_title }}
+            <span id="button-spinner-{{ page.slug }}" class="htmx-indicator">
+                {% include "includes/bars.svg" %}
+            </span>
+            <span class="button-text">
+                <span class="icon">{{ card.icon }}</span> {{ card.button_title
+                }}
+            </span>
         </div>
     </a>
     {% else %}

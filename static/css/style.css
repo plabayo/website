@@ -161,6 +161,10 @@ body > header {
     margin: 0;
     font-family: var(--mono-font);
     border-bottom: 1px solid var(--accent);
+    display: grid;
+    grid-template-columns: 1fr auto;
+    align-items: center;
+    gap: 10px;
 }
 
 body > footer {
@@ -183,6 +187,20 @@ body > footer a {
 body > header a .hover-icon {
     display: none;
     font-size: 16px;
+}
+
+body > header .htmx-indicator {
+    opacity: 0;
+    transition: opacity 500ms ease-in;
+    color: var(--fg);
+}
+
+body > header .htmx-request .htmx-indicator {
+    opacity: 1;
+}
+
+body > header .htmx-request.htmx-indicator {
+    opacity: 1;
 }
 
 @media not all and (hover: none) {
@@ -278,10 +296,20 @@ div.card a header {
     text-align: right;
     display: grid;
     background-color: var(--bg);
-    grid-template-columns: auto 1fr;
+    grid-template-columns: auto 1fr 1fr;
     border-top-left-radius: 10px;
     border-top-right-radius: 10px;
-    padding: 5px 8px;
+    align-items: center;
+    padding-inline: 10px;
+    gap: 10px;
+}
+
+div.card a header > div {
+    margin-block: 5px;
+}
+
+.card .btn-icon::after {
+    content: "⇨";
 }
 
 div.card a > div {
@@ -295,6 +323,20 @@ div.card article {
     padding: 0 10px;
 }
 
+div.card .htmx-indicator {
+    opacity: 0;
+    transition: opacity 500ms ease-in;
+    color: var(--fg);
+}
+
+div.card .htmx-request .htmx-indicator {
+    opacity: 1;
+}
+
+div.card .htmx-request.htmx-indicator {
+    opacity: 1;
+}
+
 @media not all and (hover: none) {
     div.card a:hover header {
         background-color: var(--accent);
@@ -303,6 +345,15 @@ div.card article {
     div.card a:hover > div {
         transform: scale(1.025);
         box-shadow: 0px 5px 10px 0px rgba(125, 125, 125, 0.5);
+    }
+
+    .card a:hover .btn-icon {
+        font-size: 24px;
+        font-weight: bold;
+    }
+
+    .card a:hover .btn-icon::after {
+        content: "☞";
     }
 }
 
@@ -323,7 +374,8 @@ nav .button > div {
     padding: 5px 20px;
 }
 
-nav .button .icon {
+nav .button .icon,
+.card .icon {
     margin-right: 8px;
 }
 
@@ -334,6 +386,32 @@ nav .button {
 nav .button.idle > div {
     box-shadow: inset 0px 3px 5px rgba(0, 0, 0, 0.3);
     transform: scale(0.85);
+}
+
+nav .button .htmx-indicator {
+    display: none;
+    transition: opacity 500ms ease-in;
+    opacity: 0;
+    color: var(--fg);
+    padding-inline: 12px;
+}
+
+nav .button .htmx-request .htmx-indicator {
+    display: inline;
+    opacity: 1;
+}
+
+nav .button .htmx-request.htmx-indicator {
+    display: inline;
+    opacity: 1;
+}
+
+nav .button .htmx-request.htmx-indicator ~ .button-text {
+    display: none;
+}
+
+.card .btn-icon {
+    margin-block: auto;
 }
 
 @media not all and (hover: none) {

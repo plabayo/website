@@ -4,11 +4,24 @@
         {% for page in ctx.pages %} {% match page.card %} {% when Some with
         (card) %}
         <div class="card">
-            <a href="/{{ page.slug }}">
+            <a
+                href="/{{ page.slug }}"
+                title="Click to view the page: '{{ page.header }}'"
+                hx-indicator="#card-spinner-{{ page.slug }}"
+            >
                 <div class="{{ card.style }}">
                     <header>
-                        <span class="icon">{{ card.icon }}</span>{{ page.header
-                        }}
+                        <div>
+                            <span class="icon">{{ card.icon }}</span>{{
+                            page.header }}
+                        </div>
+                        <div
+                            id="card-spinner-{{ page.slug }}"
+                            class="htmx-indicator"
+                        >
+                            {% include "includes/bars.svg" %}
+                        </div>
+                        <div class="btn-icon"></div>
                     </header>
                     <article>{{ card.description_short|safe }}</article>
                 </div>
