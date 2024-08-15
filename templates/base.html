@@ -46,22 +46,23 @@
         <link rel="stylesheet" href="/css/style.css" />
     </head>
     <body hx-boost="true">
-        <header>
+        <header {% if this.slug !="" %}class="grid" {% endif %}>
             <div>
-                <a
-                    href="/"
-                    title="Go to the homepage"
-                    hx-indicator="#nav-spinner-home"
-                >
-                    <span class="nuance icon">&gt;</span>
-                    <span class="hover-icon">🏠</span>
-                    <span>&nbsp;plabayo.tech/{{ this.slug }}</span>
-                    <span class="cursor">&nbsp;</span>
-                </a>
+                <span class="nuance icon">&gt;</span>
+                <span>&nbsp;plabayo.tech/{{ this.slug }}</span>
+                <span class="cursor">&nbsp;</span>
             </div>
+            {% if this.slug !="" %}
             <div id="nav-spinner-home" class="htmx-indicator">
                 {% include "includes/bars.svg" %}
             </div>
+            <a
+                href="/"
+                title="Go to the homepage"
+                hx-indicator="#nav-spinner-home"
+                ><div class="hover-icon"><span>🏠&nbsp;Home</span></div></a
+            >
+            {% endif %}
         </header>
         <div id="content">{% block content %}{% endblock %}</div>
         <footer>

@@ -162,9 +162,14 @@ body > header {
     font-family: var(--mono-font);
     border-bottom: 1px solid var(--accent);
     display: grid;
-    grid-template-columns: 1fr auto;
+    grid-template-columns: 1fr;
     align-items: center;
     gap: 10px;
+    padding-inline: 10px;
+}
+
+body > header.grid {
+    grid-template-columns: 1fr auto auto;
 }
 
 body > footer {
@@ -182,11 +187,6 @@ body > footer {
 body > header a,
 body > footer a {
     text-decoration: none;
-}
-
-body > header a .hover-icon {
-    display: none;
-    font-size: 16px;
 }
 
 body > header .htmx-indicator {
@@ -213,11 +213,8 @@ body > header .htmx-request.htmx-indicator {
         visibility: hidden;
     }
 
-    body > header a:hover .hover-icon {
-        display: block;
-        position: absolute;
-        top: 6px;
-        left: 5px;
+    body > header a:hover .hover-icon::before {
+        content: "⬅  ";
     }
 }
 
