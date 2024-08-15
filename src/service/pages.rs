@@ -20,6 +20,7 @@ pub struct PageContext {
 #[derive(Debug, Clone)]
 pub struct PageCardContext {
     icon: &'static str,
+    header: &'static str,
     style: &'static str,
     button_title: &'static str,
     description_short: &'static str,
@@ -113,6 +114,7 @@ page!(rust, "rust.html", "rust", {
     card: Some(PageCardContext {
         icon: "🦀",
         style: "rust",
+        header: "Rust Experts",
         button_title: "Rust",
         description_short: r##"<p>
             Our team has more than 10 years of experience using the Rust language,
@@ -130,6 +132,7 @@ page!(data, "data.html", "data", {
     header: "Data Extraction",
     card: Some(PageCardContext {
         icon: "💾",
+        header: "Data Extraction",
         style: "data",
         button_title: "Data",
         description_short: r##"<p>
@@ -148,6 +151,7 @@ page!(foss, "foss.html", "foss", {
     header: "Free and Open Source Software",
     card: Some(PageCardContext {
         icon: "🏡",
+        header: "FOSS",
         style: "rust",
         button_title: "FOSS",
         description_short: r##"<p>
@@ -166,6 +170,7 @@ page!(about, "about.html", "about", {
     header: "About Plabayo",
     card: Some(PageCardContext {
         icon: "👫",
+        header: "About us",
         style: "about",
         button_title: "About",
         description_short: r##"<p>
