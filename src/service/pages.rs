@@ -150,7 +150,7 @@ page!(foss, "foss.html", "foss", {
     title: "Plabayo FOSS",
     header: "Free and Open Source Software",
     card: Some(PageCardContext {
-        icon: "🏡",
+        icon: "🧭",
         header: "FOSS",
         style: "rust",
         button_title: "FOSS",
