@@ -141,7 +141,7 @@ textarea {
 }
 
 body {
-    width: 100dvw;
+    width: 100%; /* do not use '100dvw' as it doesn't take into account vertical scrollbar :( */
     height: 100dvh;
 
     margin: 0;
