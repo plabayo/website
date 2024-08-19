@@ -28,9 +28,9 @@ primary_region = 'lhr'
   [[http_service.checks]]
     grace_period = "10s"
     interval = "30s"
-    method = "GET"
+    method = "POST"
     timeout = "5s"
-    path = "/"
+    path = "/fly/health"
 
 [[vm]]
   memory = '256mb'

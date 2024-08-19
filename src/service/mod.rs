@@ -7,13 +7,14 @@ use rama::{
             compression::CompressionLayer, required_header::AddRequiredResponseHeadersLayer,
             set_header::SetResponseHeaderLayer, trace::TraceLayer,
         },
+        matcher::HttpMatcher,
         response::Redirect,
-        service::web::WebService,
+        service::web::{IntoEndpointService, WebService},
         HeaderName, HeaderValue, IntoResponse, Request, Response, StatusCode,
     },
-    service::{Layer, Service},
+    service::{layer::HijackLayer, Layer, Service},
 };
-use std::convert::Infallible;
+use std::{convert::Infallible, sync::Arc};
 
 mod middleware;
 mod pages;
@@ -39,6 +40,10 @@ pub async fn web_service(
 ) -> impl Service<State, Request, Response = Response, Error = Infallible> {
     tracing::info!("creating web service with static dir: {}", cfg.static_dir);
     (
+        HijackLayer::new(
+            HttpMatcher::post("/fly/health"),
+            Arc::new(StatusCode::OK.into_endpoint_service()),
+        ),
         CacheControlLayer::default(),
         AddRequiredResponseHeadersLayer::new(),
         SetResponseHeaderLayer::if_not_present(
