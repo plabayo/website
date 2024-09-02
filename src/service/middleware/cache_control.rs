@@ -3,7 +3,7 @@ use rama::error::BoxError;
 use rama::http::dep::http_body;
 use rama::http::headers::{CacheControl, ETag, HeaderMapExt, IfNoneMatch};
 use rama::http::{Body, IntoResponse, Request, Response, StatusCode, Uri};
-use rama::service::{Context, Layer, Service};
+use rama::{Context, Layer, Service};
 use std::fmt;
 use std::hash::{DefaultHasher, Hash, Hasher};
 use std::time::Duration;

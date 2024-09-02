@@ -49,7 +49,7 @@ async fn main() {
 
     let state = service::State;
 
-    let graceful = rama::utils::graceful::Shutdown::default();
+    let graceful = rama::graceful::Shutdown::default();
 
     graceful.spawn_task_fn(move |guard| async move {
         let exec = Executor::graceful(guard.clone());

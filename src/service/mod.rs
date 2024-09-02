@@ -12,7 +12,8 @@ use rama::{
         service::web::{IntoEndpointService, WebService},
         HeaderName, HeaderValue, IntoResponse, Request, Response, StatusCode,
     },
-    service::{layer::HijackLayer, Layer, Service},
+    layer::HijackLayer,
+    Layer, Service,
 };
 use std::{convert::Infallible, sync::Arc};
 
