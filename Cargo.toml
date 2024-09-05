@@ -9,7 +9,7 @@ askama = "0.12.1"
 bytes = "1"
 clap = { version = "4.5.13", features = ["derive"] }
 paste = "1"
-rama = { git = "https://github.com/plabayo/rama", branch = "main", features = ["compression", "http-full"] }
+rama = { version = "=0.2.0-alpha.2", features = ["compression", "http-full"] }
 tokio = { version = "1", features = ["full"] }
 tracing = "0.1.40"
 tracing-subscriber = { version = "0.3.16", features = ["env-filter"] }
