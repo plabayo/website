@@ -1273,11 +1273,12 @@ dependencies = [
 
 [[package]]
 name = "rama"
-version = "0.2.0-alpha.2"
+version = "0.2.0-alpha.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "3e6663fc66a768fc33b2e7261764a555b0b13c8ee5075982beaa8db510fc49b6"
+checksum = "e72705da8bb7e73d51f1daad529d0adf0955f71bc2f513cd585c466d774d0bac"
 dependencies = [
  "rama-core",
+ "rama-dns",
  "rama-http",
  "rama-http-backend",
  "rama-macros",
@@ -1290,12 +1291,11 @@ dependencies = [
 
 [[package]]
 name = "rama-core"
-version = "0.2.0-alpha.2"
+version = "0.2.0-alpha.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "899b0bf399c8a6b10fff06d91732d8cae6486c566c4cfab1419341809cb116ad"
+checksum = "03c910dc21126ef0c53d9e5077a74a921cff4ac00a75b475654d1ca5b36540af"
 dependencies = [
  "futures-lite",
- "hickory-resolver",
  "parking_lot",
  "paste",
  "rama-error",
@@ -1307,16 +1307,30 @@ dependencies = [
 ]
 
 [[package]]
-name = "rama-error"
-version = "0.2.0-alpha.2"
+name = "rama-dns"
+version = "0.2.0-alpha.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "8b71b6f4ab83d3824b087d6e031a158b413147106b5f44730b1ec75ce3e75cee"
+checksum = "fafa9928af3011df578398c7fbc74d5d81675acf7441fde9b3edfc259a4a50c7"
+dependencies = [
+ "hickory-resolver",
+ "rama-core",
+ "rama-net",
+ "rama-utils",
+ "serde",
+ "tokio",
+]
+
+[[package]]
+name = "rama-error"
+version = "0.2.0-alpha.3"
+source = "registry+https://github.com/rust-lang/crates.io-index"
+checksum = "c8e4071c009d5a1bcfeeb90072f99c8d25de6496b37844e4f8415cfe83eda1c3"
 
 [[package]]
 name = "rama-http"
-version = "0.2.0-alpha.2"
+version = "0.2.0-alpha.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "6b104640d6433a8edbc68c3fbda01152b09284d5da93f948bee133740dbe9fe1"
+checksum = "bc1955a9dad61fff2e3d0797f1813db42d73842590f5ac538a736b8039309ffa"
 dependencies = [
  "async-compression",
  "base64 0.22.1",
@@ -1352,9 +1366,9 @@ dependencies = [
 
 [[package]]
 name = "rama-http-backend"
-version = "0.2.0-alpha.2"
+version = "0.2.0-alpha.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "50b6acba837cbbcd36f681b8dfd14135a030a79c07b5c3dd735652ade9bc8366"
+checksum = "c62f074561826f6753f9fa564bb110a3ca76cd8df9987c41586e2663f1eb4261"
 dependencies = [
  "h2",
  "hyper",
@@ -1371,9 +1385,9 @@ dependencies = [
 
 [[package]]
 name = "rama-http-types"
-version = "0.2.0-alpha.2"
+version = "0.2.0-alpha.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "959565ac2caf892d6e57f4b1902284215e54b58a9acb825f6cd4b776cee1cefb"
+checksum = "367fe923dbb55fd4b2cdecd395cf9b81fc568b28a71f63717163ecdecb937d9e"
 dependencies = [
  "bytes",
  "const_format",
@@ -1398,9 +1412,9 @@ dependencies = [
 
 [[package]]
 name = "rama-macros"
-version = "0.2.0-alpha.2"
+version = "0.2.0-alpha.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "e957b684e423a8c43f79ef69109e80251cace471cfc83a4e1309d1e2b8cd570b"
+checksum = "e823d80881b672f84a918b6ddf5866475fc8e9acc7139ee5f02e15b97e32e193"
 dependencies = [
  "proc-macro2",
  "quote",
@@ -1409,9 +1423,9 @@ dependencies = [
 
 [[package]]
 name = "rama-net"
-version = "0.2.0-alpha.2"
+version = "0.2.0-alpha.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "dc01b136a87d92088d9c577a7373a789417d405ae2aaa167788677c0faf80c23"
+checksum = "9728f7442cef13eed228c28a6496b90db818b144d5875b0a1e48d4a46a712c05"
 dependencies = [
  "base64 0.22.1",
  "bytes",
@@ -1429,11 +1443,12 @@ dependencies = [
 
 [[package]]
 name = "rama-tcp"
-version = "0.2.0-alpha.2"
+version = "0.2.0-alpha.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "db4ba4151c59940260ad13b0c6f6faa5bcb175401c4e26601e1a61988de55ea0"
+checksum = "5541fbea76d01ef3bac8f117650d9f488f1f6e5e77794a27cf13cc310f224661"
 dependencies = [
  "rama-core",
+ "rama-dns",
  "rama-http-types",
  "rama-net",
  "rama-utils",
@@ -1443,9 +1458,9 @@ dependencies = [
 
 [[package]]
 name = "rama-ua"
-version = "0.2.0-alpha.2"
+version = "0.2.0-alpha.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "d0b814dd515964ef54461f5e55b770eb7211972f74e3bb374dc8fefea33cc15c"
+checksum = "e0eea7928ee04494502559a7b1281550c05a484ca86b043ddb4d6f9230373257"
 dependencies = [
  "rama-core",
  "rama-utils",
@@ -1454,9 +1469,9 @@ dependencies = [
 
 [[package]]
 name = "rama-utils"
-version = "0.2.0-alpha.2"
+version = "0.2.0-alpha.3"
 source = "registry+https://github.com/rust-lang/crates.io-index"
-checksum = "ec918d6c27261bb2de13d3c640553f71d29b8b026750028245500d4e31275abd"
+checksum = "759e807e85ae6d0b581adf2fb48fcc0c5011306ff810a5f028e2ba8dc4256ce3"
 dependencies = [
  "parking_lot",
  "pin-project-lite",
