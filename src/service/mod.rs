@@ -57,19 +57,21 @@ pub async fn web_service(
         TraceLayer::new_for_http(),
     )
         .layer(
-            page_web_service!(PageIndex, PageRust, PageData, PageFoss, PageAbout, Sitemap)
-                .not_found(|req: Request| async move {
-                    if req
-                        .headers()
-                        .typed_get::<Accept>()
-                        .map(|a| a.iter().any(|q| q.value == TEXT_HTML))
-                        .unwrap_or_default()
-                    {
-                        Redirect::temporary("/").into_response()
-                    } else {
-                        StatusCode::NOT_FOUND.into_response()
-                    }
-                })
-                .dir("/", &cfg.static_dir),
+            page_web_service!(
+                PageIndex, PageRust, PageData, PagePort, PageFoss, PageAbout, Sitemap
+            )
+            .not_found(|req: Request| async move {
+                if req
+                    .headers()
+                    .typed_get::<Accept>()
+                    .map(|a| a.iter().any(|q| q.value == TEXT_HTML))
+                    .unwrap_or_default()
+                {
+                    Redirect::temporary("/").into_response()
+                } else {
+                    StatusCode::NOT_FOUND.into_response()
+                }
+            })
+            .dir("/", &cfg.static_dir),
         )
 }
