@@ -200,11 +200,11 @@ page!(about, "about.html", "about", {
             Plabayo is a software studio based in Gent, Belgium, focused on building resilient, interoperable, and secure digital
             infrastructure. We specialize in strengthening network layers and supporting modern and legacy systems alike — whether through
             free and open source contributions or commercial software.
-        
+        </p><p>
             Our philosophy is pragmatic: we build on shared standards, and contribute where we can make the greatest impact. Through tools
             like Rama and our consulting partnerships, we deliver high-integrity systems that power digital innovation across sectors with
             confidence and resilience.
-            
+            </p><p>
             We offer custom software development, team training, and code auditing to drive business innovation and growth.
         </p><p>
             Trust us for reliable and secure software solutions.
